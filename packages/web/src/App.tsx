@@ -35,6 +35,7 @@ import { StudentsPage } from './features/students/StudentsPage';
 import { StudentImportPage } from './features/students/StudentImportPage';
 import { PromoteStudentsPage } from './features/students/PromoteStudentsPage';
 import { ArchiveStudentsPage } from './features/students/ArchiveStudentsPage';
+import { EnvironmentGate } from './components/EnvironmentGate';
 import { Layout } from './components/layout/Layout';
 import { MarketingRoutes } from './features/marketing/MarketingRoutes';
 import { isMarketingPath } from './features/marketing/marketingPaths';
@@ -216,4 +217,12 @@ function App() {
   );
 }
 
-export default App;
+function GatedApp() {
+  return (
+    <EnvironmentGate>
+      <App />
+    </EnvironmentGate>
+  );
+}
+
+export default GatedApp;

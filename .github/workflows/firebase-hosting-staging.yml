@@ -60,6 +60,9 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID_STAGING }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID_STAGING }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID_STAGING }}
+          VITE_ENVIRONMENT: staging
+          VITE_ALLOWED_EMAILS: ${{ secrets.VITE_ALLOWED_EMAILS_STAGING }}
+          VITE_ALLOWED_EMAIL_DOMAINS: ${{ secrets.VITE_ALLOWED_EMAIL_DOMAINS_STAGING }}
         run: npm run build --workspace=@sprout/web
 
       - name: Use Staging Firebase Config
