@@ -146,6 +146,11 @@ jobs:
       github.event_name == 'push' ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'deploy_only')
     needs: [load-config, build]
+    # The called workflow authenticates via OIDC, and a called workflow
+    # can't be granted more than its caller, so id-token must be set here.
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/firebase-deploy-local.yml
     with:
       project_name: sprout
