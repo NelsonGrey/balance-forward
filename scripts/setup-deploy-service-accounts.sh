@@ -39,6 +39,19 @@ FUNCTIONS_ROLES=(
   roles/iam.serviceAccountUser
 )
 
+# A just-created service account can take a few seconds to become visible to
+# IAM policy calls ("Service account ... does not exist"), so retry.
+retry() {
+  local n
+  for n in 1 2 3 4 5 6 7 8; do
+    "$@" && return 0
+    echo "   (waiting for IAM to propagate, attempt ${n}/8)" >&2
+    sleep 5
+  done
+  echo "FAILED: $*" >&2
+  return 1
+}
+
 envs=("$@"); [ ${#envs[@]} -eq 0 ] && envs=(dev staging prod)
 
 for env in "${envs[@]}"; do
@@ -53,11 +66,11 @@ for env in "${envs[@]}"; do
   roles=("${RULES_ROLES[@]}")
   [ "${WITH_FUNCTIONS:-0}" = "1" ] && roles+=("${FUNCTIONS_ROLES[@]}")
   for role in "${roles[@]}"; do
-    gcloud projects add-iam-policy-binding "$project" \
-      --member "serviceAccount:${sa}" --role "${role%% *}" --condition=None >/dev/null
+    retry gcloud projects add-iam-policy-binding "$project" \
+      --member "serviceAccount:${sa}" --role "$role" --condition=None >/dev/null
   done
 
-  gcloud iam service-accounts add-iam-policy-binding "$sa" --project "$project" \
+  retry gcloud iam service-accounts add-iam-policy-binding "$sa" --project "$project" \
     --role roles/iam.workloadIdentityUser \
     --member "principalSet://iam.googleapis.com/${POOL}/attribute.ref/refs/heads/${branch}" >/dev/null
   echo "   ok: ${sa}"
