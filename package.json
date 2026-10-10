@@ -5,7 +5,8 @@
   "type": "module",
   "license": "UNLICENSED",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "!packages/functions"
   ],
   "scripts": {
     "dev": "npm run dev --workspace=@sprout/web",
