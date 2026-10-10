@@ -43,12 +43,10 @@ class ImportPreviewRow {
 /// like "007" never gets silently coerced to 7, which would break the
 /// exact-string matching in [buildImportPreview].
 List<Map<String, String>> parseCsvRows(String csvContent) {
-  // CsvToListConverter doesn't split rows on a bare '\n' unless told to —
-  // its row-ending auto-detection otherwise expects '\r\n'. Normalizing
-  // first means files from any platform (Mac/Windows/exported-from-Sheets)
-  // parse the same way.
-  final normalized = csvContent.replaceAll('\r\n', '\n');
-  final table = const CsvToListConverter(shouldParseNumbers: false, eol: '\n').convert(normalized);
+  // Fixed comma delimiter (no auto-detect) and dynamicTyping off (the
+  // default), so every cell stays a string. The decoder handles \r\n, \n
+  // and \r row endings itself, so files from any platform parse the same.
+  final table = Csv(fieldDelimiter: ',', autoDetect: false).decode(csvContent);
   if (table.isEmpty) return const [];
   final header = table.first.map((h) => h.toString()).toList();
   final rows = <Map<String, String>>[];
