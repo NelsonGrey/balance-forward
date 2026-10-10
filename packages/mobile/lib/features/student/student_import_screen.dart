@@ -56,13 +56,12 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
       .toList();
 
   Future<void> _pickFile(List<Student> existingStudents) async {
-    final result = await FilePicker.platform.pickFiles(
+    final file = await FilePicker.pickFile(
       type: FileType.custom,
       allowedExtensions: ['csv'],
-      withData: true,
     );
-    final bytes = result?.files.single.bytes;
-    if (bytes == null) return;
+    if (file == null) return;
+    final bytes = await file.readAsBytes();
     setState(() {
       _parseError = null;
       _rows = null;

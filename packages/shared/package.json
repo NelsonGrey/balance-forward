@@ -19,8 +19,8 @@
     "generate:mobile-content": "npm run build && node scripts/generate-mobile-content.mjs",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "format": "prettier --write .",
     "clean": "rm -rf node_modules dist"
   },
