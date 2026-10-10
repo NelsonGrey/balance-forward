@@ -112,6 +112,9 @@ packages/mobile/ios/fastlane/Payload/
 firebase-debug.log
 firestore-debug.log
 
+# Local emulator seed data export (regenerate via `npm run seed:emulator`)
+.emulator-seed/
+
 # Firebase service account keys
 serviceAccountKey.json
 firebase-service-account-*.json
@@ -341,7 +344,7 @@ test-results/
 # packages/functions now lives in a separate private repo
 # (NelsonGrey/sprout-functions). A local clone into this path for
 # dev/emulator use is fine, but it should never be committed here.
-packages/functions/
+packages/functions
 
 # Claude Code local session data
 .claude/

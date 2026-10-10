@@ -1,22 +1,228 @@
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, type User } from 'firebase/auth';
+import { Redirect, Route, Switch, useLocation } from 'wouter';
 import { firebaseClient } from './lib/firebase';
+import { claimPendingStudentLinkIfAny } from './lib/firestore';
+import { claimPendingInviteIfAny } from './lib/school';
+import { claimPendingFamilyManagerInviteIfAny, claimPendingFamilyMemberLinkIfAny } from './lib/family';
+import { DeleteAccountPage } from './features/auth/DeleteAccountPage';
 import { LoginPage } from './features/auth/LoginPage';
-import { HomePage } from './features/home/HomePage';
+import { LandingRouter } from './features/classroom/LandingRouter';
+import { MyStudentViewPage } from './features/student/MyStudentViewPage';
+import { LearnListPage } from './features/learn/LearnListPage';
+import { LearnPreparePage } from './features/learn/LearnPreparePage';
+import { LearnRunPage } from './features/learn/LearnRunPage';
+import { AddFamilyMemberPage } from './features/family/AddFamilyMemberPage';
+import { CreateFamilyPage } from './features/family/CreateFamilyPage';
+import { FamilyHomePage } from './features/family/FamilyHomePage';
+import { FamilyListPage } from './features/family/FamilyListPage';
+import { FamilyMemberDetailPage } from './features/family/FamilyMemberDetailPage';
+import { FamilyPolicyProfilesAdminPage } from './features/family/FamilyPolicyProfilesAdminPage';
+import { MyFamilyMemberViewPage } from './features/family/MyFamilyMemberViewPage';
+import { ClassroomDetailPage } from './features/classroom/ClassroomDetailPage';
+import { ClassroomRosterPage } from './features/classroom/ClassroomRosterPage';
+import { ClassroomSettingsPage } from './features/classroom/ClassroomSettingsPage';
+import { CreateClassroomPage } from './features/classroom/CreateClassroomPage';
+import { CreateStudentPage } from './features/classroom/CreateStudentPage';
+import { RequestAccessPage } from './features/classroom/RequestAccessPage';
+import { AccessRequestsPage } from './features/school/AccessRequestsPage';
+import { AddStaffPage } from './features/school/AddStaffPage';
+import { GradesOfferedPage } from './features/school/GradesOfferedPage';
+import { SchoolPage } from './features/school/SchoolPage';
+import { StaffPage } from './features/school/StaffPage';
+import { AddStudentPage } from './features/students/AddStudentPage';
+import { StudentsPage } from './features/students/StudentsPage';
+import { StudentImportPage } from './features/students/StudentImportPage';
+import { PromoteStudentsPage } from './features/students/PromoteStudentsPage';
+import { ArchiveStudentsPage } from './features/students/ArchiveStudentsPage';
+import { EnvironmentGate } from './components/EnvironmentGate';
+import { Layout } from './components/layout/Layout';
+import { MarketingRoutes } from './features/marketing/MarketingRoutes';
+import { isMarketingPath } from './features/marketing/marketingPaths';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [path] = useLocation();
 
   useEffect(() => {
-    return onAuthStateChanged(firebaseClient.auth, (nextUser) => {
+    return onAuthStateChanged(firebaseClient.auth, nextUser => {
       setUser(nextUser);
       setLoading(false);
+      // No-op unless an admin invited this exact email — activates the
+      // access they configured (see plan's "Invite-and-Claim Flow").
+      if (nextUser?.email) {
+        claimPendingInviteIfAny({
+          uid: nextUser.uid,
+          email: nextUser.email,
+          displayName: nextUser.displayName,
+        });
+        claimPendingStudentLinkIfAny({
+          uid: nextUser.uid,
+          email: nextUser.email,
+        });
+        claimPendingFamilyManagerInviteIfAny({
+          uid: nextUser.uid,
+          email: nextUser.email,
+        });
+        claimPendingFamilyMemberLinkIfAny({
+          uid: nextUser.uid,
+          email: nextUser.email,
+        });
+      }
     });
   }, []);
 
   if (loading) return null;
-  return user ? <HomePage user={user} /> : <LoginPage />;
+  if (isMarketingPath(path, Boolean(user))) {
+    return <MarketingRoutes user={user} />;
+  }
+
+  if (!user) {
+    return (
+      <Layout user={null}>
+        <LoginPage />
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout user={user}>
+      <Switch>
+        <Route path="/app/classrooms/new">
+          <CreateClassroomPage user={user} />
+        </Route>
+        <Route path="/app/classrooms/:contextId/students/new">
+          {params => (
+            <CreateStudentPage user={user} contextId={params.contextId} />
+          )}
+        </Route>
+        <Route path="/app/classrooms/:contextId/request-access">
+          {params => (
+            <RequestAccessPage user={user} contextId={params.contextId} />
+          )}
+        </Route>
+        <Route path="/app/classrooms/:contextId/roster">
+          {params => (
+            <ClassroomRosterPage user={user} contextId={params.contextId} />
+          )}
+        </Route>
+        <Route path="/app/classrooms/:contextId/settings">
+          {params => (
+            <ClassroomSettingsPage user={user} contextId={params.contextId} />
+          )}
+        </Route>
+        <Route path="/app/classrooms/:contextId/students/:studentId">
+          {params => (
+            <ClassroomDetailPage
+              user={user}
+              contextId={params.contextId}
+              studentId={params.studentId}
+            />
+          )}
+        </Route>
+        <Route path="/app/classrooms/:contextId">
+          {params => (
+            <ClassroomDetailPage user={user} contextId={params.contextId} />
+          )}
+        </Route>
+        <Route path="/app/school/staff/new">
+          <AddStaffPage user={user} />
+        </Route>
+        <Route path="/app/school/staff/:uid">
+          {params => <StaffPage user={user} selectedUid={params.uid} />}
+        </Route>
+        <Route path="/app/school/staff">
+          <StaffPage user={user} />
+        </Route>
+        <Route path="/app/school/requests">
+          <AccessRequestsPage user={user} />
+        </Route>
+        <Route path="/app/school/grades">
+          <GradesOfferedPage user={user} />
+        </Route>
+        <Route path="/app/school">
+          <SchoolPage user={user} />
+        </Route>
+        <Route path="/app/students/new">
+          <AddStudentPage user={user} />
+        </Route>
+        <Route path="/app/students/import">
+          <StudentImportPage user={user} />
+        </Route>
+        <Route path="/app/students/promote">
+          <PromoteStudentsPage user={user} />
+        </Route>
+        <Route path="/app/students/archive">
+          <ArchiveStudentsPage user={user} />
+        </Route>
+        <Route path="/app/students">
+          <StudentsPage user={user} />
+        </Route>
+        <Route path="/app/account/delete">
+          <DeleteAccountPage user={user} />
+        </Route>
+        <Route path="/app/me/history">
+          <MyStudentViewPage user={user} view="history" />
+        </Route>
+        <Route path="/app/me/goals">
+          <MyStudentViewPage user={user} view="goals" />
+        </Route>
+        <Route path="/app/me">
+          <MyStudentViewPage user={user} />
+        </Route>
+        <Route path="/app/family/policy-profiles">
+          <FamilyPolicyProfilesAdminPage user={user} />
+        </Route>
+        <Route path="/app/family/me">
+          <MyFamilyMemberViewPage user={user} />
+        </Route>
+        <Route path="/app/family/new">
+          <CreateFamilyPage user={user} />
+        </Route>
+        <Route path="/app/family/:contextId/children/new">
+          {params => <AddFamilyMemberPage user={user} contextId={params.contextId} />}
+        </Route>
+        <Route path="/app/family/:contextId/children/:familyMemberId">
+          {params => (
+            <FamilyMemberDetailPage user={user} contextId={params.contextId} familyMemberId={params.familyMemberId} />
+          )}
+        </Route>
+        <Route path="/app/family/:contextId">
+          {params => <FamilyHomePage user={user} contextId={params.contextId} />}
+        </Route>
+        <Route path="/app/family">
+          <FamilyListPage user={user} />
+        </Route>
+        <Route path="/app/learn/:lessonSlug/prepare">
+          {params => <LearnPreparePage lessonSlug={params.lessonSlug} />}
+        </Route>
+        <Route path="/app/learn/:lessonSlug/run">
+          {params => <LearnRunPage user={user} lessonSlug={params.lessonSlug} />}
+        </Route>
+        <Route path="/app/learn">
+          <LearnListPage user={user} />
+        </Route>
+        <Route path="/app">
+          <LandingRouter user={user} />
+        </Route>
+        <Route path="/">
+          <Redirect to="/app" />
+        </Route>
+        <Route>
+          <Redirect to="/app" />
+        </Route>
+      </Switch>
+    </Layout>
+  );
 }
 
-export default App;
+function GatedApp() {
+  return (
+    <EnvironmentGate>
+      <App />
+    </EnvironmentGate>
+  );
+}
+
+export default GatedApp;
