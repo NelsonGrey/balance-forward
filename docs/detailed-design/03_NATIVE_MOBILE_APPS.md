@@ -29,7 +29,7 @@ Use existing `SproutLayout` thresholds and gutters. Width, not device name, cont
 - Back affordance follows navigation title conventions and interactive back gesture unless a dirty form requires confirmation.
 - Apple Sign-In is shown only when configured and supported; configuration errors do not appear as generic invalid credentials.
 - VoiceOver rotor order follows title, status, primary content, primary action, secondary content.
-- Prefer Cupertino date/time picker behavior when a date is genuinely required, while retaining the Sprout visual system.
+- Prefer Cupertino date/time picker behavior when a date is genuinely required, while retaining the Balance Forward visual system.
 
 ### Android
 

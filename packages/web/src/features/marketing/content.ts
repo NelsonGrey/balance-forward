@@ -42,9 +42,9 @@ export const audiences: Audience[] = [
           'That is the product direction. The working foundation currently centers on school and classroom administration, with Pre-K–6 curriculum development first. District controls and secondary curriculum remain planned.',
       },
       {
-        question: 'Does Sprout Streak claim FERPA or COPPA certification?',
+        question: 'Does Balance Forward claim FERPA or COPPA certification?',
         answer:
-          'No. Those laws do not provide a general product certification. Sprout Streak will publish its data practices and contracting materials before it is offered for district procurement.',
+          'No. Those laws do not provide a general product certification. Balance Forward will publish its data practices and contracting materials before it is offered for district procurement.',
       },
       {
         question: 'Can schools start smaller?',
@@ -78,7 +78,7 @@ export const audiences: Audience[] = [
     shortName: 'Schools',
     headline: 'A schoolwide language for choices, goals, and growth.',
     summary:
-      'Coordinate classroom practice without flattening teacher judgment. Sprout Streak is designed for homerooms, specialists, support staff, and administrators to work within clear scopes.',
+      'Coordinate classroom practice without flattening teacher judgment. Balance Forward is designed for homerooms, specialists, support staff, and administrators to work within clear scopes.',
     outcomes: [
       {
         title: 'Less roster friction',
@@ -97,7 +97,7 @@ export const audiences: Audience[] = [
       {
         question: 'Is this a PBIS replacement?',
         answer:
-          'No. Sprout Streak focuses on financial capability through everyday practice. Schools may connect it to existing routines, but it is not positioned as a complete behavior or discipline system.',
+          'No. Balance Forward focuses on financial capability through everyday practice. Schools may connect it to existing routines, but it is not positioned as a complete behavior or discipline system.',
       },
       {
         question: 'What does a principal manage?',
@@ -252,7 +252,7 @@ export const audiences: Audience[] = [
     shortName: 'Students',
     headline: 'Your choices. Your goals. Your next smart move.',
     summary:
-      'Sprout Streak helps you practice what money can do: earn it, plan it, save it, spend it, and learn from every choice.',
+      'Balance Forward helps you practice what money can do: earn it, plan it, save it, spend it, and learn from every choice.',
     outcomes: [
       {
         title: 'Know what happened',
@@ -269,7 +269,7 @@ export const audiences: Audience[] = [
     ],
     questions: [
       {
-        question: 'Is Sprout money real money?',
+        question: 'Is Balance Forward money real money?',
         answer:
           'No. It is a safe practice space your teacher or family can use to help you learn.',
       },
@@ -281,7 +281,7 @@ export const audiences: Audience[] = [
       {
         question: 'Can other students see my balance?',
         answer:
-          'Sprout Streak is being designed so your information is shown only to people who need it. Privacy controls are still part of the pre-launch readiness work.',
+          'Balance Forward is being designed so your information is shown only to people who need it. Privacy controls are still part of the pre-launch readiness work.',
       },
     ],
     workflow: [

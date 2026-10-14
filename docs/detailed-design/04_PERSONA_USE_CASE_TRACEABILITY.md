@@ -77,7 +77,7 @@ All family production behavior is `PLANNED` pending multi-context design.
 | Marketing question/promise                      | In-product requirement                                                                        | Verification                                                          |
 | ----------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | Can this serve the whole district?              | District pages label complete district controls and secondary curriculum as planned           | No active district provisioning route without future capability flag  |
-| Does Sprout claim FERPA/COPPA certification?    | Trust/readiness never uses certification language; legal materials remain status/date labeled | Content assertion test for prohibited claims                          |
+| Does Balance Forward claim FERPA/COPPA certification? | Trust/readiness never uses certification language; legal materials remain status/date labeled | Content assertion test for prohibited claims                          |
 | Can schools start smaller?                      | Pilot design accepts one classroom or school and a bounded cohort                             | Pilot validation permits small scope; no district-wide minimum        |
 | Is this a PBIS replacement?                     | Onboarding/help says financial-capability practice, not discipline system                     | No discipline incident, punishment, demerit, or behavior-risk UI      |
 | What does a principal manage?                   | School overview links setup, grades, staff, scopes, rosters, and year transitions             | Capability tests for admin and teacher                                |
@@ -88,7 +88,7 @@ All family production behavior is `PLANNED` pending multi-context design.
 | Must families pay for chores?                   | Family flows support fictional/time/token choices and never require allowance                 | Required-field tests contain no real-money/allowance field            |
 | Are school and home balances mixed?             | Context switcher and balance card show one context; no combined total                         | Multi-context contract tests when built                               |
 | How do families avoid money anxiety?            | Prompts are optional/context-respectful; no family-resource disclosure                        | Content review and student/family tests                               |
-| Is Sprout money real money?                     | Student hero says practice/simulated, not real money                                          | Student copy assertion                                                |
+| Is Balance Forward money real money?            | Student hero says practice/simulated, not real money                                          | Student copy assertion                                                |
 | What if a student regrets a choice?             | History and reflection offer a next-plan action without reversal shame                        | Reflection copy assertion; no negative character label                |
 | Can other students see a balance?               | Student route is self-scoped; adult lists are authorized and private; no peer/student list    | Firestore rules and student navigation tests                          |
 

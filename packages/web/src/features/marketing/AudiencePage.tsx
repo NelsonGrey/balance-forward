@@ -93,7 +93,7 @@ export function AudiencePage({ audience }: { audience: Audience }) {
               Start small enough to learn what works.
             </h2>
             <p className="mt-5 leading-7 text-on-dark/65">
-              Sprout Streak is designed around repeatable practice, not a
+              Balance Forward is designed around repeatable practice, not a
               one-time assembly or a dashboard nobody revisits.
             </p>
           </div>

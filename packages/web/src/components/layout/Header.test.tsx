@@ -23,7 +23,11 @@ vi.mock('wouter', () => ({
   useLocation: () => ['/', navigateMock],
 }));
 
-const user = { uid: 'teacher-1', displayName: 'Ms. Lord', email: 'lord@example.com' } as User;
+const user = {
+  uid: 'teacher-1',
+  displayName: 'Ms. Lord',
+  email: 'lord@example.com',
+} as User;
 
 beforeEach(() => {
   vi.mocked(firestoreLib.useLinkedStudent).mockReturnValue(null);
@@ -34,7 +38,7 @@ describe('Header', () => {
   it('shows the logo but no account menu when signed out', () => {
     render(<Header user={null} />);
 
-    expect(screen.getByText('Streak')).toBeTruthy();
+    expect(screen.getByText('Balance Forward')).toBeTruthy();
     expect(screen.queryByLabelText('Account menu')).toBeNull();
   });
 
@@ -57,7 +61,9 @@ describe('Header', () => {
   });
 
   it('shows "My student view" and navigates to /app/me for a dual-role account', () => {
-    vi.mocked(firestoreLib.useLinkedStudent).mockReturnValue({ id: 'student-1' } as never);
+    vi.mocked(firestoreLib.useLinkedStudent).mockReturnValue({
+      id: 'student-1',
+    } as never);
     render(<Header user={user} />);
 
     fireEvent.click(screen.getByLabelText('Account menu'));
@@ -73,7 +79,9 @@ describe('Header', () => {
   });
 
   it('shows "My family view" and navigates to /app/family/me for a linked family member', () => {
-    vi.mocked(familyLib.useLinkedFamilyMember).mockReturnValue({ id: 'member-1' } as never);
+    vi.mocked(familyLib.useLinkedFamilyMember).mockReturnValue({
+      id: 'member-1',
+    } as never);
     render(<Header user={user} />);
 
     fireEvent.click(screen.getByLabelText('Account menu'));
@@ -92,14 +100,14 @@ describe('Header', () => {
   it('navigates to /app when the logo is clicked while signed in', () => {
     render(<Header user={user} />);
 
-    fireEvent.click(screen.getByText('Streak'));
+    fireEvent.click(screen.getByLabelText('Balance Forward home'));
     expect(navigateMock).toHaveBeenCalledWith('/app');
   });
 
   it('navigates to / when the logo is clicked while signed out', () => {
     render(<Header user={null} />);
 
-    fireEvent.click(screen.getByText('Streak'));
+    fireEvent.click(screen.getByLabelText('Balance Forward home'));
     expect(navigateMock).toHaveBeenCalledWith('/');
   });
 

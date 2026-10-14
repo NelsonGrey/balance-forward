@@ -57,7 +57,7 @@ export function MarketingHomePage() {
               <span className="text-accent">ordinary moments.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-              Sprout Streak is being built to turn everyday choices into
+              Balance Forward is being built to turn everyday choices into
               age-aware practice—so students learn to earn, plan, save, spend,
               and reflect across school and home.
             </p>
@@ -84,12 +84,12 @@ export function MarketingHomePage() {
                 <Check size={14} className="text-brand-bright" /> No advertising
               </span>
               <span className="flex items-center gap-1.5">
-                <Check size={14} className="text-brand-bright" /> No bank account
-                needed
+                <Check size={14} className="text-brand-bright" /> No bank
+                account needed
               </span>
               <span className="flex items-center gap-1.5">
-                <Check size={14} className="text-brand-bright" /> Honest readiness
-                labels
+                <Check size={14} className="text-brand-bright" /> Honest
+                readiness labels
               </span>
             </div>
           </div>
@@ -134,7 +134,10 @@ export function MarketingHomePage() {
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl border border-border bg-surface p-4">
                     <div className="flex items-center gap-2 text-sm font-black">
-                      <CircleDollarSign size={17} className="text-brand-bright" />{' '}
+                      <CircleDollarSign
+                        size={17}
+                        className="text-brand-bright"
+                      />{' '}
                       Choice check
                     </div>
                     <p className="mt-2 text-sm leading-6 text-muted">
@@ -238,7 +241,7 @@ export function MarketingHomePage() {
         <div className="relative mx-auto site-container">
           <div className="max-w-3xl">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-mint-strong">
-              The Sprout learning loop
+              The Balance Forward learning loop
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-5xl">
               A ledger records a choice. Learning happens around it.
@@ -318,9 +321,7 @@ export function MarketingHomePage() {
                   <h3 className="mt-6 text-2xl font-black tracking-[-0.035em]">
                     {lesson.title}
                   </h3>
-                  <p className="mt-3 leading-7 text-muted">
-                    {lesson.summary}
-                  </p>
+                  <p className="mt-3 leading-7 text-muted">{lesson.summary}</p>
                   <span className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand">
                     Open lesson{' '}
                     <ArrowRight
@@ -351,7 +352,7 @@ export function MarketingHomePage() {
               </h2>
               <p className="mt-3 max-w-3xl leading-7 text-muted">
                 See a plain-language view of implemented capabilities, active
-                gaps, and the gates Sprout Streak must clear before
+                gaps, and the gates Balance Forward must clear before
                 school-facing launch.
               </p>
             </div>

@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
-/// Cross-platform Sprout Streak palette.
+/// Cross-platform Balance Forward Evergreen Gold palette.
 ///
 /// Keep these values synchronized with packages/web/src/index.css. Product
 /// widgets should read from [Theme.of] for normal UI states and use these
 /// constants only for stable semantic accents that ColorScheme does not name.
 abstract final class SproutColors {
-  static const canvas = Color(0xFFF8FBF5);
+  static const canvas = Color(0xFFF8F3E8);
   static const surface = Color(0xFFFFFFFF);
-  static const surfaceSubtle = Color(0xFFFBFCF9);
-  static const ink = Color(0xFF102A26);
-  static const inkSoft = Color(0xFF24483E);
-  static const muted = Color(0xFF587168);
-  static const mutedSoft = Color(0xFF6A8078);
-  static const border = Color(0xFFDCE7DC);
-  static const borderStrong = Color(0xFFBDD0C2);
-  static const brand = Color(0xFF166B4F);
-  static const brandStrong = Color(0xFF105B43);
-  static const brandBright = Color(0xFF16805B);
-  static const mint = Color(0xFFE3F3E7);
-  static const mintStrong = Color(0xFF8ED2A6);
-  static const deepSurface = Color(0xFF16382F);
-  static const accent = Color(0xFFE56845);
-  static const accentSoft = Color(0xFFFFF0E8);
-  static const warning = Color(0xFF9B6220);
-  static const warningSoft = Color(0xFFFFF7E8);
+  static const surfaceSubtle = Color(0xFFFCFAF5);
+  static const ink = Color(0xFF123C35);
+  static const inkSoft = Color(0xFF294F47);
+  static const muted = Color(0xFF536E67);
+  static const mutedSoft = Color(0xFF687F79);
+  static const border = Color(0xFFCBD9D2);
+  static const borderStrong = Color(0xFFA8C0B6);
+  static const brand = Color(0xFF17624F);
+  static const brandStrong = Color(0xFF104B3D);
+  static const brandBright = Color(0xFF1D755D);
+  static const mint = Color(0xFFE4F1EB);
+  static const mintStrong = Color(0xFF75B798);
+  static const deepSurface = Color(0xFF0D302B);
+  static const accent = Color(0xFFA66C00);
+  static const accentSoft = Color(0xFFFFF2D2);
+  static const warning = Color(0xFF8A5A00);
+  static const warningSoft = Color(0xFFFFF2D2);
   static const info = Color(0xFF2C6791);
   static const infoSoft = Color(0xFFE1EEF9);
   static const purple = Color(0xFF6850A0);

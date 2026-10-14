@@ -31,9 +31,15 @@ export function TodayPage({ student }: { student: Student }) {
             <Sprout size={22} />
           </span>
           <div aria-live="polite">
-            <p className="text-xs font-black uppercase tracking-[0.14em] text-on-dark/60">Your Sprout balance</p>
-            <p className="mt-1 text-4xl font-black tracking-tight">${(student.balanceCents / 100).toFixed(2)}</p>
-            <p className="mt-1 text-xs text-on-dark/60">Practice money—not real money.</p>
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-on-dark/60">
+              Your practice balance
+            </p>
+            <p className="mt-1 text-4xl font-black tracking-tight">
+              ${(student.balanceCents / 100).toFixed(2)}
+            </p>
+            <p className="mt-1 text-xs text-on-dark/60">
+              Practice money—not real money.
+            </p>
           </div>
         </div>
 
@@ -46,7 +52,10 @@ export function TodayPage({ student }: { student: Student }) {
         <div className="pt-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-black text-ink">Recent</h2>
-            <Link href="/app/me/history" className="text-sm font-bold text-brand">
+            <Link
+              href="/app/me/history"
+              className="text-sm font-bold text-brand"
+            >
               See all history
             </Link>
           </div>
@@ -54,7 +63,7 @@ export function TodayPage({ student }: { student: Student }) {
             <p className="mt-2 text-sm text-ink-muted">No transactions yet.</p>
           ) : (
             <ul className="mt-2 flex flex-col gap-2">
-              {recentTransactions.map((transaction) => (
+              {recentTransactions.map(transaction => (
                 <li
                   key={transaction.id}
                   aria-label={transactionAriaLabel(transaction)}
@@ -68,7 +77,9 @@ export function TodayPage({ student }: { student: Student }) {
         </div>
 
         <div className="py-4">
-          <ReflectionPrompt prompts={['What happened today?', 'What might you try next?']} />
+          <ReflectionPrompt
+            prompts={['What happened today?', 'What might you try next?']}
+          />
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-# Sprout Streak
+# Balance Forward
 
 [![CI](https://github.com/NelsonGrey/sprout/actions/workflows/master-pipeline.yml/badge.svg?branch=develop)](https://github.com/NelsonGrey/sprout/actions/workflows/master-pipeline.yml) [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](https://github.com/NelsonGrey/sprout/blob/develop/LICENSE)
 
@@ -17,7 +17,7 @@
   - [Manual Deployment](#manual-deployment)
 - [Getting Help](#getting-help)
 
-Sprout Streak is a subscription-based classroom and family financial-literacy app — a
+Balance Forward is a subscription-based classroom and family financial-literacy app — a
 digital reward/behavior-tracking system with no ads, built for schools and
 families rather than the ad-monetized arcade-game portfolio this org also
 ships. The repository contains a working web/mobile product foundation,
@@ -26,7 +26,7 @@ implemented Firestore schema and security rules.
 
 ## Demo
 
-Sprout Streak is a no-ads, subscription reward/behavior-tracking app for
+Balance Forward is a no-ads, subscription reward/behavior-tracking app for
 classrooms and families: teachers or parents award "earn"/"spend" ledger
 transactions in practice dollars (never real money — see the "Practice
 money" label in `TodayPage.tsx`), students track a running balance and
@@ -183,7 +183,7 @@ npm run test:mobile    # Flutter widget tests
   interface (`packages/mobile/lib/core/services/auth/`) extracted from the
   org's shared `game-shell` package's auth layer — everything else in
   `game-shell` (AdMob ads, GDPR/ATT consent, IAP ad-removal) was
-  deliberately left out, since Sprout Streak is a no-ads subscription product, not
+  deliberately left out, since Balance Forward is a no-ads subscription product, not
   one of the ad-monetized arcade games that package targets
 
 ### System Requirements
@@ -228,4 +228,4 @@ npm run deploy:web      # deploy web only
 
 ---
 
-© 2026 Sprout Streak, a product of Nelson Grey LLC. All rights reserved.
+© 2026 Balance Forward, a product of Nelson Grey LLC. All rights reserved.

@@ -304,7 +304,7 @@ class SproutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Sprout Streak',
+      title: 'Balance Forward',
       theme: SproutTheme.light,
       routerConfig: _router,
     );

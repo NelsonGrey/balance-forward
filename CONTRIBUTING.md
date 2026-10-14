@@ -1,6 +1,6 @@
 # Contributing
 
-Sprout Streak is closed-source. The source is publicly visible, but this isn't an open-source project — there's no public issue tracker and outside pull requests aren't accepted.
+Balance Forward is closed-source. The source is publicly visible, but this isn't an open-source project — there's no public issue tracker and outside pull requests aren't accepted.
 
 If you have collaborator access to this repository:
 

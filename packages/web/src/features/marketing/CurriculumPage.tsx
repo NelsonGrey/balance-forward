@@ -41,7 +41,7 @@ export function CurriculumPage() {
         <div className="relative mx-auto site-container">
           <div className="max-w-4xl">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-bright">
-              Sprout learning library · Foundation release
+              Balance Forward learning library · Foundation release
             </p>
             <h1 className="mt-5 text-5xl font-black leading-[1.02] tracking-[-0.052em] sm:text-6xl lg:text-7xl">
               Practice before the stakes are real.
@@ -133,9 +133,7 @@ export function CurriculumPage() {
                   <h2 className="mt-2 text-2xl font-black tracking-[-0.035em]">
                     {lesson.title}
                   </h2>
-                  <p className="mt-3 leading-7 text-muted">
-                    {lesson.summary}
-                  </p>
+                  <p className="mt-3 leading-7 text-muted">{lesson.summary}</p>
                 </div>
                 <div className="mt-7 flex items-center justify-between border-t border-border pt-5">
                   <span className="text-xs font-bold text-muted">

@@ -1,4 +1,4 @@
-# Sprout Streak mobile
+# Balance Forward mobile
 
 The shared Flutter application for four required form factors:
 

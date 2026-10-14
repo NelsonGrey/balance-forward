@@ -309,7 +309,7 @@ const rawLessons: Lesson[] = [
     familyBridge:
       'Look for the words rate and interest in a public advertisement or sample—not a private account—and discuss what questions the ad leaves unanswered.',
     productConnection:
-      'Sprout Streak plans to keep interest-based savings practice in the base learning experience. The production mechanic is not yet complete.',
+      'Balance Forward plans to keep interest-based savings practice in the base learning experience. The production mechanic is not yet complete.',
     inclusionNote:
       'State that the model is simplified and fictional. Do not ask students whether their household has savings or earns interest.',
     standardsNote:

@@ -1,4 +1,4 @@
-# Sprout Streak Application Detailed-Design Package
+# Balance Forward Application Detailed-Design Package
 
 **Version:** 1.0  
 **Design baseline:** August 20, 2026  
@@ -17,7 +17,7 @@ This package translates the public marketing promises, the Business Requirements
 - which capabilities are current, partial, planned, or launch-gated;
 - the order in which another chat should implement and validate the work.
 
-The package designs the **application side** of Sprout Streak. The existing public marketing site remains the acquisition and education surface. It is included only where it hands a user into sign-in, curriculum, trust, support, or an authenticated application workflow.
+The package designs the **application side** of Balance Forward. The existing public marketing site remains the acquisition and education surface. It is included only where it hands a user into sign-in, curriculum, trust, support, or an authenticated application workflow.
 
 ## 2. Source precedence
 
@@ -85,7 +85,7 @@ Read the documents in order. Screen IDs are stable cross-references. Do not rena
 
 ## 6. Non-negotiable product truths
 
-- Sprout currency is simulated. No screen may imply a bank account, cash value, or redeemability outside the adult-defined context.
+- Balance Forward currency is simulated. No screen may imply a bank account, cash value, or redeemability outside the adult-defined context.
 - A classroom balance and a family balance are separate even when they belong to one learner identity.
 - Students see only their own information. Public or peer balance comparison is prohibited.
 - Choices are discussed without shame. The product evaluates reasoning, math, progress, and reflection—not a child’s character or family resources.

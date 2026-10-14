@@ -286,7 +286,7 @@ Reuses `W-CLASS-03` primitives with family language and narrower capability. Off
 
 ### `W-STUDENT-01` — Today/balance and history (`CURRENT`, expand)
 
-**Hero:** greeting; context chip; `Your Sprout balance`; large private amount; `Practice money—not real money.`
+**Hero:** greeting; context chip; `Your practice balance`; large private amount; `Practice money—not real money.`
 
 **Next:** current goal progress; last three transactions; neutral reflection prompt; `See all history`. If multiple contexts later exist, explicit tabs/cards switch contexts and never show a combined amount.
 

@@ -3,7 +3,10 @@ import type { User } from 'firebase/auth';
 import { useLocation } from 'wouter';
 import { Menu } from 'lucide-react';
 import { firebaseClient } from '../../lib/firebase';
-import { useIsLinkedFamilyMember, useIsLinkedStudent } from '../../app/roleContext';
+import {
+  useIsLinkedFamilyMember,
+  useIsLinkedStudent,
+} from '../../app/roleContext';
 
 /** Persistent top bar — account menu, sign-out, and (mobile only) the
  * hamburger that opens Sidebar's drawer plus the logo, since Sidebar
@@ -40,9 +43,16 @@ export function Header({
           <button
             type="button"
             onClick={() => navigate(user ? '/app' : '/')}
-            className={`text-lg font-extrabold tracking-tight text-ink ${user ? 'lg:hidden' : ''}`}
+            className={`flex items-center gap-2 text-lg font-extrabold tracking-tight text-ink ${user ? 'lg:hidden' : ''}`}
+            aria-label="Balance Forward home"
           >
-            Sprout <span className="text-brand">Streak</span>
+            <img
+              src="/brand/balance-forward-app-icon.svg"
+              alt=""
+              className="h-8 w-8 rounded-lg"
+              aria-hidden="true"
+            />
+            <span>Balance Forward</span>
           </button>
         </div>
 
@@ -51,18 +61,22 @@ export function Header({
             <div className="relative">
               <button
                 type="button"
-                onClick={() => setMenuOpen((open) => !open)}
+                onClick={() => setMenuOpen(open => !open)}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-semibold text-on-dark"
                 aria-label="Account menu"
               >
-                {(user.displayName || user.email || '?').charAt(0).toUpperCase()}
+                {(user.displayName || user.email || '?')
+                  .charAt(0)
+                  .toUpperCase()}
               </button>
               {menuOpen && (
                 <div className="absolute right-0 mt-2 w-56 rounded-lg border border-border bg-surface p-2 shadow-lg">
                   <p className="truncate px-2 py-1 text-sm font-medium text-ink">
                     {user.displayName || 'Signed in'}
                   </p>
-                  <p className="truncate px-2 pb-2 text-xs text-ink-muted">{user.email}</p>
+                  <p className="truncate px-2 pb-2 text-xs text-ink-muted">
+                    {user.email}
+                  </p>
                   {isLinkedStudent && (
                     <button
                       type="button"

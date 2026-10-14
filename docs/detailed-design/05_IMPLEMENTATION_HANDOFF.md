@@ -334,7 +334,7 @@ Required screen IDs: [SCREEN IDS].
 Required use-case IDs: [USE-CASE IDS].
 Required platforms/form factors: [WEB/NATIVE MATRIX].
 
-Treat executable code and Firestore rules as the source of truth for current behavior. Preserve unrelated worktree changes. Use the semantic Sprout design tokens and the documented capability model. Implement loading, data, empty, denied, error, offline, submitting, success, and conflict states as applicable. Keep student data private and preserve the lesson inclusion/safety language.
+Treat executable code and Firestore rules as the source of truth for current behavior. Preserve unrelated worktree changes. Use the semantic Balance Forward design tokens and the documented capability model. Implement loading, data, empty, denied, error, offline, submitting, success, and conflict states as applicable. Keep student data private and preserve the lesson inclusion/safety language.
 
 Do not implement a PLANNED write path without its documented data/rules/privacy prerequisite. Stop and report the exact blocker if a hard stop in 05_IMPLEMENTATION_HANDOFF.md applies. Do not change marketing readiness claims merely because UI exists.
 

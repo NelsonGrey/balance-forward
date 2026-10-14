@@ -80,7 +80,7 @@ const gates = [
 export function ReadinessPage() {
   usePageMeta(
     'Readiness center',
-    'A transparent view of what Sprout Streak has built, what remains planned, and what must happen before district procurement.'
+    'A transparent view of what Balance Forward has built, what remains planned, and what must happen before district procurement.'
   );
 
   return (
@@ -98,7 +98,7 @@ export function ReadinessPage() {
             Trust starts with saying what is not ready.
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-            Sprout Streak has a working product foundation and an original
+            Balance Forward has a working product foundation and an original
             learning library. It has not completed the privacy, accessibility,
             operational, or district-control work required for institutional
             procurement.

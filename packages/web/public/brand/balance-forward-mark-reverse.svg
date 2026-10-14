@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-labelledby="title desc">
+  <title id="title">Balance Forward reverse mark</title>
+  <desc id="desc">A light monochrome Compounding Arc for dark backgrounds.</desc>
+  <g fill="none" stroke="#F8F3E8" stroke-linecap="round">
+    <path d="M14 100C65 102 113 94 146 72" stroke-width="22"/>
+    <path d="M24 70C70 71 110 62 140 43" stroke-width="17"/>
+    <path d="M54 39C87 38 115 30 135 14" stroke-width="12"/>
+  </g>
+</svg>

@@ -1,6 +1,13 @@
 import type { User } from 'firebase/auth';
 import { Link, useLocation } from 'wouter';
-import { BookOpen, HeartHandshake, House, School as SchoolIcon, Sprout, Users, X } from 'lucide-react';
+import {
+  BookOpen,
+  HeartHandshake,
+  House,
+  School as SchoolIcon,
+  Users,
+  X,
+} from 'lucide-react';
 import { useCapabilities } from '../../app/roleContext';
 import { useMyFamilyContexts } from '../../lib/family';
 import { isFeatureEnabled } from '../../app/featureFlags';
@@ -23,9 +30,11 @@ export function Sidebar({
   onCloseMobile: () => void;
 }) {
   const [path] = useLocation();
-  const { hasAnyStaffAccess, canViewAllSchoolStudents, canManageStaff } = useCapabilities(user);
+  const { hasAnyStaffAccess, canViewAllSchoolStudents, canManageStaff } =
+    useCapabilities(user);
   const familyContexts = useMyFamilyContexts(user.uid);
-  const hasAnyFamilyAccess = isFeatureEnabled('familyContexts') && familyContexts.length > 0;
+  const hasAnyFamilyAccess =
+    isFeatureEnabled('familyContexts') && familyContexts.length > 0;
 
   if (!hasAnyStaffAccess && !hasAnyFamilyAccess) return null;
 
@@ -89,15 +98,16 @@ export function Sidebar({
         onClick={onCloseMobile}
         className="flex items-center gap-2 px-5 py-5 text-lg font-extrabold tracking-tight text-ink"
       >
-        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-brand text-on-dark">
-          <Sprout size={16} />
-        </span>
-        <span>
-          Sprout <span className="text-brand">Streak</span>
-        </span>
+        <img
+          src="/brand/balance-forward-app-icon.svg"
+          alt=""
+          className="h-8 w-8 shrink-0 rounded-lg"
+          aria-hidden="true"
+        />
+        <span>Balance Forward</span>
       </Link>
       <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 px-3">
-        {navItems.map((item) => {
+        {navItems.map(item => {
           const Icon = item.icon;
           return (
             <Link
@@ -106,7 +116,9 @@ export function Sidebar({
               onClick={onCloseMobile}
               aria-current={item.active ? 'page' : undefined}
               className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
-                item.active ? 'bg-mint text-brand' : 'text-ink-muted hover:bg-bg hover:text-ink'
+                item.active
+                  ? 'bg-mint text-brand'
+                  : 'text-ink-muted hover:bg-bg hover:text-ink'
               }`}
             >
               <Icon size={18} />
@@ -120,14 +132,20 @@ export function Sidebar({
 
   return (
     <>
-      <div className="hidden w-56 shrink-0 flex-col border-r border-border bg-surface lg:flex">{content}</div>
+      <div className="hidden w-56 shrink-0 flex-col border-r border-border bg-surface lg:flex">
+        {content}
+      </div>
 
       {mobileOpen && (
         <div className="fixed inset-0 z-30 flex lg:hidden">
           {/* Mouse-only dismiss — the X button below is the sole
            * accessible "close" control, so this scrim stays out of the
            * a11y tree rather than duplicating its label. */}
-          <div aria-hidden="true" onClick={onCloseMobile} className="absolute inset-0 bg-ink/40" />
+          <div
+            aria-hidden="true"
+            onClick={onCloseMobile}
+            className="absolute inset-0 bg-ink/40"
+          />
           <div className="relative flex w-64 flex-col bg-surface pb-4 shadow-panel">
             <button
               type="button"

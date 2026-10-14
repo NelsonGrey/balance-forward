@@ -66,13 +66,12 @@ class TodayScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Your Sprout balance',
+                          'Your practice balance',
                           style: TextStyle(
-                            color: Theme.of(
-                              context,
-                            ).colorScheme.onInverseSurface.withValues(
-                              alpha: 0.7,
-                            ),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onInverseSurface
+                                .withValues(alpha: 0.7),
                           ),
                         ),
                         Text(
@@ -88,11 +87,10 @@ class TodayScreen extends StatelessWidget {
                         Text(
                           'Practice money—not real money.',
                           style: TextStyle(
-                            color: Theme.of(
-                              context,
-                            ).colorScheme.onInverseSurface.withValues(
-                              alpha: 0.7,
-                            ),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onInverseSurface
+                                .withValues(alpha: 0.7),
                           ),
                         ),
                       ],
@@ -124,7 +122,10 @@ class TodayScreen extends StatelessWidget {
                       TransactionRow(transaction: transaction),
                   const SizedBox(height: 16),
                   const ReflectionPrompt(
-                    prompts: ['What happened today?', 'What might you try next?'],
+                    prompts: [
+                      'What happened today?',
+                      'What might you try next?',
+                    ],
                   ),
                 ],
               );

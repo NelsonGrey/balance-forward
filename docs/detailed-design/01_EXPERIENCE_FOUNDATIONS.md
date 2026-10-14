@@ -2,7 +2,7 @@
 
 ## 1. Experience promise
 
-Sprout Streak turns ordinary decisions into a repeatable learning loop:
+Balance Forward turns ordinary decisions into a repeatable learning loop:
 
 `NOTICE OR PAUSE → NAME THE CHOICE → CHOOSE OR PLAN → RECORD → SEE THE EFFECT → REFLECT → TRY AGAIN`
 
@@ -87,7 +87,7 @@ Firestore rules remain authoritative. A hidden button is not authorization.
 | Internal concept | User-facing term                              | Rule                                                                   |
 | ---------------- | --------------------------------------------- | ---------------------------------------------------------------------- |
 | `context`        | `Classroom` or `Family`                       | Do not display the engineering word “context.”                         |
-| `balanceCents`   | `Sprout balance` on first use, then `Balance` | Always pair with a “simulated” explanation in onboarding/help.         |
+| `balanceCents`   | `Practice balance` on first use, then `Balance` | Always pair with a “simulated” explanation in onboarding/help.         |
 | `earn`           | `Earn`                                        | Adult-defined addition to simulated balance.                           |
 | `spend`          | `Spend`                                       | Simulated use; never “charge,” “withdraw cash,” or “payment.”          |
 | `goal`           | `Goal`                                        | Progress label, not a separate bank account.                           |
@@ -304,7 +304,7 @@ DRAFT
 ## 12. Localization and formatting
 
 - All displayed copy must be externalizable; do not concatenate translated fragments.
-- Currency-like simulated values use the organization locale but remain labeled as simulated Sprout units in onboarding/help.
+- Currency-like simulated values use the organization locale but remain labeled as simulated Balance Forward units in onboarding/help.
 - Dates use locale-aware medium dates; times appear only when useful.
 - Names preserve entered characters and are not assumed to split cleanly into Western first/last order in new UI work, even though the current schema contains both fields.
 - Layouts support 30% longer labels without truncating primary actions. Truncation must expose the full value to assistive technology and a tooltip/semantic label where appropriate.

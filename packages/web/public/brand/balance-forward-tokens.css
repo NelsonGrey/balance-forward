@@ -1,0 +1,18 @@
+:root {
+  /* Balance Forward core identity */
+  --bf-ink-green: #123c35;
+  --bf-sage: #75b798;
+  --bf-marigold: #f2b544;
+  --bf-parchment: #f8f3e8;
+
+  /* Accessible UI roles derived from the core palette */
+  --bf-text: #123c35;
+  --bf-text-secondary: #365a52;
+  --bf-canvas: #f8f3e8;
+  --bf-surface: #ffffff;
+  --bf-border: #cbd9d2;
+  --bf-action: #17624f;
+  --bf-action-hover: #104b3d;
+  --bf-focus: #9a6500;
+  --bf-on-dark: #ffffff;
+}

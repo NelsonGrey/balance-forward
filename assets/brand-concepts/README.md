@@ -1,4 +1,4 @@
-# Sprout Streak Brand Concepts
+# Balance Forward Brand Concepts
 
 These exploratory raster concepts were generated from the product direction in
 `docs/BUSINESS_REQUIREMENTS.md` and `docs/TECHNICAL_REQUIREMENTS.md`.
@@ -34,7 +34,7 @@ Palette: deep evergreen, fresh mint, warm golden yellow, warm cream.
 
 Prompt set:
 
-- Logo: Original horizontal "Sprout Streak" logo; a simple sprout emerging from
+- Logo: Original horizontal "Balance Forward" logo; a simple sprout emerging from
   a round coin, two leaves subtly forming upward progress; clean vector-friendly
   rounded educational-tech style; friendly to children and credible to adults;
   evergreen, mint, and gold; transparent background; exact name once; no slogan,
@@ -60,7 +60,7 @@ Palette: deep navy, bright teal, coral accent, pale cool blue.
 
 Prompt set:
 
-- Logo: Original horizontal "Sprout Streak" logo; a smooth S-shaped path linking
+- Logo: Original horizontal "Balance Forward" logo; a smooth S-shaped path linking
   simplified school and home endpoints with a leaf at the midpoint; welcoming,
   collaborative educational-tech geometry; navy, teal, and coral; transparent
   background; exact name once; no money symbols, coins, piggy bank, mascot,
@@ -86,7 +86,7 @@ Palette: deep indigo, chartreuse-lime, warm apricot, pale lavender-white.
 
 Prompt set:
 
-- Logo: Original horizontal "Sprout Streak" logo; four rounded seed-like shapes
+- Logo: Original horizontal "Balance Forward" logo; four rounded seed-like shapes
   rise in rhythm and the last opens into a two-leaf sprout; bold modular
   educational-tech geometry; indigo, chartreuse-lime, and apricot; transparent
   background; exact name once; no currency symbols, coins, arrows, piggy bank,

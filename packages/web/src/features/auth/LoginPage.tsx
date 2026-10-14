@@ -43,10 +43,12 @@ function PasswordInput({
   value,
   onChange,
   placeholder,
+  autoComplete,
 }: {
   value: string;
   onChange: (value: string) => void;
   placeholder: string;
+  autoComplete: 'current-password' | 'new-password';
 }) {
   const [visible, setVisible] = useState(false);
   return (
@@ -54,15 +56,16 @@ function PasswordInput({
       <input
         type={visible ? 'text' : 'password'}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={e => onChange(e.target.value)}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         required
         minLength={6}
         className="w-full rounded-lg border border-border bg-surface px-3 py-2 pr-16 text-left text-ink"
       />
       <button
         type="button"
-        onClick={() => setVisible((v) => !v)}
+        onClick={() => setVisible(v => !v)}
         className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-medium text-ink-muted hover:underline"
       >
         {visible ? 'Hide' : 'Show'}
@@ -117,7 +120,11 @@ export function LoginPage() {
       if (mode === 'sign-in') {
         await signInWithEmailAndPassword(firebaseClient.auth, email, password);
       } else {
-        await createUserWithEmailAndPassword(firebaseClient.auth, email, password);
+        await createUserWithEmailAndPassword(
+          firebaseClient.auth,
+          email,
+          password
+        );
       }
     });
   };
@@ -135,12 +142,15 @@ export function LoginPage() {
 
   return (
     <div className="flex min-h-full flex-col items-center justify-center gap-6 px-8 py-16 text-center text-ink">
-      <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-brand text-4xl">
-        🌱
-      </div>
+      <img
+        src="/brand/balance-forward-app-icon.svg"
+        alt=""
+        className="h-24 w-24 rounded-[22px] shadow-logo"
+        aria-hidden="true"
+      />
       <div>
-        <h1 className="text-3xl font-bold">Sprout Streak</h1>
-        <p className="mt-1 text-ink-muted">Grow good habits together</p>
+        <h1 className="text-3xl font-bold">Balance Forward</h1>
+        <p className="mt-1 text-ink-muted">Good choices compound.</p>
       </div>
 
       <div className="flex w-full max-w-xs flex-col gap-3">
@@ -171,17 +181,26 @@ export function LoginPage() {
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             placeholder="Email"
+            autoComplete="email"
             required
             className="rounded-lg border border-border bg-surface px-3 py-2 text-left text-ink"
           />
-          <PasswordInput value={password} onChange={setPassword} placeholder="Password" />
+          <PasswordInput
+            value={password}
+            onChange={setPassword}
+            placeholder="Password"
+            autoComplete={
+              mode === 'sign-in' ? 'current-password' : 'new-password'
+            }
+          />
           {mode === 'sign-up' && (
             <PasswordInput
               value={confirmPassword}
               onChange={setConfirmPassword}
               placeholder="Confirm password"
+              autoComplete="new-password"
             />
           )}
           <button
@@ -199,9 +218,15 @@ export function LoginPage() {
             onClick={() => setMode(mode === 'sign-in' ? 'sign-up' : 'sign-in')}
             className="hover:underline"
           >
-            {mode === 'sign-in' ? 'Create an account' : 'Already have an account?'}
+            {mode === 'sign-in'
+              ? 'Create an account'
+              : 'Already have an account?'}
           </button>
-          <button type="button" onClick={handleForgotPassword} className="hover:underline">
+          <button
+            type="button"
+            onClick={handleForgotPassword}
+            className="hover:underline"
+          >
             Forgot password?
           </button>
         </div>

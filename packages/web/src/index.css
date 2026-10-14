@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Sprout Streak design tokens
+/* Balance Forward — Evergreen Gold design tokens
  *
  * This is the single web source of truth for product and marketing color,
  * page width, and responsive gutters. The matching Flutter constants live in
@@ -8,26 +8,26 @@
  * semantic Tailwind classes (bg-canvas, text-muted, border-border, etc.) and
  * must not introduce literal brand colors or one-off outer max widths. */
 :root {
-  --sprout-canvas: #f8fbf5;
+  --sprout-canvas: #f8f3e8;
   --sprout-surface: #ffffff;
-  --sprout-surface-subtle: #fbfcf9;
+  --sprout-surface-subtle: #fcfaf5;
   --sprout-on-dark: #ffffff;
-  --sprout-ink: #102a26;
-  --sprout-ink-soft: #24483e;
-  --sprout-muted: #587168;
-  --sprout-muted-soft: #6a8078;
-  --sprout-border: #dce7dc;
-  --sprout-border-strong: #bdd0c2;
-  --sprout-brand: #166b4f;
-  --sprout-brand-strong: #105b43;
-  --sprout-brand-bright: #16805b;
-  --sprout-mint: #e3f3e7;
-  --sprout-mint-strong: #8ed2a6;
-  --sprout-deep-surface: #16382f;
-  --sprout-accent: #e56845;
-  --sprout-accent-soft: #fff0e8;
-  --sprout-warning: #9b6220;
-  --sprout-warning-soft: #fff7e8;
+  --sprout-ink: #123c35;
+  --sprout-ink-soft: #294f47;
+  --sprout-muted: #536e67;
+  --sprout-muted-soft: #687f79;
+  --sprout-border: #cbd9d2;
+  --sprout-border-strong: #a8c0b6;
+  --sprout-brand: #17624f;
+  --sprout-brand-strong: #104b3d;
+  --sprout-brand-bright: #1d755d;
+  --sprout-mint: #e4f1eb;
+  --sprout-mint-strong: #75b798;
+  --sprout-deep-surface: #0d302b;
+  --sprout-accent: #a66c00;
+  --sprout-accent-soft: #fff2d2;
+  --sprout-warning: #8a5a00;
+  --sprout-warning-soft: #fff2d2;
   --sprout-info: #2c6791;
   --sprout-info-soft: #e1eef9;
   --sprout-purple: #6850a0;
@@ -35,10 +35,10 @@
   --sprout-danger: #b65033;
   --sprout-content-max-width: 80rem;
   --sprout-page-gutter: 1.25rem;
-  --sprout-shadow-brand: 0 12px 30px rgb(22 107 79 / 20%);
-  --sprout-shadow-panel: 0 30px 80px rgb(25 68 56 / 20%);
-  --sprout-shadow-card: 0 12px 40px rgb(27 72 58 / 6%);
-  --sprout-shadow-logo: 0 8px 22px rgb(22 107 79 / 18%);
+  --sprout-shadow-brand: 0 12px 30px rgb(18 60 53 / 20%);
+  --sprout-shadow-panel: 0 30px 80px rgb(18 60 53 / 20%);
+  --sprout-shadow-card: 0 12px 40px rgb(18 60 53 / 8%);
+  --sprout-shadow-logo: 0 8px 22px rgb(18 60 53 / 18%);
 }
 
 @theme inline {
@@ -93,6 +93,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  font-family: 'Avenir Next', Avenir, Montserrat, system-ui, sans-serif;
 }
 
 ::selection {

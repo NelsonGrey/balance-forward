@@ -15,7 +15,7 @@ void main() {
     },
   );
 
-  test('Flutter theme matches the shared Sprout palette', () {
+  test('Flutter theme matches the shared Balance Forward palette', () {
     final scheme = SproutTheme.light.colorScheme;
 
     expect(scheme.primary, SproutColors.brand);

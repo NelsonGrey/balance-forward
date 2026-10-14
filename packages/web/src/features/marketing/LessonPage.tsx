@@ -167,7 +167,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
             </div>
             <div className="rounded-2xl border border-border bg-surface p-5">
               <Sprout size={20} className="text-brand-bright" />
-              <h2 className="mt-4 font-black">Inside Sprout Streak</h2>
+              <h2 className="mt-4 font-black">Inside Balance Forward</h2>
               <p className="mt-2 text-sm leading-6 text-muted">
                 {lesson.productConnection}
               </p>

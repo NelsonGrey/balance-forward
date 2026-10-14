@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import type { User } from 'firebase/auth';
-import { ArrowRight, Leaf, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
 const navItems = [
@@ -43,17 +43,20 @@ export function MarketingLayout({
           <Link
             href={user ? '/welcome' : '/'}
             className="group flex items-center gap-2.5"
-            aria-label="Sprout Streak marketing home"
+            aria-label="Balance Forward home"
           >
-            <span className="grid h-10 w-10 place-items-center rounded-[14px] bg-brand text-on-dark shadow-logo transition-transform group-hover:-rotate-3">
-              <Leaf size={21} strokeWidth={2.4} aria-hidden="true" />
-            </span>
+            <img
+              src="/brand/balance-forward-app-icon.svg"
+              alt=""
+              className="h-10 w-10 rounded-[12px] shadow-logo transition-transform group-hover:-rotate-3"
+              aria-hidden="true"
+            />
             <span className="leading-none">
               <span className="block text-[17px] font-black tracking-[-0.03em]">
-                Sprout Streak
+                Balance Forward
               </span>
               <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-muted">
-                Money habits, grown daily
+                Good choices compound
               </span>
             </span>
           </Link>
@@ -131,7 +134,7 @@ export function MarketingLayout({
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-xl bg-ink px-4 py-3 text-sm font-bold text-on-dark sm:col-span-2"
               >
-                {user ? 'Go to dashboard' : 'Sign in to Sprout Streak'}
+                {user ? 'Go to dashboard' : 'Sign in to Balance Forward'}
               </Link>
             </div>
           </nav>
@@ -151,7 +154,7 @@ export function MarketingLayout({
       >
         <div className="mx-auto flex site-container flex-col items-center justify-between gap-2 py-3 text-center text-[11px] text-on-dark/60 sm:flex-row sm:text-left">
           <p>
-            © 2026 Sprout Streak, a product of Nelson Grey LLC. All rights
+            © 2026 Balance Forward, a product of Nelson Grey LLC. All rights
             reserved.
           </p>
           <nav

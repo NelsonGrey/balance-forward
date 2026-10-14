@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 150" role="img" aria-labelledby="title desc">
+  <title id="title">Balance Forward</title>
+  <desc id="desc">Balance Forward logo with the Compounding Arc and the tagline Good choices compound.</desc>
+  <g transform="translate(8 16) scale(.98)">
+    <path d="M14 100C65 102 113 94 146 72" fill="none" stroke="#123C35" stroke-linecap="round" stroke-width="22"/>
+    <path d="M24 70C70 71 110 62 140 43" fill="none" stroke="#75B798" stroke-linecap="round" stroke-width="17"/>
+    <path d="M54 39C87 38 115 30 135 14" fill="none" stroke="#F2B544" stroke-linecap="round" stroke-width="12"/>
+  </g>
+  <text x="186" y="78" fill="#123C35" font-family="Avenir Next, Avenir, Montserrat, system-ui, sans-serif" font-size="55" font-weight="700" letter-spacing="-1.8">Balance Forward</text>
+  <text x="190" y="114" fill="#365A52" font-family="Avenir Next, Avenir, system-ui, sans-serif" font-size="24" font-weight="500" letter-spacing=".1">Good choices compound.</text>
+</svg>

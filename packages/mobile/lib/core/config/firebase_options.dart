@@ -4,7 +4,8 @@
 // with vehicle-vitals/wishlist-wizard, not com.nelsongrey.*; the project ID
 // itself stays nelsongrey-sprout-dev since GCP project IDs are permanent
 // once created — only the app-level bundle/package IDs and product name
-// changed when "Sprout" became "Sprout Streak"). Web and macOS remain
+// changed when "Sprout" became "Sprout Streak"; the bundle IDs were
+// not renamed for the later Balance Forward rebrand). Web and macOS remain
 // unconfigured — packages/web (React) is the web client, and macOS isn't a
 // TRD §1.2-supported platform.
 // Environment is selected at build time via `--dart-define=FIREBASE_ENV=dev

@@ -1,4 +1,4 @@
-# Sprout Streak - Technical Requirements & Implementation Status
+# Balance Forward - Technical Requirements & Implementation Status
 
 > **Refreshed 2026-08-19** against actual repo state (code, tests, and deployed product status) — the previous version (1.3, written 2026-08-16) described a fresh scaffold and was badly stale within two days as Phase 1 and much of Phase 2 landed. The status column in every table below is the source of truth on what's actually built — do not assume a described requirement is implemented, or unimplemented, unless its row says so.
 
@@ -11,7 +11,7 @@
 
 ## Executive Summary
 
-Sprout Streak is a React (web) + Flutter (mobile) app on a Firebase backend, structured as a monorepo (`packages/web`, `packages/mobile`, `packages/shared`, `packages/firebase-utils`, plus a private companion repo `sprout-functions`). The repository, three Firebase environments, CI/CD, and the authentication layer (extracted from the org's shared `game-shell` package, with its ads/consent/IAP layers deliberately excluded — see [[modulo_squares_auth_design]]) are built and tested.
+Balance Forward is a React (web) + Flutter (mobile) app on a Firebase backend, structured as a monorepo (`packages/web`, `packages/mobile`, `packages/shared`, `packages/firebase-utils`, plus a private companion repo `sprout-functions`). The repository, three Firebase environments, CI/CD, and the authentication layer (extracted from the org's shared `game-shell` package, with its ads/consent/IAP layers deliberately excluded — see [[modulo_squares_auth_design]]) are built and tested.
 
 The product itself is now real and live at `nelsongrey-sprout-dev.web.app`: a school/classroom hierarchy (super_admin/admin/teacher roles with scoped and delegated access), classroom and student roster management, earn/spend transaction recording with a ledger/history view, a read-only student self-service balance view (own real account, linked via invite-and-claim — no separate student login system), CSV bulk import, and multi-select bulk operations (archive, promote, move-to-classroom) on web. Mobile has feature parity on everything except bulk operations and CSV import, which are web-only so far.
 
@@ -314,7 +314,7 @@ Firebase Authentication — Google, Apple (pending provider config), and email/p
 | **FERPA** | 🟡 Public draft; institutional program incomplete | The public privacy draft describes school control and limited educational purpose. A final data processing agreement, direct-control/use restrictions, subprocessor terms, data-return/deletion process, and district-facing review package are still required |
 | **Accessibility (WCAG 2.1 AA-equivalent)** | 🔴 Not started (minimal incidental coverage, §2.4) | Still a release gate for v1.0 per BR-1.3.4/1.4.4, not yet scheduled |
 
-This remains a meaningfully higher compliance bar than the org's other three apps carry — see [[feedback_no_live_users_yet]] (modulo-squares/vehicle-vitals/wishlist-wizard have zero public users and no institutional data-handling obligations yet); Sprout Streak's K-12/school-facing ambition means COPPA/FERPA readiness needs to land before the first real classroom signs up, not be retrofitted after.
+This remains a meaningfully higher compliance bar than the org's other three apps carry — see [[feedback_no_live_users_yet]] (modulo-squares/vehicle-vitals/wishlist-wizard have zero public users and no institutional data-handling obligations yet); Balance Forward's K-12/school-facing ambition means COPPA/FERPA readiness needs to land before the first real classroom signs up, not be retrofitted after.
 
 ---
 

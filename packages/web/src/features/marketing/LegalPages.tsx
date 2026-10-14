@@ -116,18 +116,18 @@ function DraftNotice({ children }: { children: ReactNode }) {
 export function PrivacyPage() {
   usePageMeta(
     'Privacy',
-    'The working Sprout Streak privacy notice for schools, families, educators, and students.'
+    'The working Balance Forward privacy notice for schools, families, educators, and students.'
   );
 
   return (
     <LegalPage
       eyebrow="Privacy"
       title="Student privacy should be designed in, not added later."
-      summary="This working notice explains the information Sprout Streak expects to handle, why it is needed, and the safeguards required before a student-data pilot begins."
+      summary="This working notice explains the information Balance Forward expects to handle, why it is needed, and the safeguards required before a student-data pilot begins."
       icon={<ShieldCheck size={16} aria-hidden="true" />}
     >
       <DraftNotice>
-        Sprout Streak is in pre-launch development. This draft is provided for
+        Balance Forward is in pre-launch development. This draft is provided for
         stakeholder review; it is not a claim of FERPA, COPPA, state-law, or
         district-policy compliance. A final notice, data inventory, retention
         schedule, contracts, and qualified legal/privacy review are launch
@@ -136,10 +136,10 @@ export function PrivacyPage() {
 
       <Section title="1. Scope and who we are">
         <p>
-          Sprout Streak is a financial-learning product of Nelson Grey LLC. It
+          Balance Forward is a financial-learning product of Nelson Grey LLC. It
           is being designed for schools, educators, families, and students,
           initially from Pre-K through grade 6. This notice covers the public
-          website and the Sprout Streak web application. A final notice will
+          website and the Balance Forward web application. A final notice will
           identify the product’s business contact and effective date before a
           pilot opens.
         </p>
@@ -149,7 +149,7 @@ export function PrivacyPage() {
         <p>
           When a school or district provides student information, the school or
           district remains responsible for its education records and determines
-          the approved educational purpose. Sprout Streak expects to act only
+          the approved educational purpose. Balance Forward expects to act only
           under the institution’s instructions and agreement. A separate family
           experience may require a different consent and account relationship;
           that workflow is planned and is not yet represented as complete.
@@ -173,7 +173,7 @@ export function PrivacyPage() {
             <strong>Learning and simulated transaction records:</strong>
             classroom or family-context balances, earn/spend entries, notes,
             timestamps, and learning activity needed to show progress and
-            history. Sprout Streak balances are instructional and are not real
+            history. Balance Forward balances are instructional and are not real
             money.
           </li>
           <li>
@@ -211,7 +211,7 @@ export function PrivacyPage() {
 
       <Section title="5. Children and consent">
         <p>
-          Sprout Streak is intended to include children under 13, so child
+          Balance Forward is intended to include children under 13, so child
           privacy is a core design constraint. The product will not ask a child
           to approve legal terms or provide parental consent. In an authorized
           school context, a school may be permitted to provide consent for a
@@ -224,7 +224,7 @@ export function PrivacyPage() {
 
       <Section title="6. Advertising, sale, and profiling">
         <p>
-          Sprout Streak does not display behavioral advertising and is not
+          Balance Forward does not display behavioral advertising and is not
           designed to sell student personal information. Student information
           will not be used to build commercial marketing profiles. Adding an
           advertising network, social-media tracking technology, or unrelated
@@ -263,7 +263,7 @@ export function PrivacyPage() {
           If information maintained for a school is an education record, access,
           correction, export, or deletion requests should ordinarily begin with
           the school or district. The institution can verify identity, authority,
-          and its recordkeeping obligations. Sprout Streak expects to support
+          and its recordkeeping obligations. Balance Forward expects to support
           the institution’s authorized response and to restrict use and
           redisclosure through its school agreement and technical controls.
         </p>
@@ -284,8 +284,8 @@ export function PrivacyPage() {
       <Section title="10. Security">
         <p>
           Current foundations include authenticated access, role-aware
-          authorization, and managed cloud infrastructure. Before launch, Sprout
-          Streak still needs a completed security review, incident-response
+          authorization, and managed cloud infrastructure. Before launch, Balance
+          Forward still needs a completed security review, incident-response
           process, vendor review, recovery testing, and district-facing security
           documentation. No online service can promise absolute security.
         </p>
@@ -331,14 +331,14 @@ export function PrivacyPage() {
 export function TermsPage() {
   usePageMeta(
     'Terms',
-    'Working terms for the pre-launch Sprout Streak financial-learning service.'
+    'Working terms for the pre-launch Balance Forward financial-learning service.'
   );
 
   return (
     <LegalPage
       eyebrow="Terms"
       title="Clear rules for a learning environment."
-      summary="These working terms describe the expected responsibilities of institutions, adults, and students using Sprout Streak."
+      summary="These working terms describe the expected responsibilities of institutions, adults, and students using Balance Forward."
       icon={<Scale size={16} aria-hidden="true" />}
     >
       <DraftNotice>
@@ -350,10 +350,10 @@ export function TermsPage() {
 
       <Section title="1. The service">
         <p>
-          Sprout Streak is a Nelson Grey LLC financial-learning product. It uses
+          Balance Forward is a Nelson Grey LLC financial-learning product. It uses
           simulated classroom and family contexts to help students practice
           earning, spending, saving, planning, and reflection. Any balances,
-          rewards, purchases, or transactions shown in Sprout Streak are
+          rewards, purchases, or transactions shown in Balance Forward are
           instructional records only; they are not money, deposits, securities,
           stored value, credit, or a promise of cash redemption.
         </p>
@@ -398,7 +398,7 @@ export function TermsPage() {
 
       <Section title="5. Educational content and adult judgment">
         <p>
-          Sprout Streak provides educational activities, not financial, legal,
+          Balance Forward provides educational activities, not financial, legal,
           tax, investment, or banking advice. Educators and families should adapt
           lessons to student needs, local standards, accessibility requirements,
           and community context. The starter curriculum requires educator review
@@ -412,7 +412,7 @@ export function TermsPage() {
           <Link href="/privacy" className="font-bold text-brand underline">
             Privacy notice
           </Link>
-          . Schools should not use Sprout Streak with student records until the
+          . Schools should not use Balance Forward with student records until the
           applicable agreement, privacy review, authorization, consent path,
           and retention instructions are complete.
         </p>
@@ -432,7 +432,7 @@ export function TermsPage() {
 
       <Section title="8. Availability, changes, and suspension">
         <p>
-          Sprout Streak is pre-launch and may change substantially. The final
+          Balance Forward is pre-launch and may change substantially. The final
           agreement must define support, availability, material product changes,
           data return, suspension, termination, and transition responsibilities.
           Access may be restricted to protect students, users, data, or service
@@ -464,14 +464,14 @@ export function TermsPage() {
 export function CookiesPage() {
   usePageMeta(
     'Cookies',
-    'How Sprout Streak uses cookies and local browser storage during pre-launch development.'
+    'How Balance Forward uses cookies and local browser storage during pre-launch development.'
   );
 
   return (
     <LegalPage
       eyebrow="Cookies and local storage"
       title="Only what the service needs."
-      summary="Sprout Streak does not currently use advertising or behavioral-tracking cookies. This working notice explains the limited browser storage used by the product foundation."
+      summary="Balance Forward does not currently use advertising or behavioral-tracking cookies. This working notice explains the limited browser storage used by the product foundation."
       icon={<Cookie size={16} aria-hidden="true" />}
     >
       <DraftNotice>
@@ -542,7 +542,7 @@ export function CookiesPage() {
           Browser controls can display or clear cookies and local storage.
           Blocking essential storage may prevent sign-in or other application
           functions. Because no optional analytics or advertising technologies
-          are currently active, Sprout Streak does not currently show an
+          are currently active, Balance Forward does not currently show an
           optional-cookie preference banner. That decision must be revisited
           before adding any optional technology.
         </p>
@@ -550,9 +550,9 @@ export function CookiesPage() {
 
       <Section title="5. Social links">
         <p>
-          Sprout Streak does not currently include social-media links. If added,
+          Balance Forward does not currently include social-media links. If added,
           they should be plain outbound links intended for adult stakeholders,
-          clearly leave the Sprout Streak service, and avoid embedded feeds,
+          clearly leave the Balance Forward service, and avoid embedded feeds,
           pixels, automatic data collection, student sharing prompts, or requests
           that children contact the company through social media.
         </p>
@@ -576,7 +576,7 @@ const supportRoutes = [
   {
     audience: 'District and school staff',
     guidance:
-      'Use your designated Sprout Streak implementation or procurement contact. That route should handle access, privacy, security, rostering, and institution-wide issues.',
+      'Use your designated Balance Forward implementation or procurement contact. That route should handle access, privacy, security, rostering, and institution-wide issues.',
   },
   {
     audience: 'Educators',
@@ -598,14 +598,14 @@ const supportRoutes = [
 export function SupportPage() {
   usePageMeta(
     'Support',
-    'Pre-launch support routing for Sprout Streak schools, educators, families, and students.'
+    'Pre-launch support routing for Balance Forward schools, educators, families, and students.'
   );
 
   return (
     <LegalPage
       eyebrow="Support"
       title="Help should reach the right trusted adult."
-      summary="Sprout Streak support is being designed around school authority, family verification, child safety, accessibility, and clear escalation paths."
+      summary="Balance Forward support is being designed around school authority, family verification, child safety, accessibility, and clear escalation paths."
       icon={<LifeBuoy size={16} aria-hidden="true" />}
     >
       <DraftNotice>
@@ -641,7 +641,7 @@ export function SupportPage() {
           </div>
           <div>
             <h3 className="font-black text-ink-soft">I want to access, correct, export, or delete student information.</h3>
-            <p className="mt-1">For school-managed records, begin with the school or district. For an adult’s own Sprout Streak account, the application includes an account-deletion flow. The final support process will cover verified privacy requests and data export.</p>
+            <p className="mt-1">For school-managed records, begin with the school or district. For an adult’s own Balance Forward account, the application includes an account-deletion flow. The final support process will cover verified privacy requests and data export.</p>
           </div>
           <div>
             <h3 className="font-black text-ink-soft">I found a possible security or privacy issue.</h3>

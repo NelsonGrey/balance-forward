@@ -224,24 +224,18 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 60),
-                // TODO(branding): swap for the real app icon once designed —
-                // no assets/icons/icon.png exists yet at scaffold time.
                 Container(
                   width: 96,
                   height: 96,
                   decoration: BoxDecoration(
-                    color: SproutColors.brand,
+                    color: SproutColors.ink,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Icon(
-                    Icons.eco,
-                    size: 52,
-                    color: SproutColors.onDark,
-                  ),
+                  child: const _CompoundingArcMark(),
                 ),
                 const SizedBox(height: 18),
                 const Text(
-                  'Sprout Streak',
+                  'Balance Forward',
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -250,7 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 6),
                 const Text(
-                  'Grow good habits together',
+                  'Good choices compound.',
                   style: TextStyle(fontSize: 15, color: SproutColors.muted),
                 ),
                 const SizedBox(height: 48),
@@ -425,6 +419,63 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+}
+
+class _CompoundingArcMark extends StatelessWidget {
+  const _CompoundingArcMark();
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _CompoundingArcPainter(),
+      size: const Size.square(70),
+    );
+  }
+}
+
+class _CompoundingArcPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final scaleX = size.width / 160;
+    final scaleY = size.height / 120;
+    canvas.scale(scaleX, scaleY);
+
+    void drawArc(Path path, Color color, double width) {
+      canvas.drawPath(
+        path,
+        Paint()
+          ..color = color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = width
+          ..strokeCap = StrokeCap.round,
+      );
+    }
+
+    drawArc(
+      Path()
+        ..moveTo(14, 100)
+        ..cubicTo(65, 102, 113, 94, 146, 72),
+      SproutColors.canvas,
+      22,
+    );
+    drawArc(
+      Path()
+        ..moveTo(24, 70)
+        ..cubicTo(70, 71, 110, 62, 140, 43),
+      SproutColors.mintStrong,
+      17,
+    );
+    drawArc(
+      Path()
+        ..moveTo(54, 39)
+        ..cubicTo(87, 38, 115, 30, 135, 14),
+      const Color(0xFFF2B544),
+      12,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class _AuthButton extends StatelessWidget {

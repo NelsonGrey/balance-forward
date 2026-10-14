@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-This repository holds the Sprout Streak web and mobile client. Only the code currently deployed on each environment branch is supported — there is no long-term support for older commits.
+This repository holds the Balance Forward web and mobile client. Only the code currently deployed on each environment branch is supported — there is no long-term support for older commits.
 
 | Branch | Environment | Status |
 |---|---|---|
