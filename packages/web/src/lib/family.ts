@@ -28,7 +28,7 @@ import type {
   SavingsLabel,
   SpendCategory,
   TransactionType,
-} from '@sprout/shared';
+} from '@balance-forward/shared';
 import { firebaseClient } from './firebase';
 import { combineDisplayName, normalizeEmail } from './firestore';
 

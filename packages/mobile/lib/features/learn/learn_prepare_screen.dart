@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:sprout/core/config/api_config.dart';
-import 'package:sprout/core/models/lesson.dart';
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/config/api_config.dart';
+import 'package:balance_forward/core/models/lesson.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// `M-LEARN-02` — an adult's preparation view for one lesson before running
 /// it, following the lesson contract exactly. Stores nothing: no
@@ -39,7 +39,7 @@ class LearnPrepareScreen extends StatelessWidget {
         }
 
         return Scaffold(
-          appBar: SproutAppBar(
+          appBar: BfAppBar(
             title: lesson.title,
             actions: [
               IconButton(

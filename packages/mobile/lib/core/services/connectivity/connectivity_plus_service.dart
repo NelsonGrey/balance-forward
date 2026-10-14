@@ -1,6 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
 
 bool _isOnline(List<ConnectivityResult> results) => results.any((r) => r != ConnectivityResult.none);
 

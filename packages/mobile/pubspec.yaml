@@ -1,4 +1,4 @@
-name: sprout
+name: balance_forward
 description: "Balance Forward — classroom and family financial-literacy app."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -43,7 +43,7 @@ dependencies:
   cloud_functions: ^6.3.6
   firebase_app_check: ^0.4.6
 
-  # Plain HTTP client for the sprout-functions `api` Cloud Function — an
+  # Plain HTTP client for the balance-forward-functions `api` Cloud Function — an
   # onRequest/Express endpoint behind a Hosting /api/** rewrite, not an
   # onCall function, so cloud_functions' httpsCallable protocol doesn't
   # apply here (see core/services/classroom/bulk_transaction_client.dart).

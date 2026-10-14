@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/app/capabilities.dart';
-import 'package:sprout/core/models/school.dart';
+import 'package:balance_forward/app/capabilities.dart';
+import 'package:balance_forward/core/models/school.dart';
 
 void main() {
   group('deriveCapabilities', () {

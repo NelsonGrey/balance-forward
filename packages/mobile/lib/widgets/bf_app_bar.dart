@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 /// styling has exactly one code path. go_router already auto-supplies the
 /// back chevron when a route isn't top-of-stack; this centralizes
 /// everything else around it.
-class SproutAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SproutAppBar({super.key, required this.title, this.actions});
+class BfAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const BfAppBar({super.key, required this.title, this.actions});
 
   final String title;
   final List<Widget>? actions;

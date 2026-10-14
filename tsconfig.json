@@ -18,8 +18,8 @@
     "types": ["node"],
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@sprout/shared": ["./packages/shared/src"],
-      "@sprout/shared/*": ["./packages/shared/src/*"]
+      "@balance-forward/shared": ["./packages/shared/src"],
+      "@balance-forward/shared/*": ["./packages/shared/src/*"]
     }
   }
 }

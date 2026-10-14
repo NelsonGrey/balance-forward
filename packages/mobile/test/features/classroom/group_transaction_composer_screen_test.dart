@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/connectivity/fake_connectivity_service.dart';
-import 'package:sprout/features/classroom/group_transaction_composer_screen.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/connectivity/fake_connectivity_service.dart';
+import 'package:balance_forward/features/classroom/group_transaction_composer_screen.dart';
 
 const _ownerUid = 'teacher-1';
 

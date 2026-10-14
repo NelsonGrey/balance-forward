@@ -11,9 +11,9 @@
 
 ## Executive Summary
 
-Balance Forward is a React (web) + Flutter (mobile) app on a Firebase backend, structured as a monorepo (`packages/web`, `packages/mobile`, `packages/shared`, `packages/firebase-utils`, plus a private companion repo `sprout-functions`). The repository, three Firebase environments, CI/CD, and the authentication layer (extracted from the org's shared `game-shell` package, with its ads/consent/IAP layers deliberately excluded — see [[modulo_squares_auth_design]]) are built and tested.
+Balance Forward is a React (web) + Flutter (mobile) app on a Firebase backend, structured as a monorepo (`packages/web`, `packages/mobile`, `packages/shared`, `packages/firebase-utils`, plus a private companion repo `balance-forward-functions`). The repository, three Firebase environments, CI/CD, and the authentication layer (extracted from the org's shared `game-shell` package, with its ads/consent/IAP layers deliberately excluded — see [[modulo_squares_auth_design]]) are built and tested.
 
-The product itself is now real and live at `nelsongrey-sprout-dev.web.app`: a school/classroom hierarchy (super_admin/admin/teacher roles with scoped and delegated access), classroom and student roster management, earn/spend transaction recording with a ledger/history view, a read-only student self-service balance view (own real account, linked via invite-and-claim — no separate student login system), CSV bulk import, and multi-select bulk operations (archive, promote, move-to-classroom) on web. Mobile has feature parity on everything except bulk operations and CSV import, which are web-only so far.
+The product itself is now real and live at `nelsongrey-bf-dev.web.app`: a school/classroom hierarchy (super_admin/admin/teacher roles with scoped and delegated access), classroom and student roster management, earn/spend transaction recording with a ledger/history view, a read-only student self-service balance view (own real account, linked via invite-and-claim — no separate student login system), CSV bulk import, and multi-select bulk operations (archive, promote, move-to-classroom) on web. Mobile has feature parity on everything except bulk operations and CSV import, which are web-only so far.
 
 **Project Status**: 🟢 **PHASE 1 MVP COMPLETE — PHASE 2 PARTIALLY COMPLETE**
 
@@ -29,9 +29,9 @@ Still open: offline/reliability hardening (§2.2), an accessibility pass (§2.4)
 |---|---|---|---|
 | **Web Frontend** | React + Vite | React 19 | ✅ Real app — routing, 8 feature areas, 14 test files/94 tests |
 | **Mobile Frontend** | Flutter | 3.44.2 | ✅ Real app — go_router, feature parity with web except bulk ops/CSV import |
-| **Backend** | Firebase Functions (consolidated `api` function) | Node 22 | 🔴 Still repo-only — real code lives in the private `sprout-functions` repo, not available here; no business logic exists client-side that depends on it |
+| **Backend** | Firebase Functions (consolidated `api` function) | Node 22 | 🔴 Still repo-only — real code lives in the private `balance-forward-functions` repo, not available here; no business logic exists client-side that depends on it |
 | **Database** | Cloud Firestore | — | ✅ Implemented — see §3.2 for the live schema and a documented Firestore list-query authorization constraint discovered and fixed 2026-08-18 |
-| **Auth** | Firebase Auth (Google + Apple + email/password) | — | ✅ Complete and live; email/password confirmed working against the real `nelsongrey-sprout-dev` project. Apple still needs Developer-portal config (owner action) |
+| **Auth** | Firebase Auth (Google + Apple + email/password) | — | ✅ Complete and live; email/password confirmed working against the real `nelsongrey-bf-dev` project. Apple still needs Developer-portal config (owner action) |
 | **State Management (mobile)** | `provider` | 6.1.2 | ✅ In real use throughout `lib/features` |
 | **Routing (mobile)** | `go_router` | 16.2.4 | ✅ 5 registered routes, 2 more reached via internal dispatch (see §1.3) |
 
@@ -43,13 +43,13 @@ Still open: offline/reliability hardening (§2.2), an accessibility pass (§2.4)
 | **Apple iPad** | 🟡 Required deliverable; shared Flutter implementation and responsive foundation exist, but an iPad-specific device QA matrix has not been completed | iPadOS 16.0+ |
 | **Google Android phone** | 🟢 Flutter implementation; real Firebase config for `dev` only; confirmed booting to login | API 21+ (revisit before release) |
 | **Google Android tablet** | 🟡 Required deliverable; shared Flutter implementation and responsive foundation exist, but an Android-tablet device QA matrix has not been completed | API 21+ (revisit before release) |
-| **Responsive web** | 🟢 Deployed and functionally live at `nelsongrey-sprout-dev.web.app`; shared 320px-to-wide-desktop layout contract implemented | Modern browsers |
+| **Responsive web** | 🟢 Deployed and functionally live at `nelsongrey-bf-dev.web.app`; shared 320px-to-wide-desktop layout contract implemented | Modern browsers |
 
 Neither `google-services.json` nor `GoogleService-Info.plist` is present in the repo (gitignored, not committed) — mobile builds against real config require generating these locally via `flutterfire configure` or the Firebase console.
 
 ### 1.3 Project Structure (as built)
 ```
-sprout/
+balance-forward/
 ├── packages/
 │   ├── web/                          # React 19 + Vite — real app
 │   │   └── src/
@@ -69,15 +69,15 @@ sprout/
 │   │       │   └── services/{auth,classroom,school}/  # real repositories + Fake test doubles
 │   │       ├── design_system/                          # shared palette, ThemeData, responsive breakpoints/body
 │   │       ├── features/{auth,classroom,school,student}/  # screens mirroring web's feature set
-│   │       └── widgets/                                # SproutAppBar, confirm_delete_dialog (minimal shared set)
+│   │       └── widgets/                                # BfAppBar, confirm_delete_dialog (minimal shared set)
 │   ├── shared/                 # TS domain types (Student, ClassroomContext, School, etc.) — hand-kept in sync with Dart models
 │   ├── firebase-utils/         # Client/Admin SDK wrapper helpers, ported from wishlist-wizard
-│   └── functions/              # gitignored — real code lives in NelsonGrey/sprout-functions (private)
+│   └── functions/              # gitignored — real code lives in NelsonGrey/balance-forward-functions (private)
 ├── firestore.rules             # ~490 lines — full security model, see §3.2/§3.2a
 ├── firestore.rules.test.ts     # 43 tests across 4 describe blocks
 ├── firestore.indexes.json      # 5 composite indexes
 ├── firebase.json / firebase.{dev,staging,prod}.json
-└── .firebaserc                 # nelsongrey-sprout-{dev,staging,prod}
+└── .firebaserc                 # nelsongrey-bf-{dev,staging,prod}
 ```
 
 ---
@@ -90,7 +90,7 @@ This table maps directly to the Business Requirements (`BR-*` IDs) in [BUSINESS_
 | Feature | Status | Implementation |
 |---|---|---|
 | Google Sign-In (Android + web) | ✅ Complete | `packages/mobile/lib/features/auth/login_screen.dart`; `packages/web/src/features/auth/LoginPage.tsx` |
-| Email/Password (mobile + web) | ✅ Complete and live | Confirmed working against the real `nelsongrey-sprout-dev` project's Auth this session (sign-in, password reset via `sendPasswordResetEmail`). Mobile: `login_screen.dart` (sign in/up toggle, confirm-password, show/hide). Web: `LoginPage.tsx`, same UX |
+| Email/Password (mobile + web) | ✅ Complete and live | Confirmed working against the real `nelsongrey-bf-dev` project's Auth this session (sign-in, password reset via `sendPasswordResetEmail`). Mobile: `login_screen.dart` (sign in/up toggle, confirm-password, show/hide). Web: `LoginPage.tsx`, same UX |
 | Apple Sign-In (iOS/macOS native SDK; web via `signInWithPopup(new OAuthProvider('apple.com'))`) | 🟡 Code complete, needs external config | **Blocked** until Apple's provider is enabled per-environment in the Firebase console, which requires a Sign in with Apple Services ID + key from the Apple Developer portal (owner action) |
 | Fake auth for tests | ✅ Complete | `fake_auth_service.dart` (mobile) |
 | Login screen (platform-gated OS buttons + email/password, error handling) | ✅ Complete | `login_screen.dart` (mobile); `LoginPage.tsx` (web, 17 tests) |
@@ -154,8 +154,8 @@ This table maps directly to the Business Requirements (`BR-*` IDs) in [BUSINESS_
 ### 2.8 CI/CD & Infrastructure ✅ COMPLETE
 | Feature | Status |
 |---|---|
-| GitHub repos (`sprout` public, `sprout-functions` private), `develop`/`staging`/`main` branch model | ✅ Complete |
-| Firebase project trio (`nelsongrey-sprout-dev/staging/prod`) | ✅ `dev` fully functional and in active use (real Auth users, real Firestore data, deployed hosting); staging/prod created but Auth providers/IAM/billing setup still pending (owner action) |
+| GitHub repos (`balance-forward` public, `balance-forward-functions` private), `develop`/`staging`/`main` branch model | ✅ Complete |
+| Firebase project trio (`nelsongrey-bf-dev/staging/prod`) | ✅ `dev` fully functional and in active use (real Auth users, real Firestore data, deployed hosting); staging/prod created but Auth providers/IAM/billing setup still pending (owner action) |
 | GitHub Actions (`master-pipeline.yml`, hosting deploys per branch, CodeQL, secret scanning) | ✅ Complete. `codeql.yml` runs on push/PR to develop/staging/main plus a weekly schedule; `secret-scan.yml` runs on push/PR to the same three branches |
 | Functions companion-repo checkout (`FUNCTIONS_REPO_PAT`) | ✅ Workflow wired; secret not yet set |
 
@@ -172,11 +172,11 @@ This table maps directly to the Business Requirements (`BR-*` IDs) in [BUSINESS_
 
 ### 2.10 Cross-Platform Design System & Responsive Layout (BR-8.3.8–8.3.10) 🟡 FOUNDATION COMPLETE
 
-- **Palette source of truth**: `packages/web/src/index.css` defines the semantic web tokens; `packages/mobile/lib/design_system/sprout_theme.dart` mirrors the same values for Flutter. The selected direction is the marketing palette: evergreen, warm off-white, mint, coral, and semantic warning/info/danger accents. The temporary navy/teal theme switcher has been removed.
+- **Palette source of truth**: `packages/web/src/index.css` defines the semantic web tokens; `packages/mobile/lib/design_system/bf_theme.dart` mirrors the same values for Flutter. The selected direction is the marketing palette: evergreen, warm off-white, mint, coral, and semantic warning/info/danger accents. The temporary navy/teal theme switcher has been removed.
 - **Semantic usage**: Web components use named utilities such as `bg-canvas`, `text-ink`, `text-muted`, `bg-brand`, `text-accent`, and `border-border`; marketing components no longer contain literal hexadecimal/RGB brand colors. Authenticated web components inherit the same token set.
 - **Universal web boundary**: `.site-container` supplies one 1280px maximum page boundary with 20px phone, 32px tablet, and 48px desktop gutters. It is used by public headers, footers, homepage sections, stakeholder pages, curriculum, readiness, legal/support pages, and the authenticated app shell. `.reading-container` is a nested 1040px reading measure, not a competing outer page width.
-- **Flutter responsive contract**: `SproutLayout` defines phone (`600`), tablet (`840`), and wide (`1200`) breakpoints, matching responsive gutters, a 1280px content maximum, and narrower reading/form measures. `SproutResponsiveBody` provides the reusable bounded-height wrapper required by screens containing `Column`/`Expanded` layouts.
-- **Current mobile application**: `MaterialApp` now uses `SproutTheme.light`; sign-in is responsive and palette-aligned, while shared Material theming brings the rest of the application into the same visual system. Full screen-by-screen iPad and Android-tablet layout QA remains open and must not be inferred from a shared Flutter codebase alone.
+- **Flutter responsive contract**: `BfLayout` defines phone (`600`), tablet (`840`), and wide (`1200`) breakpoints, matching responsive gutters, a 1280px content maximum, and narrower reading/form measures. `BfResponsiveBody` provides the reusable bounded-height wrapper required by screens containing `Column`/`Expanded` layouts.
+- **Current mobile application**: `MaterialApp` now uses `BfTheme.light`; sign-in is responsive and palette-aligned, while shared Material theming brings the rest of the application into the same visual system. Full screen-by-screen iPad and Android-tablet layout QA remains open and must not be inferred from a shared Flutter codebase alone.
 - **Acceptance matrix**: Web changes require representative phone, tablet, laptop, and desktop browser checks. Mobile releases require separate iPhone, iPad, Android-phone, and Android-tablet checks, including orientation, text scaling, overflow, touch targets, keyboard behavior, and screen-reader operation.
 
 ---
@@ -188,7 +188,7 @@ Unchanged since last review: `AuthService` (abstract interface) → `FirebaseAut
 
 ### 3.2 Firestore Data Model (implemented)
 
-The live schema, reflecting what's actually deployed to `nelsongrey-sprout-dev` as of this document's refresh:
+The live schema, reflecting what's actually deployed to `nelsongrey-bf-dev` as of this document's refresh:
 
 ```
 users/{uid}
@@ -243,7 +243,7 @@ Unchanged in design since the previous version of this document — see the sche
 
 **Award-only vs. full manage**: `hasAwardAccess()`/`hasManageAccess()` split what scoped/delegated access grants. Grade/whole-school scope only ever grants award-level access (read + record transactions); full manage stays with the owner, an admin, or an explicit `manage`-level `classroomGrants` entry — set only by an admin approving an `accessRequests/{id}` doc. A classroom owner can *propose* a colleague get access to specifically their classroom (via the UI described in §2.6); only an admin can actually grant it.
 
-**Why invite-and-claim instead of real account provisioning**: unchanged — Cloud Functions live in the private `sprout-functions` repo, not available here.
+**Why invite-and-claim instead of real account provisioning**: unchanged — Cloud Functions live in the private `balance-forward-functions` repo, not available here.
 
 **UI**: `packages/web/src/features/school/` and `packages/mobile/lib/features/school/school_admin_screen.dart` have staff CRUD at parity, plus the access-request delegation UI on both platforms' classroom detail screens (§2.6).
 
@@ -255,10 +255,10 @@ Still not implemented — see §2.2 for current status. The plan (enable Firesto
 ## 4. Platform-Specific Implementation Notes (as built)
 
 ### 4.1 iOS
-Unchanged since last review: bundle ID `com.sproutstreak.app.ios`, `Runner.entitlements` wired for Sign in with Apple, `Info.plist`'s `CFBundleURLTypes` still has the placeholder `REPLACE_WITH_REVERSED_CLIENT_ID` (no `GoogleService-Info.plist` exists locally yet — see §1.2).
+Unchanged since last review: bundle ID `com.balanceforward.app.ios`, `Runner.entitlements` wired for Sign in with Apple, `Info.plist`'s `CFBundleURLTypes` still has the placeholder `REPLACE_WITH_REVERSED_CLIENT_ID` (no `GoogleService-Info.plist` exists locally yet — see §1.2).
 
 ### 4.2 Android
-Unchanged: `applicationId` `com.sproutstreak.app.android`, Google Services Gradle plugin file-exists-guarded, no `AD_ID` permission.
+Unchanged: `applicationId` `com.balanceforward.app.android`, Google Services Gradle plugin file-exists-guarded, no `AD_ID` permission.
 
 ### 4.3 Web
 No longer a bare scaffold — a real, multi-feature React app. See §1.3 for the directory layout and §2 for the full feature inventory. `packages/web/src/index.css` is now the single web design-token source of truth; the former two-palette comparison switcher has been removed and public/authenticated surfaces use the selected marketing palette and universal content boundary (§2.10).
@@ -364,23 +364,23 @@ Unchanged: `firebase_core: ^4.13.0`, `firebase_auth: ^6.5.7`, `cloud_firestore: 
 ### 9.2 Firebase Projects
 | Alias | Project ID | Status |
 |---|---|---|
-| development | `nelsongrey-sprout-dev` | ✅ Fully functional — real Auth users, live Firestore data, deployed hosting, in active use |
-| staging | `nelsongrey-sprout-staging` | ✅ Created; Auth providers/IAM pending owner action |
-| production | `nelsongrey-sprout-prod` | ✅ Created; Auth providers/IAM pending owner action |
+| development | `nelsongrey-bf-dev` | ✅ Fully functional — real Auth users, live Firestore data, deployed hosting, in active use |
+| staging | `nelsongrey-bf-staging` | ✅ Created; Auth providers/IAM pending owner action |
+| production | `nelsongrey-bf-prod` | ✅ Created; Auth providers/IAM pending owner action |
 
 ### 9.3 Emulator Test Accounts (local only — never real credentials)
 
-Run `npm run seed:emulator` once (regenerates `.emulator-seed/`, gitignored), then `npm run emulators` for every regular session. One school ("Test Elementary") covering every role/scope, password `sprouttest1` for all:
+Run `npm run seed:emulator` once (regenerates `.emulator-seed/`, gitignored), then `npm run emulators` for every regular session. One school ("Test Elementary") covering every role/scope, password `bftest1` for all:
 
 | Email | Role / scope |
 |---|---|
-| `super1@test.sprout` | Super admin (founder) |
-| `admin1@test.sprout` | Admin (delegate) |
-| `teacher.own@test.sprout` | Teacher, scope `own` — owns 3rd Grade |
-| `teacher.grades@test.sprout` | Teacher, scope `grades` — [4, 5] |
-| `teacher.school@test.sprout` | Teacher, scope `school` — whole-school specialist (PE/art/music case) |
+| `super1@test.balanceforward` | Super admin (founder) |
+| `admin1@test.balanceforward` | Admin (delegate) |
+| `teacher.own@test.balanceforward` | Teacher, scope `own` — owns 3rd Grade |
+| `teacher.grades@test.balanceforward` | Teacher, scope `grades` — [4, 5] |
+| `teacher.school@test.balanceforward` | Teacher, scope `school` — whole-school specialist (PE/art/music case) |
 
-The same five accounts exist in the real `nelsongrey-sprout-dev` project too (`scripts/seed-real-dev-accounts.mjs`, same password), for manual verification against the live deployment. No student account on either — students still don't have a dedicated seed identity; link one manually via the staff-facing "link student account" flow to test that path (§2.3).
+The same five accounts exist in the real `nelsongrey-bf-dev` project too (`scripts/seed-real-dev-accounts.mjs`, same password), for manual verification against the live deployment. No student account on either — students still don't have a dedicated seed identity; link one manually via the staff-facing "link student account" flow to test that path (§2.3).
 
 ---
 
@@ -408,7 +408,7 @@ The same five accounts exist in the real `nelsongrey-sprout-dev` project too (`s
 | Accessibility | Minimal incidental coverage only | See §2.4 |
 | Testing | Strong across the board | Web: 131 tests/24 files. Mobile: 86 tests/17 files. Firestore rules: 43 tests |
 
-**Status**: 🟢 **Phase 1 MVP live at `nelsongrey-sprout-dev.web.app`. Phase 2 partially complete. Next priorities for a v1.0-readiness pass: reliability/offline hardening, accessibility, and the compliance program — none of which are started.**
+**Status**: 🟢 **Phase 1 MVP live at `nelsongrey-bf-dev.web.app`. Phase 2 partially complete. Next priorities for a v1.0-readiness pass: reliability/offline hardening, accessibility, and the compliance program — none of which are started.**
 
 ---
 

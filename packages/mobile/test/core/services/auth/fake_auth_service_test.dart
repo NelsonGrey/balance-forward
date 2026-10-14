@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuthException;
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/services/auth/fake_auth_service.dart';
+import 'package:balance_forward/core/services/auth/fake_auth_service.dart';
 
 /// Confirms the self-service account deletion fakes added to
 /// [FakeAuthService] are callable and can be made to throw for error-path

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/lesson.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/classroom/classrooms_screen.dart';
-import 'package:sprout/features/learn/lesson_activity_links.dart';
-import 'package:sprout/features/student/early_reader_today_screen.dart';
-import 'package:sprout/features/student/student_presentation.dart';
-import 'package:sprout/features/student/today_screen.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/lesson.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/classroom/classrooms_screen.dart';
+import 'package:balance_forward/features/learn/lesson_activity_links.dart';
+import 'package:balance_forward/features/student/early_reader_today_screen.dart';
+import 'package:balance_forward/features/student/student_presentation.dart';
+import 'package:balance_forward/features/student/today_screen.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 sealed class _RunStep {
   const _RunStep();
@@ -162,7 +162,7 @@ class _LearnRunScreenState extends State<LearnRunScreen> {
         final activityLabel = activityLinkLabel(lesson.slug);
 
         return Scaffold(
-          appBar: SproutAppBar(title: lesson.title),
+          appBar: BfAppBar(title: lesson.title),
           body: Column(
             children: [
               SizedBox(

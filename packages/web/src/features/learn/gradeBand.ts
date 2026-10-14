@@ -1,7 +1,7 @@
-import type { LessonBand } from '@sprout/shared';
+import type { LessonBand } from '@balance-forward/shared';
 
 /** Maps a student's free-text `gradeLevel` (school-entered, unenforced —
- * see @sprout/shared's School.enabledGrades comment) to a lesson band, so
+ * see @balance-forward/shared's School.enabledGrades comment) to a lesson band, so
  * `/app/learn` can offer "Start mission" only when a lesson is actually
  * within a student's own band (01_EXPERIENCE_FOUNDATIONS.md §5.3 / the
  * LEARN-01 spec), never from a self-reported age. Returns undefined for

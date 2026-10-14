@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import type { ClassroomContext, MemberScope, SchoolMember } from '@sprout/shared';
+import type { ClassroomContext, MemberScope, SchoolMember } from '@balance-forward/shared';
 import { assignClassroomOwner } from '../../lib/firestore';
 import { removeMember, revokeClassroomGrant, updateMemberScope } from '../../lib/school';
 import { Button } from '../../components/ui/button';

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
 
 /// Confirms the self-service account deletion methods added to
 /// [FakeSchoolRepository] behave correctly — see delete_account_screen.dart

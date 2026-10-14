@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/features/student/goals_screen.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/features/student/goals_screen.dart';
 
 const _teacherUid = 'teacher-1';
 

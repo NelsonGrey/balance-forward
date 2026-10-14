@@ -1,4 +1,4 @@
-import type { Student } from '@sprout/shared';
+import type { Student } from '@balance-forward/shared';
 import { gradeLevelToBand } from '../learn/gradeBand';
 
 /** Whether a student sees the collapsed, early-reader `Today` presentation

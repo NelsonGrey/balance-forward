@@ -3,11 +3,11 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
-import 'package:sprout/features/learn/learn_list_screen.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/features/learn/learn_list_screen.dart';
 
 const _teacher = AppUser(uid: 'teacher-1', displayName: 'Ms. Lord', email: 'lord@example.com');
 const _studentUser = AppUser(uid: 'student-1-uid', displayName: 'Alex Rivera', email: 'alex@example.com');

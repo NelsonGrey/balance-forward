@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
-import type { Goal } from '@sprout/shared';
+import type { Goal } from '@balance-forward/shared';
 import { PartyPopper, Target, TrendingUp, Trash2 } from 'lucide-react';
 import { Button } from './button';
 import { IconButton } from './icon-button';

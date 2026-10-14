@@ -1,4 +1,4 @@
-import type { SpendCategory } from '@sprout/shared';
+import type { SpendCategory } from '@balance-forward/shared';
 import { CircleCheck, Heart, Shuffle } from 'lucide-react';
 
 const config: Record<SpendCategory, { text: string; icon: typeof CircleCheck; className: string }> = {

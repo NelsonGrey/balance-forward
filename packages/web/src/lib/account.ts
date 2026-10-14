@@ -1,7 +1,7 @@
 import type { User } from 'firebase/auth';
 import { deleteUser } from 'firebase/auth';
 import { arrayRemove, collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, where } from 'firebase/firestore';
-import type { MemberRole } from '@sprout/shared';
+import type { MemberRole } from '@balance-forward/shared';
 import { firebaseClient } from './firebase';
 import { bulkDeleteStudents, deleteClassroom } from './firestore';
 import { removeMember } from './school';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { SpendCategory, Student, TransactionType } from '@sprout/shared';
+import type { SpendCategory, Student, TransactionType } from '@balance-forward/shared';
 import { recordBulkTransaction, type BulkTransactionOutcome } from '../../../../lib/api';
 import { useOnlineStatus } from '../../../../lib/useOnlineStatus';
 import { Button } from '../../../../components/ui/button';
@@ -10,7 +10,7 @@ import { OfflineNotice } from '../../../../components/ui/offline-notice';
  * The group/mass transaction composer (`C-TRANSACTION-COMPOSER`, group
  * mode) — W-CLASS-02's multi-recipient path. Recipient selection itself
  * lives in the caller (checkbox selection on the roster list); this only
- * covers action/tags/review/submit, calling the sprout-functions bulk
+ * covers action/tags/review/submit, calling the balance-forward-functions bulk
  * endpoint (see lib/api.ts) rather than looping recordTransaction client-
  * side, which has neither the idempotency nor the server-rechecked
  * authorization a retry-safe group write requires.

@@ -1,5 +1,5 @@
 import type { User } from 'firebase/auth';
-import type { FamilyMember } from '@sprout/shared';
+import type { FamilyMember } from '@balance-forward/shared';
 import { useTransactions } from '../../lib/firestore';
 import { useFamilyGoals, useLinkedFamilyMember } from '../../lib/family';
 import { PageHeader } from '../../components/ui/page-header';

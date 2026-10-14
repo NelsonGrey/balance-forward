@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Goal } from '@sprout/shared';
+import type { Goal } from '@balance-forward/shared';
 import { Route } from 'lucide-react';
 
 /** Previews how a hypothetical spend would change a goal's trail —

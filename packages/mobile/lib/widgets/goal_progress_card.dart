@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 const _checkpoints = [0.25, 0.5, 0.75];
 const _defaultRatePercent = '5';
@@ -62,7 +62,7 @@ class _GoalProgressCardState extends State<GoalProgressCard> {
                 const Icon(
                   Icons.flag,
                   size: 16,
-                  color: SproutColors.brandBright,
+                  color: BfColors.brandBright,
                 ),
                 const SizedBox(width: 6),
                 Expanded(
@@ -78,7 +78,7 @@ class _GoalProgressCardState extends State<GoalProgressCard> {
                       vertical: 2,
                     ),
                     decoration: BoxDecoration(
-                      color: SproutColors.mint,
+                      color: BfColors.mint,
                       borderRadius: BorderRadius.circular(999),
                     ),
                     child: const Text(
@@ -86,7 +86,7 @@ class _GoalProgressCardState extends State<GoalProgressCard> {
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
-                        color: SproutColors.brand,
+                        color: BfColors.brand,
                       ),
                     ),
                   ),
@@ -127,7 +127,7 @@ class _GoalProgressCardState extends State<GoalProgressCard> {
                           child: Container(
                             width: 1,
                             height: 8,
-                            color: SproutColors.surface,
+                            color: BfColors.surface,
                           ),
                         ),
                     ],
@@ -143,7 +143,7 @@ class _GoalProgressCardState extends State<GoalProgressCard> {
                     const Icon(
                       Icons.trending_up,
                       size: 16,
-                      color: SproutColors.info,
+                      color: BfColors.info,
                     ),
                     const SizedBox(width: 6),
                     SizedBox(

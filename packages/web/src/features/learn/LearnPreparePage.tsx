@@ -1,6 +1,6 @@
 import { ExternalLink, Lightbulb, PackageOpen, ShieldCheck } from 'lucide-react';
 import { Link } from 'wouter';
-import { getLesson } from '@sprout/shared';
+import { getLesson } from '@balance-forward/shared';
 import { PageHeader } from '../../components/ui/page-header';
 
 /** `W-LEARN-02` — an adult's preparation view for one lesson before running

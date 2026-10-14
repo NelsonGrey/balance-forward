@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
 
 const _months = [
   'Jan',

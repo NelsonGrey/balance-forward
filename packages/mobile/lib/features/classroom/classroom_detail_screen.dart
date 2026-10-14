@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/classroom/group_transaction_composer_screen.dart';
-import 'package:sprout/widgets/confirm_delete_dialog.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/classroom/group_transaction_composer_screen.dart';
+import 'package:balance_forward/widgets/confirm_delete_dialog.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// A classroom's roster: student list + "create a student". Tapping a
 /// student opens their ledger.
@@ -255,7 +255,7 @@ class _ClassroomDetailScreenState extends State<ClassroomDetailScreen> {
                     ClassroomGrantLevel.manage;
 
             return Scaffold(
-              appBar: SproutAppBar(
+              appBar: BfAppBar(
                 title: classroom?.name ?? 'Classroom',
                 actions: [
                   TextButton(

@@ -1,4 +1,4 @@
-import type { Student } from '@sprout/shared';
+import type { Student } from '@balance-forward/shared';
 import { useGoals } from '../../lib/firestore';
 import { PageHeader } from '../../components/ui/page-header';
 import { GoalProgressCard } from '../../components/ui/goal-progress-card';

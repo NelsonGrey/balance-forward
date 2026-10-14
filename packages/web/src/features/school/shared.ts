@@ -1,4 +1,4 @@
-import type { MemberRole, MemberScope } from '@sprout/shared';
+import type { MemberRole, MemberScope } from '@balance-forward/shared';
 
 export const GRADE_OPTIONS = ['PK', 'K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 

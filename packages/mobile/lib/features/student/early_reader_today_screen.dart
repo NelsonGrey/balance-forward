@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/widgets/account_menu_button.dart';
-import 'package:sprout/widgets/goal_progress_card.dart';
-import 'package:sprout/widgets/read_aloud_button.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/widgets/account_menu_button.dart';
+import 'package:balance_forward/widgets/goal_progress_card.dart';
+import 'package:balance_forward/widgets/read_aloud_button.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// The Pre-K–2 presentation — 01_EXPERIENCE_FOUNDATIONS.md §5.2: "Pre-K–2
 /// may collapse these into one scrollable Today view with adult-guided
@@ -35,7 +35,7 @@ class EarlyReaderTodayScreen extends StatelessWidget {
         'You have ${(student.balanceCents / 100).toStringAsFixed(2)} dollars.';
 
     return Scaffold(
-      appBar: SproutAppBar(
+      appBar: BfAppBar(
         title: student.contextName ?? 'Today',
         actions: [AccountMenuButton(authService: authService)],
       ),

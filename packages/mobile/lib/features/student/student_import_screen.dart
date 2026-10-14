@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/student/student_import_preview.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/student/student_import_preview.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 const _bulkChunkSize =
     400; // matches ClassroomRepository's write-batch chunk size
@@ -113,7 +113,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
         final schoolIds = schoolIdsSnapshot.data ?? const <String>[];
         if (schoolIds.isEmpty) {
           return const Scaffold(
-            appBar: SproutAppBar(title: 'Import CSV'),
+            appBar: BfAppBar(title: 'Import CSV'),
             body: Center(child: Text('No school found.')),
           );
         }
@@ -129,7 +129,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
                 membership != null && membership.role != MemberRole.teacher;
             if (!isAtLeastAdmin) {
               return const Scaffold(
-                appBar: SproutAppBar(title: 'Import CSV'),
+                appBar: BfAppBar(title: 'Import CSV'),
                 body: Center(
                   child: Padding(
                     padding: EdgeInsets.all(24),
@@ -156,7 +156,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
 
                     if (_done) {
                       return Scaffold(
-                        appBar: const SproutAppBar(title: 'Import CSV'),
+                        appBar: const BfAppBar(title: 'Import CSV'),
                         body: Center(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -184,7 +184,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
                     );
 
                     return Scaffold(
-                      appBar: const SproutAppBar(title: 'Import CSV'),
+                      appBar: const BfAppBar(title: 'Import CSV'),
                       body: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -221,7 +221,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
                                 child: Text(
                                   _parseError!,
                                   style: const TextStyle(
-                                    color: SproutColors.danger,
+                                    color: BfColors.danger,
                                   ),
                                 ),
                               ),
@@ -271,7 +271,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
                                           color:
                                               row.status ==
                                                   ImportRowStatus.error
-                                              ? SproutColors.danger
+                                              ? BfColors.danger
                                               : null,
                                         ),
                                       ),
@@ -285,7 +285,7 @@ class _StudentImportScreenState extends State<StudentImportScreen> {
                                   child: Text(
                                     _commitError!,
                                     style: const TextStyle(
-                                      color: SproutColors.danger,
+                                      color: BfColors.danger,
                                     ),
                                   ),
                                 ),

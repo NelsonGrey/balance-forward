@@ -31,7 +31,7 @@ packages/mobile/ios/*.p8
 # Automation and monitoring logs
 automation.log
 monitoring.log
-sprout.log
+balance-forward.log
 flutter_*.log
 
 # Automation and monitoring files
@@ -342,7 +342,7 @@ playwright-report/
 test-results/
 
 # packages/functions now lives in a separate private repo
-# (NelsonGrey/sprout-functions). A local clone into this path for
+# (NelsonGrey/balance-forward-functions). A local clone into this path for
 # dev/emulator use is fine, but it should never be committed here.
 packages/functions
 

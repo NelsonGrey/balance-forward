@@ -1,4 +1,4 @@
-title = "sprout gitleaks configuration"
+title = "balance-forward gitleaks configuration"
 
 [extend]
 useDefault = true

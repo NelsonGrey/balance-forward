@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// Shown at /school to a signed-in user who isn't a member of any school
 /// yet — founding a school makes them its super_admin (BR-1.3.11/1.3.12),
@@ -46,7 +46,7 @@ class _CreateSchoolScreenState extends State<CreateSchoolScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SproutAppBar(title: 'Set up your school'),
+      appBar: const BfAppBar(title: 'Set up your school'),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(

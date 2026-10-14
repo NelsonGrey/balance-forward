@@ -1,11 +1,7 @@
-// Real config for the `nelsongrey-sprout-dev` Firebase project, apps
-// registered via the Firebase MCP tooling (bundle/package id
-// com.sproutstreak.app.{ios,android} — the org-unbranded convention shared
-// with vehicle-vitals/wishlist-wizard, not com.nelsongrey.*; the project ID
-// itself stays nelsongrey-sprout-dev since GCP project IDs are permanent
-// once created — only the app-level bundle/package IDs and product name
-// changed when "Sprout" became "Sprout Streak"; the bundle IDs were
-// not renamed for the later Balance Forward rebrand). Web and macOS remain
+// Config for the `nelsongrey-bf-dev` Firebase project (bundle/package id
+// com.balanceforward.app.{ios,android} — the org-unbranded convention shared
+// with vehicle-vitals/wishlist-wizard, not com.nelsongrey.*). The project ID
+// is permanent once created. Web and macOS remain
 // unconfigured — packages/web (React) is the web client, and macOS isn't a
 // TRD §1.2-supported platform.
 // Environment is selected at build time via `--dart-define=FIREBASE_ENV=dev
@@ -27,17 +23,17 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyB7dOjDqUYk5zcXsTX8JVWur4JdRjnGbZY',
     appId: '1:968230602171:android:5b84a930f0940ea930709e',
     messagingSenderId: '968230602171',
-    projectId: 'nelsongrey-sprout-dev',
-    storageBucket: 'nelsongrey-sprout-dev.firebasestorage.app',
+    projectId: 'nelsongrey-bf-dev',
+    storageBucket: 'nelsongrey-bf-dev.firebasestorage.app',
   );
 
   static const FirebaseOptions _dev_ios = FirebaseOptions(
     apiKey: 'AIzaSyASDDXwQT8SMBzglwoWoLd4iVm5ClEnE20',
     appId: '1:968230602171:ios:b9567a054a95e71430709e',
     messagingSenderId: '968230602171',
-    projectId: 'nelsongrey-sprout-dev',
-    storageBucket: 'nelsongrey-sprout-dev.firebasestorage.app',
-    iosBundleId: 'com.sproutstreak.app.ios',
+    projectId: 'nelsongrey-bf-dev',
+    storageBucket: 'nelsongrey-bf-dev.firebasestorage.app',
+    iosBundleId: 'com.balanceforward.app.ios',
   );
 
   static FirebaseOptions get currentPlatform {

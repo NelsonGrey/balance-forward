@@ -1,5 +1,5 @@
 {
-  "name": "sprout",
+  "name": "balance-forward",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "!packages/functions"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=@sprout/web",
+    "dev": "npm run dev --workspace=@balance-forward/web",
     "build": "npm run build --workspaces --if-present",
     "build:mobile": "cd packages/mobile && flutter build web --release",
     "build:all": "npm run build && npm run build:mobile",

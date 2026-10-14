@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
 
 class FirestoreSchoolRepository implements SchoolRepository {
   FirestoreSchoolRepository({FirebaseFirestore? firestore})

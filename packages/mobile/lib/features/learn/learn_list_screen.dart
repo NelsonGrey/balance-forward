@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/lesson.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/learn/grade_band.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/lesson.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/learn/grade_band.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 const _gradeBandFilters = [
   'All',
@@ -55,7 +55,7 @@ class _LearnListScreenState extends State<LearnListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SproutAppBar(title: 'Learning library'),
+      appBar: const BfAppBar(title: 'Learning library'),
       body: FutureBuilder<List<Lesson>>(
         future: widget.lessonRepository.loadLessons(),
         builder: (context, lessonsSnapshot) {

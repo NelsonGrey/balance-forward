@@ -3,8 +3,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/features/learn/learn_prepare_screen.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/features/learn/learn_prepare_screen.dart';
 
 /// Tall enough that the whole lesson contract (down to the "Start guided
 /// lesson" button) lays out within the initial viewport — see

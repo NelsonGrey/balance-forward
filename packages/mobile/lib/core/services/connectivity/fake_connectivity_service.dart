@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
 
 /// In-memory [ConnectivityService] for widget tests — mirrors
 /// FakeAuthService's role for AuthService. Starts online; call [setOnline]

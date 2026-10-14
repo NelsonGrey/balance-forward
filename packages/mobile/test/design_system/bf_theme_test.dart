@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 void main() {
   test(
     'uses one responsive gutter contract for phone, tablet, and wide layouts',
     () {
-      expect(SproutLayout.pageGutterFor(390), 20);
-      expect(SproutLayout.pageGutterFor(768), 32);
-      expect(SproutLayout.pageGutterFor(1440), 48);
-      expect(SproutLayout.isTablet(599), isFalse);
-      expect(SproutLayout.isTablet(600), isTrue);
+      expect(BfLayout.pageGutterFor(390), 20);
+      expect(BfLayout.pageGutterFor(768), 32);
+      expect(BfLayout.pageGutterFor(1440), 48);
+      expect(BfLayout.isTablet(599), isFalse);
+      expect(BfLayout.isTablet(600), isTrue);
     },
   );
 
   test('Flutter theme matches the shared Balance Forward palette', () {
-    final scheme = SproutTheme.light.colorScheme;
+    final scheme = BfTheme.light.colorScheme;
 
-    expect(scheme.primary, SproutColors.brand);
-    expect(scheme.secondary, SproutColors.accent);
-    expect(scheme.surface, SproutColors.surface);
-    expect(scheme.onSurface, SproutColors.ink);
-    expect(scheme.error, SproutColors.danger);
-    expect(SproutTheme.light.scaffoldBackgroundColor, SproutColors.canvas);
+    expect(scheme.primary, BfColors.brand);
+    expect(scheme.secondary, BfColors.accent);
+    expect(scheme.surface, BfColors.surface);
+    expect(scheme.onSurface, BfColors.ink);
+    expect(scheme.error, BfColors.danger);
+    expect(BfTheme.light.scaffoldBackgroundColor, BfColors.canvas);
   });
 
   testWidgets('responsive body caps wide content at the universal width', (
@@ -38,12 +38,12 @@ void main() {
 
     await tester.pumpWidget(
       MaterialApp(
-        theme: SproutTheme.light,
+        theme: BfTheme.light,
         home: Scaffold(
-          body: SproutResponsiveBody(
+          body: BfResponsiveBody(
             child: ColoredBox(
               key: const Key('responsive-content'),
-              color: SproutColors.mint,
+              color: BfColors.mint,
             ),
           ),
         ),
@@ -52,7 +52,7 @@ void main() {
 
     expect(
       tester.getSize(find.byKey(const Key('responsive-content'))).width,
-      SproutLayout.contentMaxWidth,
+      BfLayout.contentMaxWidth,
     );
   });
 }

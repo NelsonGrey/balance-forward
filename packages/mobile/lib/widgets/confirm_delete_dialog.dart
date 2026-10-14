@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 /// Shared destructive-action confirmation, mirroring web's ConfirmDialog.
 /// Returns true only if Delete was tapped.
@@ -21,7 +21,7 @@ Future<bool> showConfirmDeleteDialog(
         ),
         TextButton(
           key: const Key('confirmDeleteButton'),
-          style: TextButton.styleFrom(foregroundColor: SproutColors.danger),
+          style: TextButton.styleFrom(foregroundColor: BfColors.danger),
           onPressed: () => Navigator.pop(context, true),
           child: const Text('Delete'),
         ),
@@ -64,7 +64,7 @@ Future<bool> showConfirmActionDialog(
         TextButton(
           key: const Key('confirmActionButton'),
           style: destructive
-              ? TextButton.styleFrom(foregroundColor: SproutColors.danger)
+              ? TextButton.styleFrom(foregroundColor: BfColors.danger)
               : null,
           onPressed: () => Navigator.pop(context, true),
           child: Text(confirmLabel),

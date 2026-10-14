@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/services/auth/fake_auth_service.dart';
-import 'package:sprout/widgets/account_menu_button.dart';
+import 'package:balance_forward/core/services/auth/fake_auth_service.dart';
+import 'package:balance_forward/widgets/account_menu_button.dart';
 
 /// Routed harness so tapping "Delete account" (context.push('/account/delete'))
 /// has a GoRouter ancestor to push onto, same pattern as

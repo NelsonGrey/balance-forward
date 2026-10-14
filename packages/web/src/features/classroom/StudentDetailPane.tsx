@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { User } from 'firebase/auth';
-import type { Student } from '@sprout/shared';
+import type { Student } from '@balance-forward/shared';
 import { Pencil, Plus, Trash2 } from 'lucide-react';
 import {
   cancelStudentLink,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/app/adaptive_shell.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/app/adaptive_shell.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
 
 const _teacher = AppUser(uid: 'teacher-1', displayName: 'Ms. Lord', email: 'lord@example.com');
 const _admin = AppUser(uid: 'admin-1', displayName: 'Office Manager', email: 'admin@example.com');
@@ -19,7 +19,7 @@ Future<String> _foundSchool(FakeSchoolRepository repository, AppUser founder) as
   return school.id;
 }
 
-/// The default flutter_test surface is 800×600 — already ≥ SproutLayout's
+/// The default flutter_test surface is 800×600 — already ≥ BfLayout's
 /// 600px phone breakpoint, which would silently exercise the rail branch
 /// instead of the bottom-nav branch. Tests asserting phone behavior must
 /// opt into an explicit phone-sized viewport.

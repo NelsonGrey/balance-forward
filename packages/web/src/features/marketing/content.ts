@@ -305,11 +305,11 @@ export const audiences: Audience[] = [
   },
 ];
 
-// Lesson content moved to @sprout/shared in Slice 3 — see
+// Lesson content moved to @balance-forward/shared in Slice 3 — see
 // docs/detailed-design/05_IMPLEMENTATION_HANDOFF.md. It's the single
 // canonical copy; packages/mobile reads a generated JSON asset from it
 // rather than a hand-duplicated Dart copy.
-export { type Lesson, lessons, getLesson } from '@sprout/shared';
+export { type Lesson, lessons, getLesson } from '@balance-forward/shared';
 
 export const gradeBands = [
   'All',

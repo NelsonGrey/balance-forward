@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/auth/fake_auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/auth/delete_account_screen.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/auth/fake_auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/auth/delete_account_screen.dart';
 
 /// Routed harness — the hard-block state's "Go to Staff" button does
 /// context.go('/school'), so a plain MaterialApp has no GoRouter ancestor

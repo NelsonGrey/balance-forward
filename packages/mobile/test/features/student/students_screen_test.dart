@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
-import 'package:sprout/features/student/students_screen.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/features/student/students_screen.dart';
 
 const _admin = AppUser(uid: 'admin-1', displayName: 'Office Manager', email: 'admin@example.com');
 const _teacher = AppUser(uid: 'teacher-1', displayName: 'Ms. Lord', email: 'lord@example.com');

@@ -21,7 +21,7 @@ export const firebaseClient = FirebaseClient.initialize(config);
 // dev/staging access gate). Same project config, but its own Auth instance
 // and persisted session, so App.tsx's onAuthStateChanged never sees the
 // gate's sign-in -- passing the gate must not log the visitor into the app.
-const GATE_APP_NAME = 'sprout-gate';
+const GATE_APP_NAME = 'bf-gate';
 const gateApp: FirebaseApp = (() => {
   try {
     return getApp(GATE_APP_NAME);

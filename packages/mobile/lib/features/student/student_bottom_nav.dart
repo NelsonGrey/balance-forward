@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/app/feature_flags.dart';
+import 'package:balance_forward/app/feature_flags.dart';
 
 enum StudentDestination { today, history, goals }
 

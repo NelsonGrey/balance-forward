@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { User } from 'firebase/auth';
 import { ArrowRight, Clock3 } from 'lucide-react';
 import { Link } from 'wouter';
-import { lessons, LessonBandSchema, type LessonBand } from '@sprout/shared';
+import { lessons, LessonBandSchema, type LessonBand } from '@balance-forward/shared';
 import { PageHeader } from '../../components/ui/page-header';
 import { useCapabilities, useIsLinkedStudent } from '../../app/roleContext';
 import { useLinkedStudent } from '../../lib/firestore';

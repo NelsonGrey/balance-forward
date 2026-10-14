@@ -3,12 +3,12 @@ import { gateRequired, isEmailAllowed } from './EnvironmentGate';
 
 describe('gateRequired', () => {
   it('gates staging and development on public hosts', () => {
-    expect(gateRequired('staging', 'sprout-staging.web.app')).toBe(true);
-    expect(gateRequired('development', 'sprout-dev.web.app')).toBe(true);
+    expect(gateRequired('staging', 'bf-staging.web.app')).toBe(true);
+    expect(gateRequired('development', 'bf-dev.web.app')).toBe(true);
   });
   it('never gates production, unset, or localhost', () => {
-    expect(gateRequired('production', 'sprout.example')).toBe(false);
-    expect(gateRequired(undefined, 'sprout.example')).toBe(false);
+    expect(gateRequired('production', 'balanceforward.example')).toBe(false);
+    expect(gateRequired(undefined, 'balanceforward.example')).toBe(false);
     expect(gateRequired('staging', 'localhost')).toBe(false);
     expect(gateRequired('development', '127.0.0.1')).toBe(false);
   });

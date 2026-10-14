@@ -1,4 +1,4 @@
-import type { LedgerTransaction } from '@sprout/shared';
+import type { LedgerTransaction } from '@balance-forward/shared';
 import { SavingsLabelBadge } from '../../components/ui/savings-label-badge';
 import { SpendCategoryBadge } from '../../components/ui/spend-category-badge';
 

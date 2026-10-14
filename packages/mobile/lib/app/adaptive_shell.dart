@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/app/capabilities.dart';
-import 'package:sprout/app/feature_flags.dart';
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/app/capabilities.dart';
+import 'package:balance_forward/app/feature_flags.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 class _NavDestinationSpec {
   const _NavDestinationSpec({
@@ -56,7 +56,7 @@ List<_NavDestinationSpec> _destinationsFor(Capabilities capabilities) => [
 /// access (student-only), matching Sidebar's `hasAnyStaffAccess` gate and
 /// preserving the "no navigation elsewhere" constraint from BR-1.3.3/1.4.1.
 ///
-/// Width thresholds match [SproutLayout] / 03_NATIVE_MOBILE_APPS.md §1:
+/// Width thresholds match [BfLayout] / 03_NATIVE_MOBILE_APPS.md §1:
 /// <600 a bottom [NavigationBar]; 600–839 a compact icon-only
 /// [NavigationRail]; 840+ an extended labeled rail.
 class AdaptiveShell extends StatelessWidget {
@@ -152,7 +152,7 @@ class _AdaptiveShellChrome extends StatelessWidget {
       builder: (context, constraints) {
         final width = constraints.maxWidth;
 
-        if (width < SproutLayout.phoneBreakpoint) {
+        if (width < BfLayout.phoneBreakpoint) {
           return Scaffold(
             body: child,
             bottomNavigationBar: NavigationBar(
@@ -166,7 +166,7 @@ class _AdaptiveShellChrome extends StatelessWidget {
           );
         }
 
-        final extended = width >= SproutLayout.tabletBreakpoint;
+        final extended = width >= BfLayout.tabletBreakpoint;
         return Scaffold(
           body: Row(
             children: [

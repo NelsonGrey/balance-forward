@@ -2,22 +2,22 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/store_item.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/confirm_delete_dialog.dart';
-import 'package:sprout/widgets/goal_progress_card.dart';
-import 'package:sprout/widgets/offline_notice.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/store_item.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/confirm_delete_dialog.dart';
+import 'package:balance_forward/widgets/goal_progress_card.dart';
+import 'package:balance_forward/widgets/offline_notice.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// A single student's balance and transaction history, with an inline
 /// earn/spend form. Handing the device to the student to view this screen
@@ -304,7 +304,7 @@ class _StudentLedgerScreenState extends State<StudentLedgerScreen> {
     List<Goal> unachievedGoals,
   ) {
     return Scaffold(
-      appBar: SproutAppBar(
+      appBar: BfAppBar(
         title: student?.displayName ?? 'Student',
         actions: canManage
             ? [
@@ -436,7 +436,7 @@ class _StudentLedgerScreenState extends State<StudentLedgerScreen> {
                                 child: Text(
                                   'Linked — the student can sign in and see this on their own',
                                   style: TextStyle(
-                                    color: SproutColors.brandBright,
+                                    color: BfColors.brandBright,
                                   ),
                                 ),
                               ),

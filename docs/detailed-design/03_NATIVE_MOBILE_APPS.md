@@ -11,7 +11,7 @@ The Flutter application is one codebase but four independently accepted products
 | `NATIVE-TABLET`         |      840–1199 | 224–240px extended navigation rail                        | Master-detail for classroom/staff/roster; centered bounded forms     |
 | `NATIVE-WIDE`           |         ≥1200 | 240px extended rail within 1280px content boundary        | Master-detail plus contextual side panel where justified             |
 
-Use existing `SproutLayout` thresholds and gutters. Width, not device name, controls layout. Orientation changes preserve active role, context, selection, form text, scroll anchor where feasible, and queued transaction state.
+Use existing `BfLayout` thresholds and gutters. Width, not device name, controls layout. Orientation changes preserve active role, context, selection, form text, scroll anchor where feasible, and queued transaction state.
 
 ## 2. Native conventions
 

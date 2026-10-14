@@ -23,7 +23,7 @@ if (process.env.CONFIRM_REAL_FIREBASE !== 'yes') {
   process.exit(1);
 }
 
-const PROJECT_ID = process.argv[2] ?? 'nelsongrey-sprout-dev';
+const PROJECT_ID = process.argv[2] ?? 'nelsongrey-bf-dev';
 
 const app = initializeApp({ projectId: PROJECT_ID });
 const db = getFirestore(app);

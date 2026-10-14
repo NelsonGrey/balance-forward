@@ -4,16 +4,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:sprout/core/config/api_config.dart';
-import 'package:sprout/core/models/bulk_transaction_result.dart';
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/store_item.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/models/student_import_row.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/config/api_config.dart';
+import 'package:balance_forward/core/models/bulk_transaction_result.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/store_item.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/models/student_import_row.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
 
 class FirestoreClassroomRepository implements ClassroomRepository {
   FirestoreClassroomRepository({FirebaseFirestore? firestore})

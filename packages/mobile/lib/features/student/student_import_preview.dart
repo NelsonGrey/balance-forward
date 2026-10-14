@@ -1,6 +1,6 @@
 import 'package:csv/csv.dart';
 
-import 'package:sprout/core/models/student_import_row.dart';
+import 'package:balance_forward/core/models/student_import_row.dart';
 
 enum ImportRowStatus { newStudent, update, error }
 

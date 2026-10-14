@@ -14,7 +14,7 @@ This repository holds the Balance Forward web and mobile client. Only the code c
 
 This repository doesn't have a public issue tracker, so please don't report security concerns that way. Use one of:
 
-- GitHub's [private vulnerability reporting](https://github.com/NelsonGrey/sprout/security/advisories/new) (enabled on this repo), or
+- GitHub's [private vulnerability reporting](https://github.com/NelsonGrey/balance-forward/security/advisories/new) (enabled on this repo), or
 - Email **support@nelsongrey.com**
 
 Either way, include:

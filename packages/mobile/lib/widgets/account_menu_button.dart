@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
 
 enum _AccountMenuAction { signOut, deleteAccount }
 
 /// Replaces the bare sign-out IconButton previously in every top-level
-/// screen's [SproutAppBar] actions with a small menu that also surfaces
+/// screen's [BfAppBar] actions with a small menu that also surfaces
 /// self-service account deletion (Apple/Google app store compliance — see
 /// delete_account_screen.dart).
 class AccountMenuButton extends StatelessWidget {

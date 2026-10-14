@@ -50,7 +50,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci --legacy-peer-deps 2>/dev/null || npm ci --force
-          npm run build --workspace=@sprout/shared
+          npm run build --workspace=@balance-forward/shared
           npm run build --workspace=@shared/firebase-utils
 
       - name: Build Web App
@@ -62,7 +62,7 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID_PRODUCTION }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID_PRODUCTION }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID_PRODUCTION }}
-        run: npm run build --workspace=@sprout/web
+        run: npm run build --workspace=@balance-forward/web
 
       - name: Use Production Firebase Config
         run: cp firebase.prod.json firebase.json
@@ -71,12 +71,12 @@ jobs:
         uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: "projects/968230602171/locations/global/workloadIdentityPools/github-actions/providers/github"
-          service_account: "github-actions-hosting@nelsongrey-sprout-prod.iam.gserviceaccount.com"
+          service_account: "github-actions-hosting@nelsongrey-bf-prod.iam.gserviceaccount.com"
 
       - name: Deploy Firebase Hosting
         run: |
           firebase deploy \
-            --project="nelsongrey-sprout-prod" \
+            --project="nelsongrey-bf-prod" \
             --only=hosting \
             --message="Production hosting deploy from main — ${{ github.sha }}" \
             --non-interactive

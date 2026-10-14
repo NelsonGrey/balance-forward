@@ -1,4 +1,4 @@
-import type { Student } from '@sprout/shared';
+import type { Student } from '@balance-forward/shared';
 import { Sprout } from 'lucide-react';
 import { Link } from 'wouter';
 import { useGoals, useTransactions } from '../../lib/firestore';

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/features/student/student_bottom_nav.dart';
-import 'package:sprout/widgets/account_menu_button.dart';
-import 'package:sprout/widgets/goal_progress_card.dart';
-import 'package:sprout/widgets/reflection_prompt.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
-import 'package:sprout/widgets/transaction_row.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/features/student/student_bottom_nav.dart';
+import 'package:balance_forward/widgets/account_menu_button.dart';
+import 'package:balance_forward/widgets/goal_progress_card.dart';
+import 'package:balance_forward/widgets/reflection_prompt.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
+import 'package:balance_forward/widgets/transaction_row.dart';
 
 /// `M-STUDENT-01` — the student-only "Today" home: balance, one current
 /// goal, the last three transactions, a neutral reflection prompt, and a
@@ -34,7 +34,7 @@ class TodayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SproutAppBar(
+      appBar: BfAppBar(
         title: student.contextName ?? 'Today',
         actions: [AccountMenuButton(authService: authService)],
       ),

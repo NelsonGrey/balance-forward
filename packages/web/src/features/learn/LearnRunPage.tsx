@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 import { Link, useLocation, useSearchParams } from 'wouter';
 import type { User } from 'firebase/auth';
-import { getLesson } from '@sprout/shared';
+import { getLesson } from '@balance-forward/shared';
 import { PageHeader } from '../../components/ui/page-header';
 import { useCapabilities, useIsLinkedStudent } from '../../app/roleContext';
 import { activityLinkLabel } from './lessonActivityLinks';

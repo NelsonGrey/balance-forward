@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { LedgerTransaction, Student } from '@sprout/shared';
+import type { LedgerTransaction, Student } from '@balance-forward/shared';
 import { useTransactions } from '../../lib/firestore';
 import { PageHeader } from '../../components/ui/page-header';
 import { ReflectionPrompt } from './ReflectionPrompt';

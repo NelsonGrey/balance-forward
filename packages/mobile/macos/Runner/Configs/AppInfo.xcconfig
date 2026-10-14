@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = sprout
+PRODUCT_NAME = balance_forward
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.sproutstreak.app.macos
+PRODUCT_BUNDLE_IDENTIFIER = com.balanceforward.app.macos
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2026 Balance Forward. All rights reserved.

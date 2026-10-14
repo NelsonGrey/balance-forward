@@ -164,14 +164,14 @@ Use the existing semantic tokens. Do not add literal brand hex values in compone
 
 | Intent                  | Web token                       | Flutter source                    |
 | ----------------------- | ------------------------------- | --------------------------------- |
-| Canvas                  | `bg-canvas` / `bg-bg`           | `SproutColors.canvas`             |
-| Primary surface         | `bg-surface`                    | `SproutColors.surface`            |
-| Primary text            | `text-ink`                      | `SproutColors.ink`                |
-| Secondary text          | `text-ink-muted`                | `SproutColors.muted`              |
+| Canvas                  | `bg-canvas` / `bg-bg`           | `BfColors.canvas`             |
+| Primary surface         | `bg-surface`                    | `BfColors.surface`            |
+| Primary text            | `text-ink`                      | `BfColors.ink`                |
+| Secondary text          | `text-ink-muted`                | `BfColors.muted`              |
 | Primary action          | `bg-brand`                      | `colorScheme.primary`             |
-| Learning/progress field | `bg-mint`                       | `SproutColors.mint`               |
+| Learning/progress field | `bg-mint`                       | `BfColors.mint`               |
 | Warm emphasis           | `bg-accent-soft`, `text-accent` | secondary container/secondary     |
-| Warning/info/danger     | semantic named tokens           | matching `SproutColors` constants |
+| Warning/info/danger     | semantic named tokens           | matching `BfColors` constants |
 
 ### 6.2 Typography
 
@@ -196,7 +196,7 @@ Currency uses tabular numerals. Never rely on color or a plus/minus sign alone; 
 - At least 8px between adjacent targets; at least 12px between destructive and primary confirmation actions.
 - Maximum application outer width: 1280px. Reading content: 1040px. Forms: 480px unless a table/import requires more.
 - Web gutters: 20px under 640px, 32px from 640px, 48px from 1024px.
-- Native gutters: use `SproutLayout.pageGutterFor`: 20 under 600, 32 from 600, 48 from 1200.
+- Native gutters: use `BfLayout.pageGutterFor`: 20 under 600, 32 from 600, 48 from 1200.
 
 ## 7. Shared component inventory
 

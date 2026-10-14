@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { StoreItem } from '@sprout/shared';
+import type { StoreItem } from '@balance-forward/shared';
 import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { createStoreItem, deleteStoreItem, updateStoreItem, useStoreItems } from '../../lib/firestore';
 import { Button } from '../../components/ui/button';

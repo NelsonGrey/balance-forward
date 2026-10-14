@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/goal.dart';
+import 'package:balance_forward/core/models/goal.dart';
 
 /// Previews how a hypothetical spend would change a goal's trail —
 /// client-side arithmetic only, never a write. Dart mirror of

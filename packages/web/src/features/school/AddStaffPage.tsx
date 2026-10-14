@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { User } from 'firebase/auth';
-import type { MemberRole, MemberScope } from '@sprout/shared';
+import type { MemberRole, MemberScope } from '@balance-forward/shared';
 import {
   cancelInvite,
   getSchool,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { User } from 'firebase/auth';
-import type { FamilyPolicyProfile } from '@sprout/shared';
+import type { FamilyPolicyProfile } from '@balance-forward/shared';
 import { saveFamilyPolicyProfile, useAllFamilyPolicyProfiles, usePlatformAdmin } from '../../lib/family';
 import { PageHeader } from '../../components/ui/page-header';
 import { Button } from '../../components/ui/button';

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/app/capabilities.dart';
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/account_menu_button.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/app/capabilities.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/account_menu_button.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// Post-login landing screen: a teacher's classroom list plus "create a
 /// classroom". Uses a persistent inline form rather than a dialog so the
@@ -63,7 +63,7 @@ class _ClassroomsScreenState extends State<ClassroomsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SproutAppBar(
+      appBar: BfAppBar(
         title: 'My Classrooms',
         actions: [
           IconButton(

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/features/student/student_presentation.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/features/student/student_presentation.dart';
 
 Student _student({String? gradeLevel}) => Student(
   id: 's1',

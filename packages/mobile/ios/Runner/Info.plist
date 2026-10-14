@@ -51,7 +51,7 @@
 	<true/>
 	<!-- TODO(firebase): replace REPLACE_WITH_REVERSED_CLIENT_ID with the
 	     REVERSED_CLIENT_ID from this env's real GoogleService-Info.plist,
-	     once sprout-dev/staging/prod exist — do NOT copy a value from
+	     once bf-dev/staging/prod exist — do NOT copy a value from
 	     another app's plist, it must match this app's own OAuth client. -->
 	<key>CFBundleURLTypes</key>
 	<array>

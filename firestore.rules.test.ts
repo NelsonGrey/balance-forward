@@ -15,7 +15,7 @@ let testEnv: RulesTestEnvironment;
 
 beforeAll(async () => {
   testEnv = await initializeTestEnvironment({
-    projectId: 'sprout-rules-test',
+    projectId: 'bf-rules-test',
     firestore: { rules: readFileSync('firestore.rules', 'utf8') },
   });
 });

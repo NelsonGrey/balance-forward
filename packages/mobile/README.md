@@ -7,11 +7,11 @@ The shared Flutter application for four required form factors:
 - Google Android phone
 - Google Android tablet
 
-The application uses `SproutTheme.light` from
-`lib/design_system/sprout_theme.dart`, matching the public and authenticated
-web palette. `SproutLayout` defines the phone/tablet/wide breakpoints,
+The application uses `BfTheme.light` from
+`lib/design_system/bf_theme.dart`, matching the public and authenticated
+web palette. `BfLayout` defines the phone/tablet/wide breakpoints,
 20/32/48px responsive gutters, and the universal 1280px content boundary.
-Use `SproutResponsiveBody` for new screens instead of introducing one-off
+Use `BfResponsiveBody` for new screens instead of introducing one-off
 maximum widths.
 
 ## Validation

@@ -5,8 +5,8 @@ import { Button } from './ui/button';
 
 // This gate's own "authorized" state is tracked here, deliberately separate
 // from the app's Firebase Auth user -- see gateAuth in lib/firebase.ts.
-const GATE_SESSION_KEY = 'sprout_env_gate_authorized';
-const GATE_EMAIL_KEY = 'sprout_env_gate_email';
+const GATE_SESSION_KEY = 'bf_env_gate_authorized';
+const GATE_EMAIL_KEY = 'bf_env_gate_email';
 
 const parseList = (raw: string | undefined) =>
   (raw ?? '')

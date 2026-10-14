@@ -1,4 +1,4 @@
-import type { SpendCategory } from '@sprout/shared';
+import type { SpendCategory } from '@balance-forward/shared';
 import { firebaseClient } from './firebase';
 
 export interface BulkTransactionOutcome {
@@ -6,8 +6,8 @@ export interface BulkTransactionOutcome {
   failed: { studentId: string; error: string }[];
 }
 
-/** Calls the sprout-functions `api` Cloud Function's group/mass transaction
- * endpoint (see sprout-functions/src/api/bulkTransactions.ts) — the
+/** Calls the balance-forward-functions `api` Cloud Function's group/mass transaction
+ * endpoint (see balance-forward-functions/src/api/bulkTransactions.ts) — the
  * production write contract Slice 2 step 5 requires before group
  * transactions can ship: a client-generated idempotencyKey means a retried
  * request can never double-credit a student, and the server re-checks

@@ -1,6 +1,6 @@
 /** Which lessons have a real, currently-shipped product feature to deep-link
  * a mission step to, and what that link should say — UI-only presentation
- * metadata, deliberately kept out of @sprout/shared's canonical Lesson
+ * metadata, deliberately kept out of @balance-forward/shared's canonical Lesson
  * contract (05_IMPLEMENTATION_HANDOFF.md's Slice 3 step 2: preserve every
  * field, don't add to it).
  *

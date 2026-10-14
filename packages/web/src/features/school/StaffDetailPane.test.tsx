@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import type { ClassroomContext, SchoolMember } from '@sprout/shared';
+import type { ClassroomContext, SchoolMember } from '@balance-forward/shared';
 import { StaffDetailPane } from './StaffDetailPane';
 import * as firestoreLib from '../../lib/firestore';
 

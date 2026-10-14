@@ -1,6 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link, useSearchParams } from 'wouter';
-import { getLesson } from '@sprout/shared';
+import { getLesson } from '@balance-forward/shared';
 
 /** Mounted once in Layout so it applies to any authenticated page — a
  * sticky "back to your lesson" strip when the current URL carries

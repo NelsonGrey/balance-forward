@@ -1,5 +1,5 @@
 // Creates the same set of role/scope test personas as
-// seed-emulator-accounts.mjs, but against the REAL nelsongrey-sprout-dev
+// seed-emulator-accounts.mjs, but against the REAL nelsongrey-bf-dev
 // Firebase project (Auth + Firestore), not the local emulator.
 //
 // Requires valid Application Default Credentials for an account with
@@ -16,15 +16,15 @@ import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 
 if (process.env.CONFIRM_REAL_FIREBASE !== 'yes') {
   console.error(
-    'Refusing to run: this writes real data to the nelsongrey-sprout-dev ' +
+    'Refusing to run: this writes real data to the nelsongrey-bf-dev ' +
       'Firebase project (not the emulator). Re-run with ' +
       'CONFIRM_REAL_FIREBASE=yes to proceed.',
   );
   process.exit(1);
 }
 
-const PROJECT_ID = 'nelsongrey-sprout-dev';
-const PASSWORD = 'sprouttest1';
+const PROJECT_ID = 'nelsongrey-bf-dev';
+const PASSWORD = 'bftest1';
 const GHOST_OWNER_UID = 'ghost-owner-1';
 
 const app = initializeApp({ projectId: PROJECT_ID });
@@ -45,11 +45,11 @@ async function createTestUser({ email, displayName }) {
 async function main() {
   console.log('Seeding REAL project: %s\n', PROJECT_ID);
 
-  const superAdmin = await createTestUser({ email: 'super1@test.sprout', displayName: 'Super Admin' });
-  const admin = await createTestUser({ email: 'admin1@test.sprout', displayName: 'Office Manager' });
-  const teacherOwn = await createTestUser({ email: 'teacher.own@test.sprout', displayName: 'Ms. Own-Scope' });
-  const teacherGrades = await createTestUser({ email: 'teacher.grades@test.sprout', displayName: 'Mr. Grade-Scope' });
-  const teacherSchool = await createTestUser({ email: 'teacher.school@test.sprout', displayName: 'Coach Whole-School' });
+  const superAdmin = await createTestUser({ email: 'super1@test.balanceforward', displayName: 'Super Admin' });
+  const admin = await createTestUser({ email: 'admin1@test.balanceforward', displayName: 'Office Manager' });
+  const teacherOwn = await createTestUser({ email: 'teacher.own@test.balanceforward', displayName: 'Ms. Own-Scope' });
+  const teacherGrades = await createTestUser({ email: 'teacher.grades@test.balanceforward', displayName: 'Mr. Grade-Scope' });
+  const teacherSchool = await createTestUser({ email: 'teacher.school@test.balanceforward', displayName: 'Coach Whole-School' });
 
   const schoolRef = db.collection('schools').doc();
   const schoolId = schoolRef.id;
@@ -142,11 +142,11 @@ async function main() {
 
   console.log('\nSeed complete — Test Elementary (%s) in REAL project %s\n', schoolId, PROJECT_ID);
   console.log('Test accounts (password for all: %s):', PASSWORD);
-  console.log('  super1@test.sprout          — super admin');
-  console.log('  admin1@test.sprout          — admin (delegate)');
-  console.log("  teacher.own@test.sprout     — teacher, scope 'own' (owns 3rd Grade)");
-  console.log("  teacher.grades@test.sprout  — teacher, scope 'grades' [4, 5]");
-  console.log("  teacher.school@test.sprout  — teacher, scope 'school' (whole-school specialist)\n");
+  console.log('  super1@test.balanceforward          — super admin');
+  console.log('  admin1@test.balanceforward          — admin (delegate)');
+  console.log("  teacher.own@test.balanceforward     — teacher, scope 'own' (owns 3rd Grade)");
+  console.log("  teacher.grades@test.balanceforward  — teacher, scope 'grades' [4, 5]");
+  console.log("  teacher.school@test.balanceforward  — teacher, scope 'school' (whole-school specialist)\n");
 }
 
 main()

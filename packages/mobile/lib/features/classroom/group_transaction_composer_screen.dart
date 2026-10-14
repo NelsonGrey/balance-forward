@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/bulk_transaction_result.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
-import 'package:sprout/widgets/offline_notice.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/bulk_transaction_result.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/widgets/offline_notice.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// The group/mass transaction composer (`M-CLASS-02` group mode) — pushed
 /// as its own screen from ClassroomDetailScreen's select mode. Recipient
@@ -124,7 +124,7 @@ class _GroupTransactionComposerScreenState
   Widget build(BuildContext context) {
     final result = _result;
     return Scaffold(
-      appBar: SproutAppBar(
+      appBar: BfAppBar(
         title: 'Record for ${widget.students.length} students',
       ),
       body: SingleChildScrollView(

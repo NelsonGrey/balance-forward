@@ -6,8 +6,8 @@ import 'package:flutter/services.dart' show PlatformException;
 import 'package:sign_in_with_apple/sign_in_with_apple.dart'
     show AuthorizationErrorCode, SignInWithAppleAuthorizationException;
 
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 /// Sign-in screen backed by [AuthService] — inject the real
 /// [FirebaseAuthService] in the app and [FakeAuthService] in tests/widget
@@ -215,10 +215,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SproutColors.canvas,
+      backgroundColor: BfColors.canvas,
       body: SafeArea(
-        child: SproutResponsiveBody(
-          maxContentWidth: SproutLayout.formMaxWidth,
+        child: BfResponsiveBody(
+          maxContentWidth: BfLayout.formMaxWidth,
           includeGutter: true,
           child: SingleChildScrollView(
             child: Column(
@@ -228,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 96,
                   height: 96,
                   decoration: BoxDecoration(
-                    color: SproutColors.ink,
+                    color: BfColors.ink,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const _CompoundingArcMark(),
@@ -239,19 +239,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: SproutColors.ink,
+                    color: BfColors.ink,
                   ),
                 ),
                 const SizedBox(height: 6),
                 const Text(
                   'Good choices compound.',
-                  style: TextStyle(fontSize: 15, color: SproutColors.muted),
+                  style: TextStyle(fontSize: 15, color: BfColors.muted),
                 ),
                 const SizedBox(height: 48),
                 const Text(
                   'Sign in to manage your classroom or family account.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, color: SproutColors.muted),
+                  style: TextStyle(fontSize: 14, color: BfColors.muted),
                 ),
                 const SizedBox(height: 28),
                 if (defaultTargetPlatform == TargetPlatform.android) ...[
@@ -279,15 +279,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    const Expanded(child: Divider(color: SproutColors.border)),
+                    const Expanded(child: Divider(color: BfColors.border)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Text(
                         'or',
-                        style: TextStyle(color: SproutColors.muted),
+                        style: TextStyle(color: BfColors.muted),
                       ),
                     ),
-                    const Expanded(child: Divider(color: SproutColors.border)),
+                    const Expanded(child: Divider(color: BfColors.border)),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -295,7 +295,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: const Key('emailField'),
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
-                  style: const TextStyle(color: SproutColors.ink),
+                  style: const TextStyle(color: BfColors.ink),
                   decoration: const InputDecoration(labelText: 'Email'),
                 ),
                 const SizedBox(height: 12),
@@ -303,7 +303,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: const Key('passwordField'),
                   controller: _passwordController,
                   obscureText: !_passwordVisible,
-                  style: const TextStyle(color: SproutColors.ink),
+                  style: const TextStyle(color: BfColors.ink),
                   decoration: InputDecoration(
                     labelText: 'Password',
                     suffixIcon: IconButton(
@@ -312,7 +312,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         _passwordVisible
                             ? Icons.visibility_off
                             : Icons.visibility,
-                        color: SproutColors.muted,
+                        color: BfColors.muted,
                       ),
                       onPressed: () =>
                           setState(() => _passwordVisible = !_passwordVisible),
@@ -325,7 +325,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     key: const Key('confirmPasswordField'),
                     controller: _confirmPasswordController,
                     obscureText: !_confirmPasswordVisible,
-                    style: const TextStyle(color: SproutColors.ink),
+                    style: const TextStyle(color: BfColors.ink),
                     decoration: InputDecoration(
                       labelText: 'Confirm password',
                       suffixIcon: IconButton(
@@ -334,7 +334,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           _confirmPasswordVisible
                               ? Icons.visibility_off
                               : Icons.visibility,
-                          color: SproutColors.muted,
+                          color: BfColors.muted,
                         ),
                         onPressed: () => setState(
                           () => _confirmPasswordVisible =
@@ -373,7 +373,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ? 'Create an account'
                             : 'Already have an account?',
                         style: const TextStyle(
-                          color: SproutColors.muted,
+                          color: BfColors.muted,
                           fontSize: 12,
                         ),
                       ),
@@ -384,7 +384,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: const Text(
                         'Forgot password?',
                         style: TextStyle(
-                          color: SproutColors.muted,
+                          color: BfColors.muted,
                           fontSize: 12,
                         ),
                       ),
@@ -396,7 +396,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     _emailError!,
                     style: const TextStyle(
-                      color: SproutColors.danger,
+                      color: BfColors.danger,
                       fontSize: 13,
                     ),
                   ),
@@ -406,7 +406,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     _emailInfo!,
                     style: const TextStyle(
-                      color: SproutColors.brandBright,
+                      color: BfColors.brandBright,
                       fontSize: 13,
                     ),
                   ),
@@ -455,14 +455,14 @@ class _CompoundingArcPainter extends CustomPainter {
       Path()
         ..moveTo(14, 100)
         ..cubicTo(65, 102, 113, 94, 146, 72),
-      SproutColors.canvas,
+      BfColors.canvas,
       22,
     );
     drawArc(
       Path()
         ..moveTo(24, 70)
         ..cubicTo(70, 71, 110, 62, 140, 43),
-      SproutColors.mintStrong,
+      BfColors.mintStrong,
       17,
     );
     drawArc(
@@ -496,8 +496,8 @@ class _AuthButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: SproutColors.brand,
-          foregroundColor: SproutColors.onDark,
+          backgroundColor: BfColors.brand,
+          foregroundColor: BfColors.onDark,
           padding: const EdgeInsets.symmetric(vertical: 14),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
@@ -506,14 +506,14 @@ class _AuthButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 22, color: SproutColors.onDark),
+            Icon(icon, size: 22, color: BfColors.onDark),
             const SizedBox(width: 10),
             Flexible(
               child: Text(
                 label,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  color: SproutColors.onDark,
+                  color: BfColors.onDark,
                   fontSize: 15,
                 ),
               ),

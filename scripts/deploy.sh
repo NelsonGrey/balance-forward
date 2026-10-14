@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Sprout - Manual Deployment Script
-# Adapted from wishlist-wizard's scripts/deploy.sh, trimmed to Sprout's
+# Balance Forward - Manual Deployment Script
+# Adapted from wishlist-wizard's scripts/deploy.sh, trimmed to Balance Forward's
 # actual package set (web + functions; no browser extension, no mobile PWA
 # hosting target).
 
@@ -96,7 +96,7 @@ build_all() {
 }
 
 show_usage() {
-    echo "Sprout Deployment Script"
+    echo "Balance Forward Deployment Script"
     echo ""
     echo "Usage: $0 [OPTION] [ENVIRONMENT]"
     echo ""

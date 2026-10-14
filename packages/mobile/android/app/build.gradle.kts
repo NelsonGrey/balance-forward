@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sproutstreak.app.android"
+    namespace = "com.balanceforward.app.android"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.sproutstreak.app.android"
+        applicationId = "com.balanceforward.app.android"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -47,7 +47,7 @@ flutter {
 // Apply Google Services only if a matching google-services.json is present.
 // This prevents Gradle sync/build failures when the Firebase Android app
 // package doesn't match the appId during local development, before
-// sprout-dev/staging/prod exist.
+// bf-dev/staging/prod exist.
 if (file("google-services.json").exists()) {
     apply(plugin = "com.google.gms.google-services")
 }

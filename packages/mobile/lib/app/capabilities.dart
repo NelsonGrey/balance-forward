@@ -1,4 +1,4 @@
-import 'package:sprout/core/models/school.dart';
+import 'package:balance_forward/core/models/school.dart';
 
 /// Named, presentation-only capabilities derived from current school
 /// membership — Dart mirror of packages/web/src/app/capabilities.ts. See

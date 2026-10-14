@@ -2,14 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuthException;
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/confirm_delete_dialog.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/confirm_delete_dialog.dart';
 
 /// One school this user belongs to, and what deleting the account would do
 /// to their membership there — mirrors web's SchoolMembershipSummary.
@@ -285,7 +285,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
           ),
           TextButton(
             key: const Key('confirmDeleteButton'),
-            style: TextButton.styleFrom(foregroundColor: SproutColors.danger),
+            style: TextButton.styleFrom(foregroundColor: BfColors.danger),
             onPressed: () => Navigator.pop(context, true),
             child: const Text('Delete'),
           ),
@@ -370,7 +370,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
             Text(
               'These personal classrooms and their students will be permanently deleted: '
               '${summary.standaloneClassrooms.map((c) => c.name).join(', ')}.',
-              style: const TextStyle(color: SproutColors.danger),
+              style: const TextStyle(color: BfColors.danger),
             ),
           ],
           if (summary.linkedStudentName != null) ...[
@@ -399,8 +399,8 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
           ElevatedButton(
             key: const Key('deleteAccountButton'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: SproutColors.danger,
-              foregroundColor: SproutColors.onDark,
+              backgroundColor: BfColors.danger,
+              foregroundColor: BfColors.onDark,
             ),
             onPressed: (!canDelete || _deleting) ? null : _confirmAndDelete,
             child: const Text('Delete My Account'),
@@ -411,7 +411,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
           ],
           if (_error != null) ...[
             const SizedBox(height: 12),
-            Text(_error!, style: const TextStyle(color: SproutColors.danger)),
+            Text(_error!, style: const TextStyle(color: BfColors.danger)),
           ],
         ],
       ),

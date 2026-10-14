@@ -2,7 +2,7 @@
 // role/scope in the security matrix (BR-1.3.11/1.3.12), so the UI can be
 // reviewed as each persona without waiting on real account provisioning
 // (Cloud Functions/Admin SDK for real accounts live in the private
-// sprout-functions repo, not available here — but the emulator accepts
+// balance-forward-functions repo, not available here — but the emulator accepts
 // Admin SDK calls with no real credentials at all, which is what makes
 // this script possible).
 //
@@ -23,8 +23,8 @@ process.env.FIREBASE_AUTH_EMULATOR_HOST ??= 'localhost:9099';
 // Must match the real project ID configured in firebase_options.dart /
 // packages/web/.env — the emulator partitions its local data store by
 // project ID, so seeding under the wrong one means the app never sees it.
-const PROJECT_ID = 'nelsongrey-sprout-dev';
-const PASSWORD = 'sprouttest1';
+const PROJECT_ID = 'nelsongrey-bf-dev';
+const PASSWORD = 'bftest1';
 // Not a real account — a placeholder classroom owner so the grade/whole-
 // school scope demos aren't muddied by the admin/teacher also happening to
 // be a direct owner.
@@ -46,16 +46,16 @@ async function createTestUser({ email, displayName }) {
 }
 
 async function main() {
-  const superAdmin = await createTestUser({ email: 'super1@test.sprout', displayName: 'Super Admin' });
-  const admin = await createTestUser({ email: 'admin1@test.sprout', displayName: 'Office Manager' });
-  const teacherOwn = await createTestUser({ email: 'teacher.own@test.sprout', displayName: 'Ms. Own-Scope' });
-  const teacherGrades = await createTestUser({ email: 'teacher.grades@test.sprout', displayName: 'Mr. Grade-Scope' });
-  const teacherSchool = await createTestUser({ email: 'teacher.school@test.sprout', displayName: 'Coach Whole-School' });
+  const superAdmin = await createTestUser({ email: 'super1@test.balanceforward', displayName: 'Super Admin' });
+  const admin = await createTestUser({ email: 'admin1@test.balanceforward', displayName: 'Office Manager' });
+  const teacherOwn = await createTestUser({ email: 'teacher.own@test.balanceforward', displayName: 'Ms. Own-Scope' });
+  const teacherGrades = await createTestUser({ email: 'teacher.grades@test.balanceforward', displayName: 'Mr. Grade-Scope' });
+  const teacherSchool = await createTestUser({ email: 'teacher.school@test.balanceforward', displayName: 'Coach Whole-School' });
   // Two more directly-owning teachers, purely to give ClassroomsPage/the
   // master-detail student list more than one real (non-ghost-owned)
   // classroom to browse.
-  const teacherFirst = await createTestUser({ email: 'teacher.first@test.sprout', displayName: 'Mx. First-Own' });
-  const teacherSecond = await createTestUser({ email: 'teacher.second@test.sprout', displayName: 'Mr. Second-Own' });
+  const teacherFirst = await createTestUser({ email: 'teacher.first@test.balanceforward', displayName: 'Mx. First-Own' });
+  const teacherSecond = await createTestUser({ email: 'teacher.second@test.balanceforward', displayName: 'Mr. Second-Own' });
 
   const schoolRef = db.collection('schools').doc();
   const schoolId = schoolRef.id;
@@ -189,13 +189,13 @@ async function main() {
   console.log('\nSeed complete — Test Elementary (%s)\n', schoolId);
   console.log('%d classrooms, %d students\n', classrooms.length, students.length);
   console.log('Test accounts (password for all: %s):', PASSWORD);
-  console.log('  super1@test.sprout          — super admin');
-  console.log('  admin1@test.sprout          — admin (delegate)');
-  console.log("  teacher.own@test.sprout     — teacher, scope 'own' (owns 3rd Grade)");
-  console.log("  teacher.grades@test.sprout  — teacher, scope 'grades' [4, 5]");
-  console.log("  teacher.school@test.sprout  — teacher, scope 'school' (whole-school specialist)");
-  console.log("  teacher.first@test.sprout   — teacher, scope 'own' (owns 1st Grade)");
-  console.log("  teacher.second@test.sprout  — teacher, scope 'own' (owns 2nd Grade)\n");
+  console.log('  super1@test.balanceforward          — super admin');
+  console.log('  admin1@test.balanceforward          — admin (delegate)');
+  console.log("  teacher.own@test.balanceforward     — teacher, scope 'own' (owns 3rd Grade)");
+  console.log("  teacher.grades@test.balanceforward  — teacher, scope 'grades' [4, 5]");
+  console.log("  teacher.school@test.balanceforward  — teacher, scope 'school' (whole-school specialist)");
+  console.log("  teacher.first@test.balanceforward   — teacher, scope 'own' (owns 1st Grade)");
+  console.log("  teacher.second@test.balanceforward  — teacher, scope 'own' (owns 2nd Grade)\n");
 }
 
 main()

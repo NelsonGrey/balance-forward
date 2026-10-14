@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/services/auth/fake_auth_service.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/features/student/early_reader_today_screen.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/services/auth/fake_auth_service.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/features/student/early_reader_today_screen.dart';
 
 const _teacherUid = 'teacher-1';
 

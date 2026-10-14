@@ -1,4 +1,4 @@
-import type { MemberScope } from '@sprout/shared';
+import type { MemberScope } from '@balance-forward/shared';
 
 /** Own/grades/whole-school radio group + grade-chip multiselect — used both
  * for editing an existing staff member's scope (StaffDetailPane) and for

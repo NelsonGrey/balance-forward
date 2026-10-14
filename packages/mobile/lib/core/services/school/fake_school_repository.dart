@@ -1,5 +1,5 @@
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
 
 /// In-memory [SchoolRepository] for widget tests — mirrors
 /// FakeClassroomRepository's role for ClassroomRepository.

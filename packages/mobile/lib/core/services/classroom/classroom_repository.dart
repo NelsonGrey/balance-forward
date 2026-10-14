@@ -1,11 +1,11 @@
-import 'package:sprout/core/models/bulk_transaction_result.dart';
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/store_item.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/models/student_import_row.dart';
+import 'package:balance_forward/core/models/bulk_transaction_result.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/store_item.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/models/student_import_row.dart';
 
 /// Firestore-backed classroom data access, behind an interface so screens
 /// can be tested against [FakeClassroomRepository] — same shape as
@@ -184,7 +184,7 @@ abstract class ClassroomRepository {
     SpendCategory? spendCategory,
   });
 
-  /// Group/mass transaction — calls the sprout-functions bulk endpoint
+  /// Group/mass transaction — calls the balance-forward-functions bulk endpoint
   /// rather than looping [recordTransaction] client-side, which has
   /// neither the idempotency (a retried request with the same
   /// [idempotencyKey] can never double-credit a recipient) nor the
@@ -192,7 +192,7 @@ abstract class ClassroomRepository {
   /// requires. No per-recipient goalId — each student's goals differ, so a
   /// single shared goal selection across a group has no coherent meaning.
   /// Mirrors packages/web/src/lib/api.ts's recordBulkTransaction and
-  /// sprout-functions/src/api/bulkTransactions.ts exactly.
+  /// balance-forward-functions/src/api/bulkTransactions.ts exactly.
   Future<BulkTransactionResult> recordBulkTransaction({
     required String contextId,
     required String idempotencyKey,

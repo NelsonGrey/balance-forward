@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/features/student/student_bottom_nav.dart';
-import 'package:sprout/widgets/reflection_prompt.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
-import 'package:sprout/widgets/transaction_row.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/features/student/student_bottom_nav.dart';
+import 'package:balance_forward/widgets/reflection_prompt.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
+import 'package:balance_forward/widgets/transaction_row.dart';
 
 const _spendPrompts = ['What happened?', 'What would you try next time?'];
 const _earnPrompts = ['What did you do to earn this?', 'What might you do with it?'];
@@ -61,7 +61,7 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SproutAppBar(title: 'History'),
+      appBar: const BfAppBar(title: 'History'),
       body: StreamBuilder<List<LedgerTransaction>>(
         stream: classroomRepository.transactionsForStudent(
           contextId: student.contextId!,

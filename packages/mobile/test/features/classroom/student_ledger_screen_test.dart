@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/ledger_transaction.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/classroom/fake_classroom_repository.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
-import 'package:sprout/core/services/connectivity/fake_connectivity_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/classroom/student_ledger_screen.dart';
+import 'package:balance_forward/core/models/ledger_transaction.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/classroom/fake_classroom_repository.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/core/services/connectivity/fake_connectivity_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/classroom/student_ledger_screen.dart';
 
 const _user = AppUser(
   uid: 'teacher-1',

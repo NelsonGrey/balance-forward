@@ -34,7 +34,7 @@ describe('lessons', () => {
   // generated JSON asset instead (see scripts/generate-mobile-content.mjs).
   // This test is the drift guard the handoff doc requires: if someone edits
   // a lesson here and forgets to regenerate mobile's copy, this fails.
-  it('matches the generated mobile content asset (run `npm run generate:mobile-content -w @sprout/shared` if this fails)', () => {
+  it('matches the generated mobile content asset (run `npm run generate:mobile-content -w @balance-forward/shared` if this fails)', () => {
     const assetPath = join(
       __dirname,
       '..',

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'package:sprout/core/models/lesson.dart';
+import 'package:balance_forward/core/models/lesson.dart';
 
 /// Loads starter-lesson content — behind an interface (mirroring
 /// ConnectivityService/ClassroomRepository) so screens can be tested

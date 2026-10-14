@@ -1,4 +1,4 @@
-import type { Student } from '@sprout/shared';
+import type { Student } from '@balance-forward/shared';
 import { Sparkles, Sprout } from 'lucide-react';
 import { useGoals, useTransactions } from '../../lib/firestore';
 import { PageHeader } from '../../components/ui/page-header';

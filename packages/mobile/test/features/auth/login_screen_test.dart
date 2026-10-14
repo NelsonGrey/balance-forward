@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart' show TargetPlatform, debugDefaultTarget
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/services/auth/fake_auth_service.dart';
-import 'package:sprout/features/auth/login_screen.dart';
+import 'package:balance_forward/core/services/auth/fake_auth_service.dart';
+import 'package:balance_forward/features/auth/login_screen.dart';
 
 // debugDefaultTargetPlatformOverride must be reset as the LAST statement of
 // each test body, not via tearDown()/addTearDown() — flutter_test's

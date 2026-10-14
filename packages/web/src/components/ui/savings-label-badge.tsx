@@ -1,4 +1,4 @@
-import type { SavingsLabel } from '@sprout/shared';
+import type { SavingsLabel } from '@balance-forward/shared';
 import { Target, Umbrella } from 'lucide-react';
 
 const config: Record<SavingsLabel, { text: string; icon: typeof Target; className: string }> = {

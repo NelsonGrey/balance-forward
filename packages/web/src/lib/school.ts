@@ -26,7 +26,7 @@ import type {
   PendingInvite,
   School,
   SchoolMember,
-} from '@sprout/shared';
+} from '@balance-forward/shared';
 import { firebaseClient } from './firebase';
 import { assignClassroomOwner } from './firestore';
 

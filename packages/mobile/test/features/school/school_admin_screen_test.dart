@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/school/fake_school_repository.dart';
-import 'package:sprout/features/school/school_admin_screen.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/school/fake_school_repository.dart';
+import 'package:balance_forward/features/school/school_admin_screen.dart';
 
 const _superAdmin = AppUser(uid: 'super-admin-1', displayName: 'Principal Lee', email: 'lee@example.com');
 const _delegate = AppUser(uid: 'delegate-1', displayName: 'Office Manager', email: 'om@example.com');

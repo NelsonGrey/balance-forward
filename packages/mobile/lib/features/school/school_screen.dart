@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/school/create_school_screen.dart';
-import 'package:sprout/features/school/school_admin_screen.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/school/create_school_screen.dart';
+import 'package:balance_forward/features/school/school_admin_screen.dart';
 
 /// Routed at /school. A signed-in user with no school yet can found one;
 /// otherwise shows their school. Multi-school membership/switching is

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import type { User } from 'firebase/auth';
-import type { SchoolMember, Student } from '@sprout/shared';
+import type { SchoolMember, Student } from '@balance-forward/shared';
 import { PromoteStudentsPage } from './PromoteStudentsPage';
 import * as firestoreLib from '../../lib/firestore';
 import * as schoolLib from '../../lib/school';

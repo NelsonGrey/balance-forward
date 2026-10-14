@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 
 /// Honest "can't record right now" notice for a transaction composer while
 /// offline — mirrors packages/web/src/components/ui/offline-notice.tsx.
@@ -17,19 +17,19 @@ class OfflineNotice extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: SproutColors.warningSoft,
-        border: Border.all(color: SproutColors.warning.withValues(alpha: 0.4)),
+        color: BfColors.warningSoft,
+        border: Border.all(color: BfColors.warning.withValues(alpha: 0.4)),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.wifi_off, size: 16, color: SproutColors.warning),
+          const Icon(Icons.wifi_off, size: 16, color: BfColors.warning),
           const SizedBox(width: 8),
           const Flexible(
             child: Text(
               "You're offline. Reconnect to record this transaction.",
-              style: TextStyle(color: SproutColors.warning, fontSize: 13),
+              style: TextStyle(color: BfColors.warning, fontSize: 13),
             ),
           ),
         ],

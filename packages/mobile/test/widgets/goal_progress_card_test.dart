@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sprout/core/models/goal.dart';
-import 'package:sprout/widgets/goal_progress_card.dart';
+import 'package:balance_forward/core/models/goal.dart';
+import 'package:balance_forward/widgets/goal_progress_card.dart';
 
 final _goal = Goal(
   id: 'goal-1',

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 /// Keep these values synchronized with packages/web/src/index.css. Product
 /// widgets should read from [Theme.of] for normal UI states and use these
 /// constants only for stable semantic accents that ColorScheme does not name.
-abstract final class SproutColors {
+abstract final class BfColors {
   static const canvas = Color(0xFFF8F3E8);
   static const surface = Color(0xFFFFFFFF);
   static const surfaceSubtle = Color(0xFFFCFAF5);
@@ -34,7 +34,7 @@ abstract final class SproutColors {
 }
 
 /// Shared responsive contract for Apple and Android phone/tablet layouts.
-abstract final class SproutLayout {
+abstract final class BfLayout {
   static const phoneBreakpoint = 600.0;
   static const tabletBreakpoint = 840.0;
   static const wideBreakpoint = 1200.0;
@@ -51,66 +51,66 @@ abstract final class SproutLayout {
   static bool isTablet(double width) => width >= phoneBreakpoint;
 }
 
-abstract final class SproutTheme {
+abstract final class BfTheme {
   static ThemeData get light {
     final colorScheme =
         ColorScheme.fromSeed(
-          seedColor: SproutColors.brand,
+          seedColor: BfColors.brand,
           brightness: Brightness.light,
         ).copyWith(
-          primary: SproutColors.brand,
-          onPrimary: SproutColors.onDark,
-          primaryContainer: SproutColors.mint,
-          onPrimaryContainer: SproutColors.ink,
-          secondary: SproutColors.accent,
-          onSecondary: SproutColors.onDark,
-          secondaryContainer: SproutColors.accentSoft,
-          onSecondaryContainer: SproutColors.ink,
-          surface: SproutColors.surface,
-          onSurface: SproutColors.ink,
-          error: SproutColors.danger,
-          onError: SproutColors.onDark,
-          outline: SproutColors.borderStrong,
-          outlineVariant: SproutColors.border,
+          primary: BfColors.brand,
+          onPrimary: BfColors.onDark,
+          primaryContainer: BfColors.mint,
+          onPrimaryContainer: BfColors.ink,
+          secondary: BfColors.accent,
+          onSecondary: BfColors.onDark,
+          secondaryContainer: BfColors.accentSoft,
+          onSecondaryContainer: BfColors.ink,
+          surface: BfColors.surface,
+          onSurface: BfColors.ink,
+          error: BfColors.danger,
+          onError: BfColors.onDark,
+          outline: BfColors.borderStrong,
+          outlineVariant: BfColors.border,
         );
 
     return ThemeData(
       useMaterial3: true,
       colorScheme: colorScheme,
-      scaffoldBackgroundColor: SproutColors.canvas,
-      dividerColor: SproutColors.border,
+      scaffoldBackgroundColor: BfColors.canvas,
+      dividerColor: BfColors.border,
       appBarTheme: const AppBarTheme(
-        backgroundColor: SproutColors.surface,
-        foregroundColor: SproutColors.ink,
+        backgroundColor: BfColors.surface,
+        foregroundColor: BfColors.ink,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        shape: Border(bottom: BorderSide(color: SproutColors.border)),
+        shape: Border(bottom: BorderSide(color: BfColors.border)),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: SproutColors.surface,
-        labelStyle: const TextStyle(color: SproutColors.muted),
-        hintStyle: const TextStyle(color: SproutColors.mutedSoft),
+        fillColor: BfColors.surface,
+        labelStyle: const TextStyle(color: BfColors.muted),
+        hintStyle: const TextStyle(color: BfColors.mutedSoft),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: SproutColors.border),
+          borderSide: const BorderSide(color: BfColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: SproutColors.border),
+          borderSide: const BorderSide(color: BfColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: SproutColors.brand, width: 2),
+          borderSide: const BorderSide(color: BfColors.brand, width: 2),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: SproutColors.brand,
-          foregroundColor: SproutColors.onDark,
-          disabledBackgroundColor: SproutColors.border,
-          disabledForegroundColor: SproutColors.muted,
+          backgroundColor: BfColors.brand,
+          foregroundColor: BfColors.onDark,
+          disabledBackgroundColor: BfColors.border,
+          disabledForegroundColor: BfColors.muted,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(999),
@@ -118,24 +118,24 @@ abstract final class SproutTheme {
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: SproutColors.brand),
+        style: TextButton.styleFrom(foregroundColor: BfColors.brand),
       ),
       textTheme: const TextTheme(
         headlineLarge: TextStyle(
-          color: SproutColors.ink,
+          color: BfColors.ink,
           fontWeight: FontWeight.w800,
         ),
         headlineMedium: TextStyle(
-          color: SproutColors.ink,
+          color: BfColors.ink,
           fontWeight: FontWeight.w800,
         ),
         titleLarge: TextStyle(
-          color: SproutColors.ink,
+          color: BfColors.ink,
           fontWeight: FontWeight.w700,
         ),
-        bodyLarge: TextStyle(color: SproutColors.ink),
-        bodyMedium: TextStyle(color: SproutColors.ink),
-        bodySmall: TextStyle(color: SproutColors.muted),
+        bodyLarge: TextStyle(color: BfColors.ink),
+        bodyMedium: TextStyle(color: BfColors.ink),
+        bodySmall: TextStyle(color: BfColors.muted),
       ),
     );
   }
@@ -144,11 +144,11 @@ abstract final class SproutTheme {
 /// Constrains a screen to the universal content width while preserving a
 /// finite height for Column/Expanded layouts. Set [includeGutter] for screens
 /// that do not already own their internal horizontal padding.
-class SproutResponsiveBody extends StatelessWidget {
-  const SproutResponsiveBody({
+class BfResponsiveBody extends StatelessWidget {
+  const BfResponsiveBody({
     super.key,
     required this.child,
-    this.maxContentWidth = SproutLayout.contentMaxWidth,
+    this.maxContentWidth = BfLayout.contentMaxWidth,
     this.includeGutter = false,
   });
 
@@ -161,7 +161,7 @@ class SproutResponsiveBody extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final gutter = includeGutter
-            ? SproutLayout.pageGutterFor(constraints.maxWidth)
+            ? BfLayout.pageGutterFor(constraints.maxWidth)
             : 0.0;
         return Align(
           alignment: Alignment.topCenter,

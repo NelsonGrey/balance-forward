@@ -21,7 +21,7 @@ import {
   type DocumentSnapshot,
   type QueryDocumentSnapshot,
 } from 'firebase/firestore';
-import type { ClassroomContext, Goal, LedgerTransaction, PendingStudentLink, SavingsLabel, SpendCategory, StoreItem, Student, TransactionType } from '@sprout/shared';
+import type { ClassroomContext, Goal, LedgerTransaction, PendingStudentLink, SavingsLabel, SpendCategory, StoreItem, Student, TransactionType } from '@balance-forward/shared';
 import { firebaseClient } from './firebase';
 
 const db = firebaseClient.firestore;

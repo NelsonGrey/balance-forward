@@ -37,7 +37,7 @@ It must not call a prototype, shared theme, route stub, or passing unit test “
 | Concern                                        | Current source                                               |
 | ---------------------------------------------- | ------------------------------------------------------------ |
 | Router/composition root                        | `packages/mobile/lib/main.dart`                              |
-| Semantic theme/responsive contract             | `packages/mobile/lib/design_system/sprout_theme.dart`        |
+| Semantic theme/responsive contract             | `packages/mobile/lib/design_system/bf_theme.dart`        |
 | Auth                                           | `packages/mobile/lib/features/auth/`                         |
 | Role-resolved landing                          | `packages/mobile/lib/features/classroom/landing_screen.dart` |
 | Classroom and ledger                           | `packages/mobile/lib/features/classroom/`                    |
@@ -56,7 +56,7 @@ It must not call a prototype, shared theme, route stub, or passing unit test “
 | Firebase client utilities  | `packages/firebase-utils/src/`                                              |
 | Server authorization       | `firestore.rules`                                                           |
 | Rule regression tests      | `firestore.rules.test.ts`                                                   |
-| Private backend            | separately mounted `packages/functions/` from `NelsonGrey/sprout-functions` |
+| Private backend            | separately mounted `packages/functions/` from `NelsonGrey/balance-forward-functions` |
 
 Do not add a field to only TypeScript or only Dart. Shared data changes require TypeScript type, Dart model, serializers, fake repositories, Firestore repositories, rules, rule tests, existing-data compatibility, and documentation in the same logical slice.
 
@@ -233,7 +233,7 @@ Begin with a read-only authenticated view over canonical public readiness and cu
 
 ## 6. UI implementation rules
 
-- Use semantic tokens from `index.css` and `sprout_theme.dart`; no literal brand colors.
+- Use semantic tokens from `index.css` and `bf_theme.dart`; no literal brand colors.
 - Use one 1280px maximum boundary and 20/32/48 gutters.
 - Preserve one scroll owner per screen; document any desktop dual-pane exception.
 - Keep frequent transactions separated from destructive roster/settings actions.
@@ -317,7 +317,7 @@ Remaining external/manual gates:
 Copy the following prompt and replace bracketed values. Do not remove the source and stop-condition instructions.
 
 ```text
-Work in /Users/marknelson/Circus/Repositories/sprout.
+Work in /Users/marknelson/Circus/Repositories/balance-forward.
 
 Read these files completely before making changes:
 - docs/detailed-design/README.md

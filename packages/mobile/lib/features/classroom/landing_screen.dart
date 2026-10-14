@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/features/classroom/classrooms_screen.dart';
-import 'package:sprout/features/student/early_reader_today_screen.dart';
-import 'package:sprout/features/student/student_presentation.dart';
-import 'package:sprout/features/student/today_screen.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/features/classroom/classrooms_screen.dart';
+import 'package:balance_forward/features/student/early_reader_today_screen.dart';
+import 'package:balance_forward/features/student/student_presentation.dart';
+import 'package:balance_forward/features/student/today_screen.dart';
 
 /// Routed at `/`. Decides between the student-facing Today view and the
 /// staff "My Classrooms" landing:

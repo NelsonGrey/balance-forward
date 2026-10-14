@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/confirm_delete_dialog.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/confirm_delete_dialog.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 enum _SortKey { name, grade, classroom }
 
@@ -265,7 +265,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
         final schoolIds = schoolIdsSnapshot.data ?? const <String>[];
         if (schoolIds.isEmpty) {
           return const Scaffold(
-            appBar: SproutAppBar(title: 'Students'),
+            appBar: BfAppBar(title: 'Students'),
             body: Center(child: Text('No school found.')),
           );
         }
@@ -281,7 +281,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
                 membership != null && membership.role != MemberRole.teacher;
             if (!isAtLeastAdmin) {
               return const Scaffold(
-                appBar: SproutAppBar(title: 'Students'),
+                appBar: BfAppBar(title: 'Students'),
                 body: Center(
                   child: Padding(
                     padding: EdgeInsets.all(24),
@@ -314,7 +314,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
                         selectedStudents.every((s) => s.archivedAt != null);
 
                     return Scaffold(
-                      appBar: SproutAppBar(
+                      appBar: BfAppBar(
                         title: 'Students',
                         actions: [
                           TextButton(
@@ -418,7 +418,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
                                   ElevatedButton(
                                     key: const Key('bulkDeleteButton'),
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: SproutColors.danger,
+                                      backgroundColor: BfColors.danger,
                                     ),
                                     onPressed: _bulkInFlight
                                         ? null

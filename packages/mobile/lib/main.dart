@@ -4,40 +4,40 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/app/adaptive_shell.dart';
-import 'package:sprout/core/config/firebase_options.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/auth/firebase_auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/classroom/firestore_classroom_repository.dart';
-import 'package:sprout/core/services/connectivity/connectivity_plus_service.dart';
-import 'package:sprout/core/services/connectivity/connectivity_service.dart';
-import 'package:sprout/core/services/content/lesson_repository.dart';
-import 'package:sprout/core/services/school/firestore_school_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/design_system/sprout_theme.dart';
-import 'package:sprout/features/auth/delete_account_screen.dart';
-import 'package:sprout/features/auth/login_screen.dart';
-import 'package:sprout/features/classroom/classroom_detail_screen.dart';
-import 'package:sprout/features/classroom/landing_screen.dart';
-import 'package:sprout/features/classroom/student_ledger_screen.dart';
-import 'package:sprout/features/learn/learn_list_screen.dart';
-import 'package:sprout/features/learn/learn_prepare_screen.dart';
-import 'package:sprout/features/learn/learn_run_screen.dart';
-import 'package:sprout/features/school/school_screen.dart';
-import 'package:sprout/features/student/archive_students_screen.dart';
-import 'package:sprout/features/student/goals_screen.dart';
-import 'package:sprout/features/student/history_screen.dart';
-import 'package:sprout/features/student/promote_students_screen.dart';
-import 'package:sprout/features/student/student_import_screen.dart';
-import 'package:sprout/features/student/students_screen.dart';
+import 'package:balance_forward/app/adaptive_shell.dart';
+import 'package:balance_forward/core/config/firebase_options.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/auth/firebase_auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/classroom/firestore_classroom_repository.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_plus_service.dart';
+import 'package:balance_forward/core/services/connectivity/connectivity_service.dart';
+import 'package:balance_forward/core/services/content/lesson_repository.dart';
+import 'package:balance_forward/core/services/school/firestore_school_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
+import 'package:balance_forward/features/auth/delete_account_screen.dart';
+import 'package:balance_forward/features/auth/login_screen.dart';
+import 'package:balance_forward/features/classroom/classroom_detail_screen.dart';
+import 'package:balance_forward/features/classroom/landing_screen.dart';
+import 'package:balance_forward/features/classroom/student_ledger_screen.dart';
+import 'package:balance_forward/features/learn/learn_list_screen.dart';
+import 'package:balance_forward/features/learn/learn_prepare_screen.dart';
+import 'package:balance_forward/features/learn/learn_run_screen.dart';
+import 'package:balance_forward/features/school/school_screen.dart';
+import 'package:balance_forward/features/student/archive_students_screen.dart';
+import 'package:balance_forward/features/student/goals_screen.dart';
+import 'package:balance_forward/features/student/history_screen.dart';
+import 'package:balance_forward/features/student/promote_students_screen.dart';
+import 'package:balance_forward/features/student/student_import_screen.dart';
+import 'package:balance_forward/features/student/students_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
-    SproutApp(
+    BalanceForwardApp(
       authService: FirebaseAuthService(),
       classroomRepository: FirestoreClassroomRepository(),
       schoolRepository: FirestoreSchoolRepository(),
@@ -47,8 +47,8 @@ Future<void> main() async {
   );
 }
 
-class SproutApp extends StatelessWidget {
-  SproutApp({
+class BalanceForwardApp extends StatelessWidget {
+  BalanceForwardApp({
     super.key,
     required this.authService,
     required this.classroomRepository,
@@ -305,7 +305,7 @@ class SproutApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Balance Forward',
-      theme: SproutTheme.light,
+      theme: BfTheme.light,
       routerConfig: _router,
     );
   }

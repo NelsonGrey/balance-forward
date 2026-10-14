@@ -1,4 +1,4 @@
-/// The sprout-functions bulk-transaction endpoint's response shape —
+/// The balance-forward-functions bulk-transaction endpoint's response shape —
 /// mirrors packages/web/src/lib/api.ts's BulkTransactionOutcome. Never
 /// collapse this into a single success/failure boolean: a partial result
 /// (some recipients succeeded, some failed) must stay visible so the UI

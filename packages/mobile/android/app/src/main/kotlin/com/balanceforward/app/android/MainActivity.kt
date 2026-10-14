@@ -1,4 +1,4 @@
-package com.sproutstreak.app.android
+package com.balanceforward.app.android
 
 import io.flutter.embedding.android.FlutterActivity
 

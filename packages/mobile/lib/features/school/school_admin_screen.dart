@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 const _gradeOptions = [
   'PK',
@@ -272,7 +272,7 @@ class _SchoolAdminScreenState extends State<SchoolAdminScreen> {
         final isSuperAdmin = membership?.role == MemberRole.superAdmin;
 
         return Scaffold(
-          appBar: SproutAppBar(
+          appBar: BfAppBar(
             title: _schoolName ?? 'School',
             actions: [
               if (isSuperAdmin)

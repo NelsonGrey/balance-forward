@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:sprout/design_system/sprout_theme.dart';
+import 'package:balance_forward/design_system/bf_theme.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:sprout/core/models/classroom_context.dart';
-import 'package:sprout/core/models/school.dart';
-import 'package:sprout/core/models/student.dart';
-import 'package:sprout/core/services/auth/auth_service.dart';
-import 'package:sprout/core/services/classroom/classroom_repository.dart';
-import 'package:sprout/core/services/school/school_repository.dart';
-import 'package:sprout/widgets/sprout_app_bar.dart';
+import 'package:balance_forward/core/models/classroom_context.dart';
+import 'package:balance_forward/core/models/school.dart';
+import 'package:balance_forward/core/models/student.dart';
+import 'package:balance_forward/core/services/auth/auth_service.dart';
+import 'package:balance_forward/core/services/classroom/classroom_repository.dart';
+import 'package:balance_forward/core/services/school/school_repository.dart';
+import 'package:balance_forward/widgets/bf_app_bar.dart';
 
 /// Year-end grade rollover: one destination classroom per occupied source
 /// classroom, applied to every student in it. Mirrors web's
@@ -89,7 +89,7 @@ class _PromoteStudentsScreenState extends State<PromoteStudentsScreen> {
         final schoolIds = schoolIdsSnapshot.data ?? const <String>[];
         if (schoolIds.isEmpty) {
           return const Scaffold(
-            appBar: SproutAppBar(title: 'Promote Students'),
+            appBar: BfAppBar(title: 'Promote Students'),
             body: Center(child: Text('No school found.')),
           );
         }
@@ -105,7 +105,7 @@ class _PromoteStudentsScreenState extends State<PromoteStudentsScreen> {
                 membership != null && membership.role != MemberRole.teacher;
             if (!isAtLeastAdmin) {
               return const Scaffold(
-                appBar: SproutAppBar(title: 'Promote Students'),
+                appBar: BfAppBar(title: 'Promote Students'),
                 body: Center(
                   child: Padding(
                     padding: EdgeInsets.all(24),
@@ -148,7 +148,7 @@ class _PromoteStudentsScreenState extends State<PromoteStudentsScreen> {
 
                     if (_done) {
                       return Scaffold(
-                        appBar: const SproutAppBar(title: 'Promote Students'),
+                        appBar: const BfAppBar(title: 'Promote Students'),
                         body: Center(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -173,7 +173,7 @@ class _PromoteStudentsScreenState extends State<PromoteStudentsScreen> {
                     );
 
                     return Scaffold(
-                      appBar: const SproutAppBar(title: 'Promote Students'),
+                      appBar: const BfAppBar(title: 'Promote Students'),
                       body: Column(
                         children: [
                           Expanded(
@@ -241,7 +241,7 @@ class _PromoteStudentsScreenState extends State<PromoteStudentsScreen> {
                               child: Text(
                                 _error!,
                                 style: const TextStyle(
-                                  color: SproutColors.danger,
+                                  color: BfColors.danger,
                                 ),
                               ),
                             ),

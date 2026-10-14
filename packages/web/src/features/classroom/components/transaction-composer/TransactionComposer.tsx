@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Goal, SavingsLabel, SpendCategory, StoreItem } from '@sprout/shared';
+import type { Goal, SavingsLabel, SpendCategory, StoreItem } from '@balance-forward/shared';
 import { recordTransaction } from '../../../../lib/firestore';
 import { useOnlineStatus } from '../../../../lib/useOnlineStatus';
 import { Button } from '../../../../components/ui/button';

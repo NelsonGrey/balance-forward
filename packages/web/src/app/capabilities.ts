@@ -1,4 +1,4 @@
-import type { MemberRole } from '@sprout/shared';
+import type { MemberRole } from '@balance-forward/shared';
 
 /** Named, presentation-only capabilities derived from current school
  * membership — see docs/detailed-design/01_EXPERIENCE_FOUNDATIONS.md §3.

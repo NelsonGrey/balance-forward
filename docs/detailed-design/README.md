@@ -32,7 +32,7 @@ When sources disagree, use this order:
 Known baseline discrepancies that an implementation chat must not copy into new work:
 
 - The TRD still describes mobile bulk student operations and CSV import as absent, but the current Flutter repository includes promote, archive, import, and bulk repository methods. Verify actual runtime completeness before declaring parity.
-- A stale limitation in the TRD says the web palette is unresolved. The current semantic tokens in `packages/web/src/index.css` and Flutter theme in `packages/mobile/lib/design_system/sprout_theme.dart` establish the selected evergreen, off-white, mint, and coral system.
+- A stale limitation in the TRD says the web palette is unresolved. The current semantic tokens in `packages/web/src/index.css` and Flutter theme in `packages/mobile/lib/design_system/bf_theme.dart` establish the selected evergreen, off-white, mint, and coral system.
 - Marketing describes family mode and district controls as product direction. They are **not current capabilities** and may not be presented as live.
 
 ## 3. Requirement language and feature states

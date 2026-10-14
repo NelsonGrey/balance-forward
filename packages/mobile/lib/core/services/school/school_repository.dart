@@ -1,4 +1,4 @@
-import 'package:sprout/core/models/school.dart';
+import 'package:balance_forward/core/models/school.dart';
 
 /// Firestore-backed school/role/grant data access, behind an interface so
 /// screens can be tested against [FakeSchoolRepository] — same shape as

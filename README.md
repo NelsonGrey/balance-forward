@@ -1,6 +1,6 @@
 # Balance Forward
 
-[![CI](https://github.com/NelsonGrey/sprout/actions/workflows/master-pipeline.yml/badge.svg?branch=develop)](https://github.com/NelsonGrey/sprout/actions/workflows/master-pipeline.yml) [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](https://github.com/NelsonGrey/sprout/blob/develop/LICENSE)
+[![CI](https://github.com/NelsonGrey/balance-forward/actions/workflows/master-pipeline.yml/badge.svg?branch=develop)](https://github.com/NelsonGrey/balance-forward/actions/workflows/master-pipeline.yml) [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](https://github.com/NelsonGrey/balance-forward/blob/develop/LICENSE)
 
 ## Contents
 
@@ -47,7 +47,7 @@ flowchart LR
   Auth["Firebase Auth\nGoogle / Apple / email"]
   Firestore[("Firestore\ncontexts, students, familyMembers,\ntransactions, goals, storeItems...")]
   Hosting["Firebase Hosting\n/api/** rewrite"]
-  API["sprout-functions (private repo)\nsingle consolidated api Cloud Function\nsrc/router.ts"]
+  API["balance-forward-functions (private repo)\nsingle consolidated api Cloud Function\nsrc/router.ts"]
 
   Web -- "direct SDK reads/writes,\nsecurity-rules enforced" --> Firestore
   Mobile -- "direct SDK reads/writes" --> Firestore
@@ -62,7 +62,7 @@ flowchart LR
 ```
 
 The business-logic Cloud Function itself lives in the private
-`sprout-functions` repo, so its internals aren't shown here — only the
+`balance-forward-functions` repo, so its internals aren't shown here — only the
 client-side contract this repo calls into it with.
 
 ### Walkthrough: a teacher awards a whole class
@@ -84,7 +84,7 @@ client-side contract this repo calls into it with.
      "savingsLabel": "just_in_case"
    }
    ```
-3. The private `sprout-functions` repo's consolidated `api` function handles
+3. The private `balance-forward-functions` repo's consolidated `api` function handles
    it: it re-checks award authorization server-side and uses the
    idempotency key so a retried request can never double-credit a student
    (see the doc comment on `recordBulkTransaction`). It replies with a
@@ -126,11 +126,11 @@ This project consists of:
 - **Mobile App**: Flutter app for Apple iPhone/iPad and Google Android
   phone/tablet form factors (`packages/mobile/`)
 - **Backend**: Firebase Functions — the live API. Real backend source lives
-  in a private companion repo (`NelsonGrey/sprout-functions`);
+  in a private companion repo (`NelsonGrey/balance-forward-functions`);
   `packages/functions/` is gitignored here and must be cloned separately for
   local dev/emulator use:
   ```bash
-  git clone https://github.com/NelsonGrey/sprout-functions.git packages/functions
+  git clone https://github.com/NelsonGrey/balance-forward-functions.git packages/functions
   cd packages/functions && npm ci && npm run build
   ```
 - **Shared Libraries**: Common TypeScript types (`packages/shared/`)
@@ -173,11 +173,11 @@ npm run test:mobile    # Flutter widget tests
   `api` Cloud Function behind a Hosting `/api/**` rewrite — chosen over a
   standalone-function-per-endpoint model to keep the default public attack
   surface small and centralize auth/dispatch in one place
-  (`sprout-functions`'s `src/router.ts`)
+  (`balance-forward-functions`'s `src/router.ts`)
 - **Mobile**: Flutter, `go_router` for navigation, `provider` for state
 - **Design system**: semantic CSS/Tailwind tokens in
   `packages/web/src/index.css` and matching Flutter palette/breakpoints in
-  `packages/mobile/lib/design_system/sprout_theme.dart`; one 1280px web
+  `packages/mobile/lib/design_system/bf_theme.dart`; one 1280px web
   content boundary with responsive 20/32/48px gutters
 - **Auth**: Google + Apple sign-in, both platforms behind an `AuthService`
   interface (`packages/mobile/lib/core/services/auth/`) extracted from the
@@ -196,9 +196,9 @@ Three environments, one Firebase project each — see `.firebaserc`:
 
 | Alias | Project ID |
 | --- | --- |
-| development (default) | `nelsongrey-sprout-dev` |
-| staging | `nelsongrey-sprout-staging` |
-| production | `nelsongrey-sprout-prod` |
+| development (default) | `nelsongrey-bf-dev` |
+| staging | `nelsongrey-bf-staging` |
+| production | `nelsongrey-bf-prod` |
 
 Config is split across `firebase.json` (staging/prod-strength CSP, used as
 the default) and `firebase.dev.json` (lighter headers, used for local/dev
@@ -208,7 +208,7 @@ deploys) — deploy with `firebase deploy --config firebase.<env>.json`.
 
 Push to `develop`/`staging`/`main` deploys web hosting to the matching
 environment (see `.github/workflows/firebase-hosting-*.yml`); `master-pipeline.yml`
-handles build/test/functions-deploy and pulls `sprout-functions` in via a
+handles build/test/functions-deploy and pulls `balance-forward-functions` in via a
 `FUNCTIONS_REPO_PAT`-authenticated checkout, branch-mapped to the target
 environment.
 
