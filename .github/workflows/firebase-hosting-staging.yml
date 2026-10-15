@@ -71,7 +71,7 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
-          workload_identity_provider: "projects/968230602171/locations/global/workloadIdentityPools/github-actions/providers/github"
+          workload_identity_provider: "projects/752167886309/locations/global/workloadIdentityPools/github-actions/providers/github"
           service_account: "github-actions-hosting@balance-forward-staging.iam.gserviceaccount.com"
 
       - name: Deploy Firebase Hosting

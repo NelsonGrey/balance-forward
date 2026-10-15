@@ -18,7 +18,7 @@
 # Functions (only needed once FUNCTIONS_REPO_PAT is configured).
 set -euo pipefail
 
-POOL_PROJECT_NUMBER=968230602171
+POOL_PROJECT_NUMBER=752167886309
 POOL="projects/${POOL_PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-actions"
 SA_NAME=github-actions-deploy
 

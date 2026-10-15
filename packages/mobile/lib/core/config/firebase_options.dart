@@ -20,17 +20,17 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions _dev_android = FirebaseOptions(
-    apiKey: 'AIzaSyB7dOjDqUYk5zcXsTX8JVWur4JdRjnGbZY',
-    appId: '1:968230602171:android:5b84a930f0940ea930709e',
-    messagingSenderId: '968230602171',
+    apiKey: 'AIzaSyDDixYBYwcGpjyAeTxyJi32ydsgqY9dy5E',
+    appId: '1:752167886309:android:42d8e9ed0867a9b0d3e30c',
+    messagingSenderId: '752167886309',
     projectId: 'balance-forward-dev',
     storageBucket: 'balance-forward-dev.firebasestorage.app',
   );
 
   static const FirebaseOptions _dev_ios = FirebaseOptions(
-    apiKey: 'AIzaSyASDDXwQT8SMBzglwoWoLd4iVm5ClEnE20',
-    appId: '1:968230602171:ios:b9567a054a95e71430709e',
-    messagingSenderId: '968230602171',
+    apiKey: 'AIzaSyDNmIEFue4_SGvB-zrsd_HMkKckpACpRXo',
+    appId: '1:752167886309:ios:deed6b31c703aa4fd3e30c',
+    messagingSenderId: '752167886309',
     projectId: 'balance-forward-dev',
     storageBucket: 'balance-forward-dev.firebasestorage.app',
     iosBundleId: 'com.balanceforward.app.ios',
