@@ -52,10 +52,10 @@ export function MarketingLayout({
               aria-hidden="true"
             />
             <span className="leading-none">
-              <span className="block text-[17px] font-black tracking-[-0.03em]">
+              <span className="block text-[17px] font-semibold tracking-[-0.03em]">
                 Balance Forward
               </span>
-              <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-muted">
+              <span className="mt-1 block text-[9px] font-semibold uppercase tracking-[0.18em] text-muted">
                 Good choices compound
               </span>
             </span>
@@ -83,13 +83,13 @@ export function MarketingLayout({
           <div className="hidden items-center gap-3 sm:flex">
             <Link
               href={user ? '/app' : '/login'}
-              className="px-2 py-2 text-sm font-bold text-ink-soft hover:text-brand"
+              className="px-2 py-2 text-sm font-semibold text-ink-soft hover:text-brand"
             >
               {user ? 'Dashboard' : 'Sign in'}
             </Link>
             <Link
               href="/readiness"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-bold text-on-dark shadow-sm transition hover:bg-deep-surface"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-on-dark shadow-sm transition hover:bg-deep-surface"
             >
               Pilot readiness{' '}
               <ArrowRight
@@ -124,7 +124,7 @@ export function MarketingLayout({
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-bold hover:bg-surface"
+                  className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-surface"
                 >
                   {item.label}
                 </Link>
@@ -132,7 +132,7 @@ export function MarketingLayout({
               <Link
                 href={user ? '/app' : '/login'}
                 onClick={() => setMenuOpen(false)}
-                className="mt-2 rounded-xl bg-ink px-4 py-3 text-sm font-bold text-on-dark sm:col-span-2"
+                className="mt-2 rounded-xl bg-ink px-4 py-3 text-sm font-semibold text-on-dark sm:col-span-2"
               >
                 {user ? 'Go to dashboard' : 'Sign in to Balance Forward'}
               </Link>
@@ -159,7 +159,7 @@ export function MarketingLayout({
           </p>
           <nav
             aria-label="Legal and support navigation"
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-bold text-on-dark/75 sm:justify-end"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-semibold text-on-dark/75 sm:justify-end"
           >
             <Link href="/privacy" className="hover:text-on-dark">
               Privacy

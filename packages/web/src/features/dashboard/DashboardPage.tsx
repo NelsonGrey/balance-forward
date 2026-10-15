@@ -64,7 +64,7 @@ export function DashboardPage({ user }: { user: User }) {
               <GraduationCap size={18} />
             </span>
             <div>
-              <p className="text-2xl font-black leading-none text-ink">{classrooms.length}</p>
+              <p className="text-2xl font-bold leading-none text-ink">{classrooms.length}</p>
               <p className="mt-1 text-xs font-semibold text-ink-muted">
                 Classroom{classrooms.length === 1 ? '' : 's'}
               </p>
@@ -80,7 +80,7 @@ export function DashboardPage({ user }: { user: User }) {
                 <Inbox size={18} />
               </span>
               <div>
-                <p className="text-2xl font-black leading-none text-ink">{pendingRequests.length}</p>
+                <p className="text-2xl font-bold leading-none text-ink">{pendingRequests.length}</p>
                 <p className="mt-1 text-xs font-semibold text-ink-muted">
                   Pending request{pendingRequests.length === 1 ? '' : 's'}
                 </p>

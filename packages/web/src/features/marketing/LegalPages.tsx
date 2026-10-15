@@ -36,16 +36,16 @@ function LegalPage({
     <div className="bg-canvas">
       <section className="border-b border-border py-12 lg:py-16">
         <div className="mx-auto site-container">
-          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-brand-bright">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-bright">
             {icon} {eyebrow}
           </div>
-          <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] sm:text-5xl">
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
             {summary}
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-warning-soft bg-warning-soft px-3 py-1.5 text-xs font-bold text-warning">
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-warning-soft bg-warning-soft px-3 py-1.5 text-xs font-semibold text-warning">
             <AlertTriangle size={14} aria-hidden="true" /> Working draft — August
             19, 2026
           </div>
@@ -63,7 +63,7 @@ function LegalPage({
                 key={link.href}
                 href={link.href}
                 aria-current={path === link.href ? 'page' : undefined}
-                className={`rounded-xl px-4 py-2.5 text-sm font-bold ${
+                className={`rounded-xl px-4 py-2.5 text-sm font-semibold ${
                   path === link.href
                     ? 'bg-mint text-brand-strong'
                     : 'text-muted hover:bg-mint hover:text-ink'
@@ -91,7 +91,7 @@ function Section({
 }) {
   return (
     <section>
-      <h2 className="text-2xl font-black tracking-[-0.025em] text-ink">
+      <h2 className="text-2xl font-semibold tracking-[-0.025em] text-ink">
         {title}
       </h2>
       <div className="mt-4 space-y-4 text-[15px] leading-7 text-muted">
@@ -297,7 +297,7 @@ export function PrivacyPage() {
           account. Requests involving school-managed student records should be
           directed first to the school or district. A verified Nelson Grey LLC
           privacy contact and request-response process will be posted here and
-          on the <Link href="/support" className="font-bold text-brand underline">Support page</Link>{' '}
+          on the <Link href="/support" className="font-semibold text-brand underline">Support page</Link>{' '}
           before pilot intake opens.
         </p>
       </Section>
@@ -309,14 +309,14 @@ export function PrivacyPage() {
           this draft may also consult the official{' '}
           <a
             href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions"
-            className="font-bold text-brand underline"
+            className="font-semibold text-brand underline"
           >
             FTC COPPA guidance <ExternalLink className="inline" size={13} />
           </a>{' '}
           and the U.S. Department of Education’s{' '}
           <a
             href="https://studentprivacy.ed.gov/resources/responsibilities-third-party-service-providers-under-ferpa"
-            className="font-bold text-brand underline"
+            className="font-semibold text-brand underline"
           >
             FERPA service-provider guidance{' '}
             <ExternalLink className="inline" size={13} />
@@ -409,7 +409,7 @@ export function TermsPage() {
       <Section title="6. Privacy and student information">
         <p>
           Use of personal information is described in the{' '}
-          <Link href="/privacy" className="font-bold text-brand underline">
+          <Link href="/privacy" className="font-semibold text-brand underline">
             Privacy notice
           </Link>
           . Schools should not use Balance Forward with student records until the
@@ -452,7 +452,7 @@ export function TermsPage() {
 
       <Section title="10. Questions">
         <p>
-          Review the <Link href="/support" className="font-bold text-brand underline">Support page</Link>{' '}
+          Review the <Link href="/support" className="font-semibold text-brand underline">Support page</Link>{' '}
           for pre-launch routing. A verified legal contact and effective date
           will appear in the final terms before pilot intake opens.
         </p>
@@ -496,29 +496,29 @@ export function CookiesPage() {
           <table className="w-full min-w-[580px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-border text-ink-soft">
-                <th className="py-3 pr-4 font-black">Category</th>
-                <th className="py-3 pr-4 font-black">Current use</th>
-                <th className="py-3 font-black">Choice</th>
+                <th className="py-3 pr-4 font-semibold">Category</th>
+                <th className="py-3 pr-4 font-semibold">Current use</th>
+                <th className="py-3 font-semibold">Choice</th>
               </tr>
             </thead>
             <tbody className="align-top">
               <tr className="border-b border-border">
-                <td className="py-4 pr-4 font-bold text-ink-soft">Essential</td>
+                <td className="py-4 pr-4 font-semibold text-ink-soft">Essential</td>
                 <td className="py-4 pr-4">Authentication, account security, service integrity, and configured sign-in-provider flows.</td>
                 <td className="py-4">Required for signed-in functions.</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-4 pr-4 font-bold text-ink-soft">Preference</td>
+                <td className="py-4 pr-4 font-semibold text-ink-soft">Preference</td>
                 <td className="py-4 pr-4">A temporary local setting remembers the selected pre-launch visual-theme comparison.</td>
                 <td className="py-4">Can be cleared in browser settings.</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-4 pr-4 font-bold text-ink-soft">Analytics</td>
+                <td className="py-4 pr-4 font-semibold text-ink-soft">Analytics</td>
                 <td className="py-4 pr-4">No web analytics integration is active in the current application code.</td>
                 <td className="py-4">Not currently used.</td>
               </tr>
               <tr>
-                <td className="py-4 pr-4 font-bold text-ink-soft">Advertising and social tracking</td>
+                <td className="py-4 pr-4 font-semibold text-ink-soft">Advertising and social tracking</td>
                 <td className="py-4 pr-4">No advertising cookies, embedded social feeds, social pixels, or student-facing share widgets are active.</td>
                 <td className="py-4">Not used.</td>
               </tr>
@@ -562,7 +562,7 @@ export function CookiesPage() {
         <p>
           This page will be updated before new cookie categories or vendors are
           enabled. Questions can be routed through the{' '}
-          <Link href="/support" className="font-bold text-brand underline">
+          <Link href="/support" className="font-semibold text-brand underline">
             Support page
           </Link>
           .
@@ -622,7 +622,7 @@ export function SupportPage() {
               key={route.audience}
               className="rounded-2xl border border-border bg-canvas p-5"
             >
-              <h3 className="font-black text-ink-soft">{route.audience}</h3>
+              <h3 className="font-semibold text-ink-soft">{route.audience}</h3>
               <p className="mt-2 text-sm leading-6">{route.guidance}</p>
             </div>
           ))}
@@ -632,23 +632,23 @@ export function SupportPage() {
       <Section title="Common questions">
         <div className="space-y-5">
           <div>
-            <h3 className="font-black text-ink-soft">I cannot sign in.</h3>
+            <h3 className="font-semibold text-ink-soft">I cannot sign in.</h3>
             <p className="mt-1">Confirm that you are using the email and sign-in method approved by your school or account administrator. Do not send a password to anyone.</p>
           </div>
           <div>
-            <h3 className="font-black text-ink-soft">A name, role, roster, or balance is wrong.</h3>
+            <h3 className="font-semibold text-ink-soft">A name, role, roster, or balance is wrong.</h3>
             <p className="mt-1">Contact the teacher or school administrator responsible for that classroom or record. They can verify the correction and its educational context.</p>
           </div>
           <div>
-            <h3 className="font-black text-ink-soft">I want to access, correct, export, or delete student information.</h3>
+            <h3 className="font-semibold text-ink-soft">I want to access, correct, export, or delete student information.</h3>
             <p className="mt-1">For school-managed records, begin with the school or district. For an adult’s own Balance Forward account, the application includes an account-deletion flow. The final support process will cover verified privacy requests and data export.</p>
           </div>
           <div>
-            <h3 className="font-black text-ink-soft">I found a possible security or privacy issue.</h3>
+            <h3 className="font-semibold text-ink-soft">I found a possible security or privacy issue.</h3>
             <p className="mt-1">Do not include student records, passwords, or exploit details in a public post or social-media message. The pre-launch security reporting channel is not yet open and is a launch gate.</p>
           </div>
           <div>
-            <h3 className="font-black text-ink-soft">I need an accessibility accommodation.</h3>
+            <h3 className="font-semibold text-ink-soft">I need an accessibility accommodation.</h3>
             <p className="mt-1">Tell your school or authorized adult what task is blocked and what assistive technology you use, without sending unnecessary student information. A direct accessibility contact and documented response process must be in place before launch.</p>
           </div>
         </div>
@@ -658,7 +658,7 @@ export function SupportPage() {
         <p>
           Procurement teams can review the current capability and launch-gate
           status in the{' '}
-          <Link href="/readiness" className="font-bold text-brand underline">
+          <Link href="/readiness" className="font-semibold text-brand underline">
             Readiness center
           </Link>
           . A district support package still needs named escalation ownership,

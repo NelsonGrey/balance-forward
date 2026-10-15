@@ -123,16 +123,13 @@ abstract final class BfTheme {
       textTheme: const TextTheme(
         headlineLarge: TextStyle(
           color: BfColors.ink,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w600,
         ),
         headlineMedium: TextStyle(
           color: BfColors.ink,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w600,
         ),
-        titleLarge: TextStyle(
-          color: BfColors.ink,
-          fontWeight: FontWeight.w700,
-        ),
+        titleLarge: TextStyle(color: BfColors.ink, fontWeight: FontWeight.w600),
         bodyLarge: TextStyle(color: BfColors.ink),
         bodyMedium: TextStyle(color: BfColors.ink),
         bodySmall: TextStyle(color: BfColors.muted),

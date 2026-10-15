@@ -31,10 +31,10 @@ export function TodayPage({ student }: { student: Student }) {
             <Sprout size={22} />
           </span>
           <div aria-live="polite">
-            <p className="text-xs font-black uppercase tracking-[0.14em] text-on-dark/60">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-on-dark/60">
               Your practice balance
             </p>
-            <p className="mt-1 text-4xl font-black tracking-tight">
+            <p className="mt-1 text-4xl font-bold tracking-tight">
               ${(student.balanceCents / 100).toFixed(2)}
             </p>
             <p className="mt-1 text-xs text-on-dark/60">
@@ -51,7 +51,7 @@ export function TodayPage({ student }: { student: Student }) {
 
         <div className="pt-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-black text-ink">Recent</h2>
+            <h2 className="text-sm font-bold text-ink">Recent</h2>
             <Link
               href="/app/me/history"
               className="text-sm font-bold text-brand"

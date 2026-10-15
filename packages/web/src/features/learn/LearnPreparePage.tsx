@@ -39,7 +39,7 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
         }
       />
       <div className="px-6 py-6">
-        <div className="flex flex-wrap items-center gap-3 text-xs font-black uppercase tracking-[0.1em] text-ink-muted">
+        <div className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-[0.1em] text-ink-muted">
           <span className="rounded-full bg-mint px-3 py-1.5 text-brand">{lesson.band}</span>
           <span>{lesson.strand}</span>
           <span>{lesson.minutes} minutes</span>
@@ -49,13 +49,13 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
         <div className="mt-6 grid gap-4 lg:grid-cols-[.6fr_1fr]">
           <div className="space-y-4">
             <section className="rounded-2xl border border-border bg-surface p-5">
-              <div className="flex items-center gap-2 font-black text-ink">
+              <div className="flex items-center gap-2 font-bold text-ink">
                 <Lightbulb size={18} className="text-warning" /> Objective
               </div>
               <p className="mt-2 text-sm leading-6 text-ink-muted">{lesson.objective}</p>
             </section>
             <section className="rounded-2xl border border-border bg-surface p-5">
-              <div className="flex items-center gap-2 font-black text-ink">
+              <div className="flex items-center gap-2 font-bold text-ink">
                 <PackageOpen size={18} className="text-brand-bright" /> Materials
               </div>
               <ul className="mt-2 space-y-1.5 text-sm leading-6 text-ink-muted">
@@ -65,7 +65,7 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
               </ul>
             </section>
             <section className="rounded-2xl border border-accent-soft bg-accent-soft p-5">
-              <div className="flex items-center gap-2 font-black text-ink">
+              <div className="flex items-center gap-2 font-bold text-ink">
                 <ShieldCheck size={18} className="text-accent" /> Teach without shame
               </div>
               <p className="mt-2 text-sm leading-6 text-ink-muted">{lesson.inclusionNote}</p>
@@ -74,15 +74,15 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
 
           <div className="space-y-4">
             <section className="rounded-2xl border border-border bg-surface p-5">
-              <h2 className="font-black text-ink">Warm-up</h2>
+              <h2 className="font-bold text-ink">Warm-up</h2>
               <p className="mt-2 text-sm leading-6 text-ink-muted">{lesson.warmup}</p>
             </section>
             <section className="rounded-2xl border border-border bg-surface p-5">
-              <h2 className="font-black text-ink">Mission overview</h2>
+              <h2 className="font-bold text-ink">Mission overview</h2>
               <ol className="mt-3 space-y-3">
                 {lesson.mission.map((step, index) => (
                   <li key={step.title} className="flex gap-3">
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-mint text-xs font-black text-brand">
+                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-mint text-xs font-bold text-brand">
                       {index + 1}
                     </span>
                     <div>
@@ -94,7 +94,7 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
               </ol>
             </section>
             <section className="rounded-2xl border border-border bg-surface p-5">
-              <h2 className="font-black text-ink">Family bridge</h2>
+              <h2 className="font-bold text-ink">Family bridge</h2>
               <p className="mt-2 text-sm leading-6 text-ink-muted">{lesson.familyBridge}</p>
             </section>
           </div>
@@ -103,7 +103,7 @@ export function LearnPreparePage({ lessonSlug }: { lessonSlug: string }) {
         <div className="mt-6 flex justify-end">
           <Link
             href={`/app/learn/${lesson.slug}/run`}
-            className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-black text-on-dark"
+            className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-bold text-on-dark"
           >
             Start guided lesson
           </Link>

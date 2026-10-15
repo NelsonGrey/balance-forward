@@ -76,15 +76,15 @@ export function LearnListPage({ user }: { user: User }) {
                 className="flex flex-col rounded-2xl border border-border-strong bg-surface p-5 shadow-card"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className={`rounded-full px-3 py-1 text-xs font-black ${strandColors[lesson.strand]}`}>
+                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${strandColors[lesson.strand]}`}>
                     {lesson.strand}
                   </span>
                   <span className="flex items-center gap-1.5 text-xs font-bold text-ink-muted">
                     <Clock3 size={13} /> {lesson.minutes} minutes
                   </span>
                 </div>
-                <p className="mt-4 text-xs font-black uppercase tracking-[0.1em] text-brand">{lesson.band}</p>
-                <h2 className="mt-1 text-lg font-black tracking-[-0.02em] text-ink">{lesson.title}</h2>
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.1em] text-brand">{lesson.band}</p>
+                <h2 className="mt-1 text-lg font-bold tracking-[-0.02em] text-ink">{lesson.title}</h2>
                 <p className="mt-2 flex-1 text-sm leading-6 text-ink-muted">{lesson.summary}</p>
 
                 <div className="mt-5 border-t border-border pt-4">
@@ -92,7 +92,7 @@ export function LearnListPage({ user }: { user: User }) {
                     withinStudentBand ? (
                       <Link
                         href={`/app/learn/${lesson.slug}/run`}
-                        className="inline-flex items-center gap-1.5 text-sm font-black text-brand"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-brand"
                       >
                         Start mission <ArrowRight size={15} />
                       </Link>
@@ -102,7 +102,7 @@ export function LearnListPage({ user }: { user: User }) {
                   ) : (
                     <Link
                       href={`/app/learn/${lesson.slug}/prepare`}
-                      className="inline-flex items-center gap-1.5 text-sm font-black text-brand"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-brand"
                     >
                       Prepare lesson <ArrowRight size={15} />
                     </Link>

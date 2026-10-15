@@ -96,7 +96,7 @@ export function Sidebar({
       <Link
         href="/app"
         onClick={onCloseMobile}
-        className="flex items-center gap-2 px-5 py-5 text-lg font-extrabold tracking-tight text-ink"
+        className="flex items-center gap-2 px-5 py-5 text-lg font-bold tracking-tight text-ink"
       >
         <img
           src="/brand/balance-forward-app-icon.svg"

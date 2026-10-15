@@ -62,7 +62,7 @@ export function EarlyReaderTodayPage({ student }: { student: Student }) {
         )}
 
         <div className="mt-4 rounded-2xl border border-border-strong bg-surface p-4">
-          <div className="flex items-center gap-2 text-sm font-black text-ink">
+          <div className="flex items-center gap-2 text-sm font-bold text-ink">
             <Sparkles size={16} className="text-brand-bright" /> Pause · Choose · Grow
           </div>
           <p className="mt-2 text-sm text-ink-muted">Ask a grown-up: What happened today?</p>

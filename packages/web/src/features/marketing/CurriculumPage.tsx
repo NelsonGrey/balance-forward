@@ -40,10 +40,10 @@ export function CurriculumPage() {
         />
         <div className="relative mx-auto site-container">
           <div className="max-w-4xl">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-bright">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-bright">
               Balance Forward learning library · Foundation release
             </p>
-            <h1 className="mt-5 text-5xl font-black leading-[1.02] tracking-[-0.052em] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-5xl font-semibold leading-[1.02] tracking-[-0.032em] sm:text-6xl lg:text-7xl">
               Practice before the stakes are real.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -55,21 +55,21 @@ export function CurriculumPage() {
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             <div className="rounded-2xl border border-border-strong bg-surface/85 p-5">
               <Brain className="text-brand-bright" />
-              <h2 className="mt-4 font-black">Plan & pause</h2>
+              <h2 className="mt-4 font-semibold">Plan & pause</h2>
               <p className="mt-1 text-sm leading-6 text-muted">
                 Build focus, patience, and future thinking.
               </p>
             </div>
             <div className="rounded-2xl border border-border-strong bg-surface/85 p-5">
               <Heart className="text-accent" />
-              <h2 className="mt-4 font-black">Practice habits</h2>
+              <h2 className="mt-4 font-semibold">Practice habits</h2>
               <p className="mt-1 text-sm leading-6 text-muted">
                 Make values and routines visible without shame.
               </p>
             </div>
             <div className="rounded-2xl border border-border-strong bg-surface/85 p-5">
               <Layers3 className="text-warning" />
-              <h2 className="mt-4 font-black">Decide with evidence</h2>
+              <h2 className="mt-4 font-semibold">Decide with evidence</h2>
               <p className="mt-1 text-sm leading-6 text-muted">
                 Compare, calculate, choose, and adjust.
               </p>
@@ -82,7 +82,7 @@ export function CurriculumPage() {
         <div className="mx-auto site-container">
           <div className="flex flex-col gap-5 border-b border-border-strong pb-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.15em] text-muted">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
                 Filter by grade band
               </p>
               <p className="mt-2 text-sm text-muted">
@@ -101,7 +101,7 @@ export function CurriculumPage() {
                   type="button"
                   onClick={() => setBand(item)}
                   aria-pressed={band === item}
-                  className={`rounded-full px-4 py-2 text-xs font-black transition ${band === item ? 'bg-ink text-on-dark' : 'border border-border-strong bg-surface text-ink-soft hover:border-border-strong'}`}
+                  className={`rounded-full px-4 py-2 text-xs font-semibold transition ${band === item ? 'bg-ink text-on-dark' : 'border border-border-strong bg-surface text-ink-soft hover:border-border-strong'}`}
                 >
                   {item}
                 </button>
@@ -118,28 +118,28 @@ export function CurriculumPage() {
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span
-                    className={`rounded-full px-3 py-1.5 text-xs font-black ${strandColors[lesson.strand]}`}
+                    className={`rounded-full px-3 py-1.5 text-xs font-semibold ${strandColors[lesson.strand]}`}
                   >
                     {lesson.strand}
                   </span>
-                  <span className="flex items-center gap-1.5 text-xs font-bold text-muted">
+                  <span className="flex items-center gap-1.5 text-xs font-semibold text-muted">
                     <Clock3 size={13} /> {lesson.minutes} minutes
                   </span>
                 </div>
                 <div className="mt-7 flex-1">
-                  <p className="text-xs font-black uppercase tracking-[0.13em] text-brand-bright">
+                  <p className="text-xs font-semibold uppercase tracking-[0.13em] text-brand-bright">
                     {lesson.band}
                   </p>
-                  <h2 className="mt-2 text-2xl font-black tracking-[-0.035em]">
+                  <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em]">
                     {lesson.title}
                   </h2>
                   <p className="mt-3 leading-7 text-muted">{lesson.summary}</p>
                 </div>
                 <div className="mt-7 flex items-center justify-between border-t border-border pt-5">
-                  <span className="text-xs font-bold text-muted">
+                  <span className="text-xs font-semibold text-muted">
                     {lesson.buildingBlock}
                   </span>
-                  <span className="flex items-center gap-1.5 text-sm font-black text-brand">
+                  <span className="flex items-center gap-1.5 text-sm font-semibold text-brand">
                     Open lesson{' '}
                     <ArrowRight
                       size={15}
@@ -157,7 +157,7 @@ export function CurriculumPage() {
         <div className="mx-auto grid site-container gap-10 lg:grid-cols-[.75fr_1.25fr]">
           <div>
             <BookOpen size={30} className="text-accent" />
-            <h2 className="mt-5 text-3xl font-black tracking-[-0.04em]">
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.02em]">
               Framework-informed, not certified.
             </h2>
             <p className="mt-4 leading-7 text-muted">
@@ -177,7 +177,7 @@ export function CurriculumPage() {
                 <Sprout className="text-brand-bright" />
                 <ExternalLink size={15} className="text-muted" />
               </div>
-              <h3 className="mt-5 font-black">CFPB building blocks</h3>
+              <h3 className="mt-5 font-semibold">CFPB building blocks</h3>
               <p className="mt-2 text-sm leading-6 text-muted">
                 Executive function, financial habits and norms, and knowledge
                 and decision-making.
@@ -193,7 +193,7 @@ export function CurriculumPage() {
                 <Layers3 className="text-warning" />
                 <ExternalLink size={15} className="text-muted" />
               </div>
-              <h3 className="mt-5 font-black">CEE / Jump$tart standards</h3>
+              <h3 className="mt-5 font-semibold">CEE / Jump$tart standards</h3>
               <p className="mt-2 text-sm leading-6 text-muted">
                 Six K–12 topic areas with expectations at grades 4, 8, and 12.
               </p>
@@ -204,12 +204,12 @@ export function CurriculumPage() {
 
       <section className="py-16">
         <div className="mx-auto site-container rounded-[28px] bg-ink p-7 text-on-dark sm:p-10">
-          <p className="text-xs font-black uppercase tracking-[0.16em] text-mint-strong">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-mint-strong">
             What comes next
           </p>
           <div className="mt-3 grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
             <div>
-              <h2 className="text-3xl font-black tracking-[-0.04em]">
+              <h2 className="text-3xl font-semibold tracking-[-0.02em]">
                 Grades 7–8 and 9–12 are expansion paths—not finished offerings.
               </h2>
               <p className="mt-4 leading-7 text-on-dark/65">
@@ -221,7 +221,7 @@ export function CurriculumPage() {
             </div>
             <Link
               href="/readiness"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-surface px-6 py-3.5 text-sm font-black text-ink lg:justify-self-end"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-surface px-6 py-3.5 text-sm font-semibold text-ink lg:justify-self-end"
             >
               Review the roadmap <ArrowRight size={16} />
             </Link>

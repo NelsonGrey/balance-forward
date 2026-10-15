@@ -24,11 +24,11 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
         <div className="mx-auto reading-container">
           <Link
             href="/curriculum"
-            className="inline-flex items-center gap-2 text-sm font-black text-brand"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand"
           >
             <ArrowLeft size={16} /> All lessons
           </Link>
-          <div className="mt-10 flex flex-wrap items-center gap-3 text-xs font-black uppercase tracking-[0.12em] text-muted">
+          <div className="mt-10 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
             <span className="rounded-full bg-mint px-3 py-1.5 text-brand">
               {lesson.band}
             </span>
@@ -38,7 +38,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
               <Clock3 size={13} /> {lesson.minutes} minutes
             </span>
           </div>
-          <h1 className="mt-5 text-5xl font-black tracking-[-0.052em] sm:text-6xl">
+          <h1 className="mt-5 text-5xl font-semibold tracking-[-0.032em] sm:text-6xl">
             {lesson.title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
@@ -48,11 +48,11 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
             <button
               type="button"
               onClick={() => window.print()}
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-black text-on-dark"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-on-dark"
             >
               <Printer size={16} /> Print lesson
             </button>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-3 text-sm font-bold text-muted">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-3 text-sm font-semibold text-muted">
               <Sprout size={16} /> {lesson.buildingBlock}
             </span>
           </div>
@@ -62,7 +62,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
       <div className="mx-auto grid reading-container gap-10 py-12 lg:grid-cols-[.67fr_1.33fr] lg:py-16">
         <aside className="space-y-5">
           <section className="rounded-2xl border border-border bg-surface p-5">
-            <div className="flex items-center gap-2 font-black">
+            <div className="flex items-center gap-2 font-semibold">
               <Lightbulb size={18} className="text-warning" /> Learning
               objective
             </div>
@@ -71,7 +71,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
             </p>
           </section>
           <section className="rounded-2xl border border-border bg-surface p-5">
-            <div className="flex items-center gap-2 font-black">
+            <div className="flex items-center gap-2 font-semibold">
               <PackageOpen size={18} className="text-brand-bright" /> Materials
             </div>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-muted">
@@ -84,12 +84,12 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
             </ul>
           </section>
           <section className="rounded-2xl border border-border bg-surface p-5">
-            <div className="font-black">Words to grow</div>
+            <div className="font-semibold">Words to grow</div>
             <div className="mt-3 flex flex-wrap gap-2">
               {lesson.vocabulary.map(word => (
                 <span
                   key={word}
-                  className="rounded-full bg-mint px-3 py-1.5 text-xs font-bold text-muted"
+                  className="rounded-full bg-mint px-3 py-1.5 text-xs font-semibold text-muted"
                 >
                   {word}
                 </span>
@@ -100,20 +100,20 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
 
         <div className="space-y-10">
           <section>
-            <p className="text-xs font-black uppercase tracking-[0.15em] text-brand-bright">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-bright">
               Open the conversation
             </p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
+            <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em]">
               Warm-up
             </h2>
             <p className="mt-4 leading-8 text-muted">{lesson.warmup}</p>
           </section>
 
           <section>
-            <p className="text-xs font-black uppercase tracking-[0.15em] text-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Student mission
             </p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
+            <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em]">
               Try it together
             </h2>
             <div className="mt-6 space-y-4">
@@ -122,11 +122,11 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
                   key={step.title}
                   className="grid gap-4 rounded-2xl border border-border-strong bg-surface p-5 sm:grid-cols-[42px_1fr]"
                 >
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-sm font-black text-accent">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-sm font-semibold text-accent">
                     {index + 1}
                   </span>
                   <div>
-                    <h3 className="font-black">{step.title}</h3>
+                    <h3 className="font-semibold">{step.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted">
                       {step.instructions}
                     </p>
@@ -137,7 +137,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
           </section>
 
           <section className="rounded-[26px] bg-ink p-6 text-on-dark sm:p-8">
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-mint-strong">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-mint-strong">
               <Sparkles size={15} /> Reflect
             </div>
             <ul className="mt-5 space-y-4">
@@ -151,7 +151,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
           </section>
 
           <section>
-            <h2 className="text-2xl font-black tracking-[-0.035em]">
+            <h2 className="text-2xl font-semibold tracking-[-0.02em]">
               Quick learning check
             </h2>
             <p className="mt-3 leading-7 text-muted">{lesson.check}</p>
@@ -160,14 +160,14 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
           <section className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-surface p-5">
               <Home size={20} className="text-accent" />
-              <h2 className="mt-4 font-black">Family bridge</h2>
+              <h2 className="mt-4 font-semibold">Family bridge</h2>
               <p className="mt-2 text-sm leading-6 text-muted">
                 {lesson.familyBridge}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-surface p-5">
               <Sprout size={20} className="text-brand-bright" />
-              <h2 className="mt-4 font-black">Inside Balance Forward</h2>
+              <h2 className="mt-4 font-semibold">Inside Balance Forward</h2>
               <p className="mt-2 text-sm leading-6 text-muted">
                 {lesson.productConnection}
               </p>
@@ -175,7 +175,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
           </section>
 
           <section className="rounded-2xl border border-accent-soft bg-accent-soft p-5">
-            <div className="flex items-center gap-2 font-black">
+            <div className="flex items-center gap-2 font-semibold">
               <ShieldCheck size={18} className="text-accent" /> Teach without
               shame
             </div>
@@ -191,7 +191,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
                 className="mt-1 shrink-0 text-brand-bright"
               />
               <div>
-                <h2 className="font-black">Framework connection</h2>
+                <h2 className="font-semibold">Framework connection</h2>
                 <p className="mt-2 text-sm leading-6 text-muted">
                   {lesson.standardsNote}
                 </p>
@@ -203,7 +203,7 @@ export function LessonPage({ lesson }: { lesson: Lesson }) {
             </p>
             <div
               data-no-print
-              className="mt-5 flex flex-wrap gap-4 text-xs font-bold text-brand"
+              className="mt-5 flex flex-wrap gap-4 text-xs font-semibold text-brand"
             >
               <a
                 href="https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/learn/"

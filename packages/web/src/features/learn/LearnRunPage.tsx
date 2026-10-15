@@ -93,18 +93,18 @@ export function LearnRunPage({ user, lessonSlug }: { user: User; lessonSlug: str
         <div className="mt-6 flex-1 rounded-2xl border border-border bg-surface p-6">
           {step.kind === 'warmup' && (
             <>
-              <h2 className="text-xl font-black text-ink">Warm-up</h2>
+              <h2 className="text-xl font-bold text-ink">Warm-up</h2>
               <p className="mt-3 leading-7 text-ink-muted">{lesson.warmup}</p>
             </>
           )}
           {step.kind === 'mission' && (
             <>
-              <h2 className="text-xl font-black text-ink">{lesson.mission[step.index].title}</h2>
+              <h2 className="text-xl font-bold text-ink">{lesson.mission[step.index].title}</h2>
               <p className="mt-3 leading-7 text-ink-muted">{lesson.mission[step.index].instructions}</p>
               {activityLabel && (
                 <Link
                   href={activityTarget}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-black text-brand"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-brand"
                 >
                   {activityLabel} <ArrowRight size={15} />
                 </Link>
@@ -113,7 +113,7 @@ export function LearnRunPage({ user, lessonSlug }: { user: User; lessonSlug: str
           )}
           {step.kind === 'reflect' && (
             <>
-              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-brand">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-brand">
                 <Sparkles size={15} /> Reflect
               </div>
               <p className="mt-2 text-sm text-ink-muted">Discuss aloud — nothing typed here is saved.</p>
@@ -129,13 +129,13 @@ export function LearnRunPage({ user, lessonSlug }: { user: User; lessonSlug: str
           )}
           {step.kind === 'check' && (
             <>
-              <h2 className="text-xl font-black text-ink">Quick learning check</h2>
+              <h2 className="text-xl font-bold text-ink">Quick learning check</h2>
               <p className="mt-3 leading-7 text-ink-muted">{lesson.check}</p>
             </>
           )}
           {step.kind === 'familyBridge' && (
             <>
-              <h2 className="text-xl font-black text-ink">Family bridge</h2>
+              <h2 className="text-xl font-bold text-ink">Family bridge</h2>
               <p className="mt-3 leading-7 text-ink-muted">{lesson.familyBridge}</p>
             </>
           )}
@@ -154,14 +154,14 @@ export function LearnRunPage({ user, lessonSlug }: { user: User; lessonSlug: str
             <button
               type="button"
               onClick={() => goToStep(currentIndex + 1)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-black text-on-dark"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-on-dark"
             >
               Next <ArrowRight size={15} />
             </button>
           ) : (
             <Link
               href="/app/learn"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-black text-on-dark"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-on-dark"
             >
               Finish
             </Link>

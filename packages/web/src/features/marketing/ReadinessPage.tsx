@@ -91,10 +91,10 @@ export function ReadinessPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto site-container">
-          <div className="inline-flex items-center gap-2 rounded-full border border-warning-soft bg-warning-soft px-3 py-1.5 text-xs font-black uppercase tracking-[0.13em] text-warning">
+          <div className="inline-flex items-center gap-2 rounded-full border border-warning-soft bg-warning-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.13em] text-warning">
             <AlertTriangle size={14} /> Pre-launch transparency
           </div>
-          <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[1.02] tracking-[-0.052em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.032em] sm:text-6xl lg:text-7xl">
             Trust starts with saying what is not ready.
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -110,10 +110,10 @@ export function ReadinessPage() {
         <div className="mx-auto site-container">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-bright">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-bright">
                 Capability map
               </p>
-              <h2 className="mt-3 text-4xl font-black tracking-[-0.045em]">
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.025em]">
                 Working, planned, and gated.
               </h2>
             </div>
@@ -141,7 +141,7 @@ export function ReadinessPage() {
                   key={item.area}
                   className={`grid gap-4 bg-surface p-5 sm:grid-cols-[1fr_190px_1.5fr] sm:items-start sm:p-6 ${index ? 'border-t border-border' : ''}`}
                 >
-                  <div className="flex items-center gap-3 font-black">
+                  <div className="flex items-center gap-3 font-semibold">
                     <Icon
                       size={18}
                       className={
@@ -156,7 +156,7 @@ export function ReadinessPage() {
                   </div>
                   <div>
                     <span
-                      className={`inline-flex rounded-full px-3 py-1.5 text-xs font-black ${tone}`}
+                      className={`inline-flex rounded-full px-3 py-1.5 text-xs font-semibold ${tone}`}
                     >
                       {item.status}
                     </span>
@@ -175,7 +175,7 @@ export function ReadinessPage() {
         <div className="mx-auto grid site-container gap-12 lg:grid-cols-[.68fr_1.32fr]">
           <div>
             <ShieldCheck size={30} className="text-brand-bright" />
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.045em]">
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.025em]">
               District launch gates
             </h2>
             <p className="mt-4 leading-7 text-muted">
@@ -190,7 +190,7 @@ export function ReadinessPage() {
                 key={gate}
                 className="grid gap-4 rounded-2xl border border-border bg-surface p-5 sm:grid-cols-[42px_1fr] sm:items-start"
               >
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-mint text-sm font-black text-brand">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-mint text-sm font-semibold text-brand">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-sm font-semibold leading-7 text-muted">
@@ -205,10 +205,10 @@ export function ReadinessPage() {
       <section className="bg-ink py-16 text-on-dark">
         <div className="mx-auto grid site-container gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-mint-strong">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-mint-strong">
               Review what can be reviewed now
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.04em]">
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.02em]">
               Start with the learning approach, not a sales promise.
             </h2>
             <p className="mt-3 max-w-3xl leading-7 text-on-dark/65">
@@ -218,7 +218,7 @@ export function ReadinessPage() {
           </div>
           <Link
             href="/curriculum"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-surface px-6 py-3.5 text-sm font-black text-ink"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-surface px-6 py-3.5 text-sm font-semibold text-ink"
           >
             Explore lessons <ArrowRight size={16} />
           </Link>

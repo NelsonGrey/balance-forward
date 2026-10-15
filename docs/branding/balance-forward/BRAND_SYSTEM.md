@@ -59,8 +59,8 @@ implementations should use this portable fallback stack:
 font-family: "Avenir Next", Avenir, Montserrat, system-ui, sans-serif;
 ```
 
-- Wordmark and display headings: weight 700, tight tracking.
-- Interface headings: weight 700 without extreme tracking.
+- Wordmark and primary display headings: weight 700 with moderately tight tracking.
+- Interface and secondary headings: weight 600–700 without compressed tracking.
 - Body and labels: weight 400–600, normal tracking.
 - Never typeset the product as `BalanceForward` or abbreviate it to `BF` in
   customer-facing copy.

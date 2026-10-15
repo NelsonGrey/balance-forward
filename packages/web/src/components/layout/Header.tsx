@@ -43,7 +43,7 @@ export function Header({
           <button
             type="button"
             onClick={() => navigate(user ? '/app' : '/')}
-            className={`flex items-center gap-2 text-lg font-extrabold tracking-tight text-ink ${user ? 'lg:hidden' : ''}`}
+            className={`flex items-center gap-2 text-lg font-bold tracking-tight text-ink ${user ? 'lg:hidden' : ''}`}
             aria-label="Balance Forward home"
           >
             <img

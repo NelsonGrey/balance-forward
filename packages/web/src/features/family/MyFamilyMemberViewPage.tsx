@@ -21,7 +21,7 @@ function LinkedFamilyMemberView({ member }: { member: FamilyMember }) {
     <div className="flex min-h-full flex-col">
       <PageHeader title={member.displayName} />
       <div className="px-6 pt-5">
-        <p className="text-4xl font-black tracking-tight">${(member.balanceCents / 100).toFixed(2)}</p>
+        <p className="text-4xl font-bold tracking-tight">${(member.balanceCents / 100).toFixed(2)}</p>
       </div>
 
       {goals.length > 0 && (

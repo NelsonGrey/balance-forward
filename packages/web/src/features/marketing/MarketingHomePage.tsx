@@ -49,10 +49,10 @@ export function MarketingHomePage() {
         />
         <div className="relative mx-auto grid site-container items-center gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_.95fr] lg:py-28">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-surface/80 px-3 py-1.5 text-xs font-black uppercase tracking-[0.13em] text-brand shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-surface/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.13em] text-brand shadow-sm">
               <Sprout size={14} /> Pre-launch · Pre-K–6 first
             </div>
-            <h1 className="mt-7 max-w-4xl text-5xl font-black leading-[0.98] tracking-[-0.055em] text-ink sm:text-6xl lg:text-[76px]">
+            <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.02em] text-ink sm:text-6xl lg:text-[76px]">
               Money habits take root in{' '}
               <span className="text-accent">ordinary moments.</span>
             </h1>
@@ -64,7 +64,7 @@ export function MarketingHomePage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/curriculum"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-black text-on-dark shadow-brand transition hover:-translate-y-0.5 hover:bg-brand-strong"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-on-dark shadow-brand transition hover:-translate-y-0.5 hover:bg-brand-strong"
               >
                 Explore the learning library{' '}
                 <ArrowRight
@@ -74,12 +74,12 @@ export function MarketingHomePage() {
               </Link>
               <Link
                 href="/readiness"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface px-6 py-3.5 text-sm font-black text-ink-soft transition hover:border-border-strong"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface px-6 py-3.5 text-sm font-semibold text-ink-soft transition hover:border-border-strong"
               >
                 See what is live and planned
               </Link>
             </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-muted">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-muted">
               <span className="flex items-center gap-1.5">
                 <Check size={14} className="text-brand-bright" /> No advertising
               </span>
@@ -103,14 +103,14 @@ export function MarketingHomePage() {
               <div className="rounded-[26px] bg-canvas p-5 sm:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.15em] text-muted">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
                       Today’s mission
                     </p>
-                    <h2 className="mt-2 text-2xl font-black tracking-[-0.04em]">
+                    <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em]">
                       Build a goal trail
                     </h2>
                   </div>
-                  <span className="rounded-full bg-mint px-3 py-1.5 text-xs font-black text-brand">
+                  <span className="rounded-full bg-mint px-3 py-1.5 text-xs font-semibold text-brand">
                     Grades 3–4
                   </span>
                 </div>
@@ -126,14 +126,14 @@ export function MarketingHomePage() {
                     />
                   ))}
                 </div>
-                <div className="mt-3 flex justify-between text-xs font-bold text-muted">
+                <div className="mt-3 flex justify-between text-xs font-semibold text-muted">
                   <span>12 saved</span>
                   <span>Goal: 18</span>
                 </div>
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl border border-border bg-surface p-4">
-                    <div className="flex items-center gap-2 text-sm font-black">
+                    <div className="flex items-center gap-2 text-sm font-semibold">
                       <CircleDollarSign
                         size={17}
                         className="text-brand-bright"
@@ -145,7 +145,7 @@ export function MarketingHomePage() {
                     </p>
                   </div>
                   <div className="rounded-2xl border border-border bg-surface p-4">
-                    <div className="flex items-center gap-2 text-sm font-black">
+                    <div className="flex items-center gap-2 text-sm font-semibold">
                       <HeartHandshake size={17} className="text-accent" />{' '}
                       Reflection
                     </div>
@@ -161,7 +161,7 @@ export function MarketingHomePage() {
                       <Sprout size={19} />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="flex justify-between gap-3 text-xs font-black">
+                      <div className="flex justify-between gap-3 text-xs font-semibold">
                         <span>Goal progress</span>
                         <span>67%</span>
                       </div>
@@ -174,7 +174,7 @@ export function MarketingHomePage() {
               </div>
             </div>
             <div className="absolute -bottom-7 -left-3 -rotate-3 rounded-2xl border border-warning-soft bg-warning-soft px-4 py-3 shadow-lg sm:-left-10">
-              <p className="text-xs font-black uppercase tracking-[0.12em] text-warning">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-warning">
                 Practice → reflect → grow
               </p>
             </div>
@@ -186,10 +186,10 @@ export function MarketingHomePage() {
         <div className="mx-auto site-container">
           <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-bright">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-bright">
                 One direction, many responsibilities
               </p>
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-5xl">
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
                 Built to answer the question each stakeholder actually asks.
               </h2>
             </div>
@@ -213,13 +213,13 @@ export function MarketingHomePage() {
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-surface text-brand shadow-sm">
                     <Icon size={20} />
                   </div>
-                  <h3 className="mt-5 text-lg font-black tracking-[-0.025em]">
+                  <h3 className="mt-5 text-lg font-semibold tracking-[-0.025em]">
                     {audience.name}
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-muted">
                     {audience.outcomes[0].title}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-black text-brand">
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand">
                     Explore{' '}
                     <ArrowRight
                       size={14}
@@ -240,10 +240,10 @@ export function MarketingHomePage() {
         />
         <div className="relative mx-auto site-container">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-mint-strong">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mint-strong">
               The Balance Forward learning loop
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
               A ledger records a choice. Learning happens around it.
             </h2>
           </div>
@@ -271,11 +271,11 @@ export function MarketingHomePage() {
               <div key={title} className="bg-deep-surface p-7 sm:p-9">
                 <div className="flex items-center justify-between">
                   <Icon className="text-mint-strong" />
-                  <span className="text-xs font-black text-on-dark/35">
+                  <span className="text-xs font-semibold text-on-dark/35">
                     {number}
                   </span>
                 </div>
-                <h3 className="mt-10 text-3xl font-black">{title}</h3>
+                <h3 className="mt-10 text-3xl font-semibold">{title}</h3>
                 <p className="mt-3 leading-7 text-on-dark/65">{body}</p>
               </div>
             ))}
@@ -287,16 +287,16 @@ export function MarketingHomePage() {
         <div className="mx-auto site-container">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-bright">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-bright">
                 Original starter lessons
               </p>
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-5xl">
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.025em] sm:text-5xl">
                 Open, teach, and adapt.
               </h2>
             </div>
             <Link
               href="/curriculum"
-              className="inline-flex items-center gap-2 text-sm font-black text-brand"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand"
             >
               View all {lessons.length} lessons <ArrowRight size={16} />
             </Link>
@@ -312,17 +312,17 @@ export function MarketingHomePage() {
                   className={`h-2 ${index === 0 ? 'bg-accent' : index === 1 ? 'bg-warning' : 'bg-brand-bright'}`}
                 />
                 <div className="p-6 sm:p-7">
-                  <div className="flex items-center justify-between gap-3 text-xs font-black uppercase tracking-[0.1em] text-muted">
+                  <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.1em] text-muted">
                     <span>{lesson.band}</span>
                     <span className="flex items-center gap-1">
                       <Clock3 size={13} /> {lesson.minutes} min
                     </span>
                   </div>
-                  <h3 className="mt-6 text-2xl font-black tracking-[-0.035em]">
+                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.02em]">
                     {lesson.title}
                   </h3>
                   <p className="mt-3 leading-7 text-muted">{lesson.summary}</p>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-black text-brand">
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand">
                     Open lesson{' '}
                     <ArrowRight
                       size={15}
@@ -343,10 +343,10 @@ export function MarketingHomePage() {
               <ShieldCheck size={26} />
             </div>
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-brand">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
                 Trust before procurement
               </p>
-              <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
+              <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em]">
                 The product foundation is real. District readiness is still in
                 progress.
               </h2>
@@ -359,7 +359,7 @@ export function MarketingHomePage() {
           </div>
           <Link
             href="/readiness"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-black text-on-dark"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-on-dark"
           >
             Review readiness <ArrowRight size={16} />
           </Link>

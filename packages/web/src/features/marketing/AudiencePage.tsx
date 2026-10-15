@@ -45,10 +45,10 @@ export function AudiencePage({ audience }: { audience: Audience }) {
           aria-hidden="true"
         />
         <div className="relative mx-auto site-container">
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-bright">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-bright">
             {audience.eyebrow}
           </p>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-[1.02] tracking-[-0.052em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-[1.02] tracking-[-0.032em] sm:text-6xl lg:text-7xl">
             {audience.headline}
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -68,10 +68,10 @@ export function AudiencePage({ audience }: { audience: Audience }) {
                 key={outcome.title}
                 className="rounded-[26px] border border-border bg-surface-subtle p-6"
               >
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-mint text-sm font-black text-brand">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-mint text-sm font-semibold text-brand">
                   0{index + 1}
                 </span>
-                <h2 className="mt-8 text-xl font-black tracking-[-0.025em]">
+                <h2 className="mt-8 text-xl font-semibold tracking-[-0.025em]">
                   {outcome.title}
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-muted">
@@ -86,10 +86,10 @@ export function AudiencePage({ audience }: { audience: Audience }) {
       <section className="bg-ink py-20 text-on-dark">
         <div className="mx-auto grid site-container gap-12 lg:grid-cols-[.72fr_1.28fr]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-mint-strong">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mint-strong">
               A practical rhythm
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em]">
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.025em]">
               Start small enough to learn what works.
             </h2>
             <p className="mt-5 leading-7 text-on-dark/65">
@@ -103,11 +103,11 @@ export function AudiencePage({ audience }: { audience: Audience }) {
                 key={item.step}
                 className="grid gap-4 rounded-2xl border border-on-dark/10 bg-surface/5 p-5 sm:grid-cols-[52px_1fr] sm:items-start"
               >
-                <span className="text-sm font-black text-mint-strong">
+                <span className="text-sm font-semibold text-mint-strong">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="text-lg font-black">{item.title}</h3>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-on-dark/60">
                     {item.body}
                   </p>
@@ -123,7 +123,7 @@ export function AudiencePage({ audience }: { audience: Audience }) {
           <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
             <div>
               <CircleHelp className="text-accent" size={30} />
-              <h2 className="mt-5 text-4xl font-black tracking-[-0.045em]">
+              <h2 className="mt-5 text-4xl font-semibold tracking-[-0.025em]">
                 Questions worth answering early.
               </h2>
               <p className="mt-4 leading-7 text-muted">
@@ -135,7 +135,7 @@ export function AudiencePage({ audience }: { audience: Audience }) {
             <div className="divide-y divide-border border-y border-border">
               {audience.questions.map(item => (
                 <details key={item.question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-black">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-semibold">
                     {item.question}
                     <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-brand transition group-open:rotate-45">
                       +
@@ -159,10 +159,10 @@ export function AudiencePage({ audience }: { audience: Audience }) {
                 <Compass size={23} />
               </span>
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-bright">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-bright">
                   Your next useful step
                 </p>
-                <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
+                <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em]">
                   {audience.cta}
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
@@ -173,7 +173,7 @@ export function AudiencePage({ audience }: { audience: Audience }) {
             </div>
             <Link
               href={ctaRoutes[audience.slug]}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-black text-on-dark"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-on-dark"
             >
               Continue{' '}
               <ArrowRight
@@ -182,7 +182,7 @@ export function AudiencePage({ audience }: { audience: Audience }) {
               />
             </Link>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3 border-t border-border-strong pt-6 text-xs font-bold text-muted">
+          <div className="mt-8 flex flex-wrap gap-3 border-t border-border-strong pt-6 text-xs font-semibold text-muted">
             <span className="inline-flex items-center gap-1.5">
               <CheckCircle2 size={14} /> Age-aware
             </span>

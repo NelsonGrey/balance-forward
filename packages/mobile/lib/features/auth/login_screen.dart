@@ -238,7 +238,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Balance Forward',
                   style: TextStyle(
                     fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: BfColors.ink,
                   ),
                 ),
@@ -383,10 +383,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: _authInProgress ? null : _handleForgotPassword,
                       child: const Text(
                         'Forgot password?',
-                        style: TextStyle(
-                          color: BfColors.muted,
-                          fontSize: 12,
-                        ),
+                        style: TextStyle(color: BfColors.muted, fontSize: 12),
                       ),
                     ),
                   ],
@@ -512,10 +509,7 @@ class _AuthButton extends StatelessWidget {
               child: Text(
                 label,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: BfColors.onDark,
-                  fontSize: 15,
-                ),
+                style: const TextStyle(color: BfColors.onDark, fontSize: 15),
               ),
             ),
           ],
