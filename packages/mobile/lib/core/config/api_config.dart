@@ -6,5 +6,5 @@
 /// there's no staging/prod option block yet), so this stays a single
 /// constant until mobile gets real per-environment build flavors.
 abstract final class ApiConfig {
-  static const baseUrl = 'https://nelsongrey-bf-dev.web.app';
+  static const baseUrl = 'https://balance-forward-dev.web.app';
 }

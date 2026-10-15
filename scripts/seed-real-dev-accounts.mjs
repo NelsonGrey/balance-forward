@@ -1,5 +1,5 @@
 // Creates the same set of role/scope test personas as
-// seed-emulator-accounts.mjs, but against the REAL nelsongrey-bf-dev
+// seed-emulator-accounts.mjs, but against the REAL balance-forward-dev
 // Firebase project (Auth + Firestore), not the local emulator.
 //
 // Requires valid Application Default Credentials for an account with
@@ -16,14 +16,14 @@ import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 
 if (process.env.CONFIRM_REAL_FIREBASE !== 'yes') {
   console.error(
-    'Refusing to run: this writes real data to the nelsongrey-bf-dev ' +
+    'Refusing to run: this writes real data to the balance-forward-dev ' +
       'Firebase project (not the emulator). Re-run with ' +
       'CONFIRM_REAL_FIREBASE=yes to proceed.',
   );
   process.exit(1);
 }
 
-const PROJECT_ID = 'nelsongrey-bf-dev';
+const PROJECT_ID = 'balance-forward-dev';
 const PASSWORD = 'bftest1';
 const GHOST_OWNER_UID = 'ghost-owner-1';
 

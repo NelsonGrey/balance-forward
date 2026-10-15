@@ -1,7 +1,7 @@
 name: "Deploy Web App to Dev (Hosting)"
 
 # Triggered on every push to develop — deploys the web app to the
-# nelsongrey-bf-dev Firebase Hosting project for review and testing. Business
+# balance-forward-dev Firebase Hosting project for review and testing. Business
 # logic lives in Firebase Functions (private, server-side). This workflow
 # publishes only the compiled dist/ bundle; no source is exposed.
 #
@@ -72,12 +72,12 @@ jobs:
         uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: "projects/968230602171/locations/global/workloadIdentityPools/github-actions/providers/github"
-          service_account: "github-actions-hosting@nelsongrey-bf-dev.iam.gserviceaccount.com"
+          service_account: "github-actions-hosting@balance-forward-dev.iam.gserviceaccount.com"
 
       - name: Deploy Firebase Hosting
         run: |
           firebase deploy \
-            --project="nelsongrey-bf-dev" \
+            --project="balance-forward-dev" \
             --only=hosting \
             --message="Dev hosting deploy from develop — ${{ github.sha }}" \
             --non-interactive

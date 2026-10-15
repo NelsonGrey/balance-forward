@@ -106,7 +106,7 @@ jobs:
           esac
 
       # Workload Identity Federation (no stored key; the org blocks SA key
-      # creation). Reuses the shared pool/provider in nelsongrey-bf-dev;
+      # creation). Reuses the shared pool/provider in balance-forward-dev;
       # each project has a github-actions-deploy service account whose
       # workloadIdentityUser binding is scoped to this environment's branch.
       - name: Authenticate to Google Cloud

@@ -71,12 +71,12 @@ jobs:
         uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: "projects/968230602171/locations/global/workloadIdentityPools/github-actions/providers/github"
-          service_account: "github-actions-hosting@nelsongrey-bf-prod.iam.gserviceaccount.com"
+          service_account: "github-actions-hosting@balance-forward-prod.iam.gserviceaccount.com"
 
       - name: Deploy Firebase Hosting
         run: |
           firebase deploy \
-            --project="nelsongrey-bf-prod" \
+            --project="balance-forward-prod" \
             --only=hosting \
             --message="Production hosting deploy from main — ${{ github.sha }}" \
             --non-interactive

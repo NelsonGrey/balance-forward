@@ -196,9 +196,9 @@ Three environments, one Firebase project each — see `.firebaserc`:
 
 | Alias | Project ID |
 | --- | --- |
-| development (default) | `nelsongrey-bf-dev` |
-| staging | `nelsongrey-bf-staging` |
-| production | `nelsongrey-bf-prod` |
+| development (default) | `balance-forward-dev` |
+| staging | `balance-forward-staging` |
+| production | `balance-forward-prod` |
 
 Config is split across `firebase.json` (staging/prod-strength CSP, used as
 the default) and `firebase.dev.json` (lighter headers, used for local/dev

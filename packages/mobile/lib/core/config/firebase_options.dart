@@ -1,4 +1,4 @@
-// Config for the `nelsongrey-bf-dev` Firebase project (bundle/package id
+// Config for the `balance-forward-dev` Firebase project (bundle/package id
 // com.balanceforward.app.{ios,android} — the org-unbranded convention shared
 // with vehicle-vitals/wishlist-wizard, not com.nelsongrey.*). The project ID
 // is permanent once created. Web and macOS remain
@@ -23,16 +23,16 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyB7dOjDqUYk5zcXsTX8JVWur4JdRjnGbZY',
     appId: '1:968230602171:android:5b84a930f0940ea930709e',
     messagingSenderId: '968230602171',
-    projectId: 'nelsongrey-bf-dev',
-    storageBucket: 'nelsongrey-bf-dev.firebasestorage.app',
+    projectId: 'balance-forward-dev',
+    storageBucket: 'balance-forward-dev.firebasestorage.app',
   );
 
   static const FirebaseOptions _dev_ios = FirebaseOptions(
     apiKey: 'AIzaSyASDDXwQT8SMBzglwoWoLd4iVm5ClEnE20',
     appId: '1:968230602171:ios:b9567a054a95e71430709e',
     messagingSenderId: '968230602171',
-    projectId: 'nelsongrey-bf-dev',
-    storageBucket: 'nelsongrey-bf-dev.firebasestorage.app',
+    projectId: 'balance-forward-dev',
+    storageBucket: 'balance-forward-dev.firebasestorage.app',
     iosBundleId: 'com.balanceforward.app.ios',
   );
 

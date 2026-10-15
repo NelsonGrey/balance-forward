@@ -23,7 +23,7 @@ process.env.FIREBASE_AUTH_EMULATOR_HOST ??= 'localhost:9099';
 // Must match the real project ID configured in firebase_options.dart /
 // packages/web/.env — the emulator partitions its local data store by
 // project ID, so seeding under the wrong one means the app never sees it.
-const PROJECT_ID = 'nelsongrey-bf-dev';
+const PROJECT_ID = 'balance-forward-dev';
 const PASSWORD = 'bftest1';
 // Not a real account — a placeholder classroom owner so the grade/whole-
 // school scope demos aren't muddied by the admin/teacher also happening to

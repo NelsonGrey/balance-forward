@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "nelsongrey-bf-dev",
-    "production": "nelsongrey-bf-prod",
-    "staging": "nelsongrey-bf-staging",
-    "development": "nelsongrey-bf-dev"
+    "default": "balance-forward-dev",
+    "production": "balance-forward-prod",
+    "staging": "balance-forward-staging",
+    "development": "balance-forward-dev"
   },
   "targets": {},
   "etags": {}

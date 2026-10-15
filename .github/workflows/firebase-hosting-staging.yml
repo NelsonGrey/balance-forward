@@ -1,7 +1,7 @@
 name: "Deploy Web App to Staging (Hosting)"
 
 # Branch promotion path: develop → staging → main. Push to staging deploys
-# the compiled dist/ bundle to Firebase Hosting on nelsongrey-bf-staging. Business
+# the compiled dist/ bundle to Firebase Hosting on balance-forward-staging. Business
 # logic lives in Firebase Functions (private, server-side). This workflow
 # publishes only the compiled dist/ bundle; no source is exposed.
 #
@@ -72,12 +72,12 @@ jobs:
         uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: "projects/968230602171/locations/global/workloadIdentityPools/github-actions/providers/github"
-          service_account: "github-actions-hosting@nelsongrey-bf-staging.iam.gserviceaccount.com"
+          service_account: "github-actions-hosting@balance-forward-staging.iam.gserviceaccount.com"
 
       - name: Deploy Firebase Hosting
         run: |
           firebase deploy \
-            --project="nelsongrey-bf-staging" \
+            --project="balance-forward-staging" \
             --only=hosting \
             --message="Staging hosting deploy from staging — ${{ github.sha }}" \
             --non-interactive

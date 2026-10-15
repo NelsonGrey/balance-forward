@@ -13,7 +13,7 @@
 
 Balance Forward is a React (web) + Flutter (mobile) app on a Firebase backend, structured as a monorepo (`packages/web`, `packages/mobile`, `packages/shared`, `packages/firebase-utils`, plus a private companion repo `balance-forward-functions`). The repository, three Firebase environments, CI/CD, and the authentication layer (extracted from the org's shared `game-shell` package, with its ads/consent/IAP layers deliberately excluded — see [[modulo_squares_auth_design]]) are built and tested.
 
-The product itself is now real and live at `nelsongrey-bf-dev.web.app`: a school/classroom hierarchy (super_admin/admin/teacher roles with scoped and delegated access), classroom and student roster management, earn/spend transaction recording with a ledger/history view, a read-only student self-service balance view (own real account, linked via invite-and-claim — no separate student login system), CSV bulk import, and multi-select bulk operations (archive, promote, move-to-classroom) on web. Mobile has feature parity on everything except bulk operations and CSV import, which are web-only so far.
+The product itself is now real and live at `balance-forward-dev.web.app`: a school/classroom hierarchy (super_admin/admin/teacher roles with scoped and delegated access), classroom and student roster management, earn/spend transaction recording with a ledger/history view, a read-only student self-service balance view (own real account, linked via invite-and-claim — no separate student login system), CSV bulk import, and multi-select bulk operations (archive, promote, move-to-classroom) on web. Mobile has feature parity on everything except bulk operations and CSV import, which are web-only so far.
 
 **Project Status**: 🟢 **PHASE 1 MVP COMPLETE — PHASE 2 PARTIALLY COMPLETE**
 
@@ -31,7 +31,7 @@ Still open: offline/reliability hardening (§2.2), an accessibility pass (§2.4)
 | **Mobile Frontend** | Flutter | 3.44.2 | ✅ Real app — go_router, feature parity with web except bulk ops/CSV import |
 | **Backend** | Firebase Functions (consolidated `api` function) | Node 22 | 🔴 Still repo-only — real code lives in the private `balance-forward-functions` repo, not available here; no business logic exists client-side that depends on it |
 | **Database** | Cloud Firestore | — | ✅ Implemented — see §3.2 for the live schema and a documented Firestore list-query authorization constraint discovered and fixed 2026-08-18 |
-| **Auth** | Firebase Auth (Google + Apple + email/password) | — | ✅ Complete and live; email/password confirmed working against the real `nelsongrey-bf-dev` project. Apple still needs Developer-portal config (owner action) |
+| **Auth** | Firebase Auth (Google + Apple + email/password) | — | ✅ Complete and live; email/password confirmed working against the real `balance-forward-dev` project. Apple still needs Developer-portal config (owner action) |
 | **State Management (mobile)** | `provider` | 6.1.2 | ✅ In real use throughout `lib/features` |
 | **Routing (mobile)** | `go_router` | 16.2.4 | ✅ 5 registered routes, 2 more reached via internal dispatch (see §1.3) |
 
@@ -43,7 +43,7 @@ Still open: offline/reliability hardening (§2.2), an accessibility pass (§2.4)
 | **Apple iPad** | 🟡 Required deliverable; shared Flutter implementation and responsive foundation exist, but an iPad-specific device QA matrix has not been completed | iPadOS 16.0+ |
 | **Google Android phone** | 🟢 Flutter implementation; real Firebase config for `dev` only; confirmed booting to login | API 21+ (revisit before release) |
 | **Google Android tablet** | 🟡 Required deliverable; shared Flutter implementation and responsive foundation exist, but an Android-tablet device QA matrix has not been completed | API 21+ (revisit before release) |
-| **Responsive web** | 🟢 Deployed and functionally live at `nelsongrey-bf-dev.web.app`; shared 320px-to-wide-desktop layout contract implemented | Modern browsers |
+| **Responsive web** | 🟢 Deployed and functionally live at `balance-forward-dev.web.app`; shared 320px-to-wide-desktop layout contract implemented | Modern browsers |
 
 Neither `google-services.json` nor `GoogleService-Info.plist` is present in the repo (gitignored, not committed) — mobile builds against real config require generating these locally via `flutterfire configure` or the Firebase console.
 
@@ -77,7 +77,7 @@ balance-forward/
 ├── firestore.rules.test.ts     # 43 tests across 4 describe blocks
 ├── firestore.indexes.json      # 5 composite indexes
 ├── firebase.json / firebase.{dev,staging,prod}.json
-└── .firebaserc                 # nelsongrey-bf-{dev,staging,prod}
+└── .firebaserc                 # balance-forward-{dev,staging,prod}
 ```
 
 ---
@@ -90,7 +90,7 @@ This table maps directly to the Business Requirements (`BR-*` IDs) in [BUSINESS_
 | Feature | Status | Implementation |
 |---|---|---|
 | Google Sign-In (Android + web) | ✅ Complete | `packages/mobile/lib/features/auth/login_screen.dart`; `packages/web/src/features/auth/LoginPage.tsx` |
-| Email/Password (mobile + web) | ✅ Complete and live | Confirmed working against the real `nelsongrey-bf-dev` project's Auth this session (sign-in, password reset via `sendPasswordResetEmail`). Mobile: `login_screen.dart` (sign in/up toggle, confirm-password, show/hide). Web: `LoginPage.tsx`, same UX |
+| Email/Password (mobile + web) | ✅ Complete and live | Confirmed working against the real `balance-forward-dev` project's Auth this session (sign-in, password reset via `sendPasswordResetEmail`). Mobile: `login_screen.dart` (sign in/up toggle, confirm-password, show/hide). Web: `LoginPage.tsx`, same UX |
 | Apple Sign-In (iOS/macOS native SDK; web via `signInWithPopup(new OAuthProvider('apple.com'))`) | 🟡 Code complete, needs external config | **Blocked** until Apple's provider is enabled per-environment in the Firebase console, which requires a Sign in with Apple Services ID + key from the Apple Developer portal (owner action) |
 | Fake auth for tests | ✅ Complete | `fake_auth_service.dart` (mobile) |
 | Login screen (platform-gated OS buttons + email/password, error handling) | ✅ Complete | `login_screen.dart` (mobile); `LoginPage.tsx` (web, 17 tests) |
@@ -155,7 +155,7 @@ This table maps directly to the Business Requirements (`BR-*` IDs) in [BUSINESS_
 | Feature | Status |
 |---|---|
 | GitHub repos (`balance-forward` public, `balance-forward-functions` private), `develop`/`staging`/`main` branch model | ✅ Complete |
-| Firebase project trio (`nelsongrey-bf-dev/staging/prod`) | ✅ `dev` fully functional and in active use (real Auth users, real Firestore data, deployed hosting); staging/prod created but Auth providers/IAM/billing setup still pending (owner action) |
+| Firebase project trio (`balance-forward-dev/staging/prod`) | ✅ `dev` fully functional and in active use (real Auth users, real Firestore data, deployed hosting); staging/prod created but Auth providers/IAM/billing setup still pending (owner action) |
 | GitHub Actions (`master-pipeline.yml`, hosting deploys per branch, CodeQL, secret scanning) | ✅ Complete. `codeql.yml` runs on push/PR to develop/staging/main plus a weekly schedule; `secret-scan.yml` runs on push/PR to the same three branches |
 | Functions companion-repo checkout (`FUNCTIONS_REPO_PAT`) | ✅ Workflow wired; secret not yet set |
 
@@ -188,7 +188,7 @@ Unchanged since last review: `AuthService` (abstract interface) → `FirebaseAut
 
 ### 3.2 Firestore Data Model (implemented)
 
-The live schema, reflecting what's actually deployed to `nelsongrey-bf-dev` as of this document's refresh:
+The live schema, reflecting what's actually deployed to `balance-forward-dev` as of this document's refresh:
 
 ```
 users/{uid}
@@ -364,9 +364,9 @@ Unchanged: `firebase_core: ^4.13.0`, `firebase_auth: ^6.5.7`, `cloud_firestore: 
 ### 9.2 Firebase Projects
 | Alias | Project ID | Status |
 |---|---|---|
-| development | `nelsongrey-bf-dev` | ✅ Fully functional — real Auth users, live Firestore data, deployed hosting, in active use |
-| staging | `nelsongrey-bf-staging` | ✅ Created; Auth providers/IAM pending owner action |
-| production | `nelsongrey-bf-prod` | ✅ Created; Auth providers/IAM pending owner action |
+| development | `balance-forward-dev` | ✅ Fully functional — real Auth users, live Firestore data, deployed hosting, in active use |
+| staging | `balance-forward-staging` | ✅ Created; Auth providers/IAM pending owner action |
+| production | `balance-forward-prod` | ✅ Created; Auth providers/IAM pending owner action |
 
 ### 9.3 Emulator Test Accounts (local only — never real credentials)
 
@@ -380,7 +380,7 @@ Run `npm run seed:emulator` once (regenerates `.emulator-seed/`, gitignored), th
 | `teacher.grades@test.balanceforward` | Teacher, scope `grades` — [4, 5] |
 | `teacher.school@test.balanceforward` | Teacher, scope `school` — whole-school specialist (PE/art/music case) |
 
-The same five accounts exist in the real `nelsongrey-bf-dev` project too (`scripts/seed-real-dev-accounts.mjs`, same password), for manual verification against the live deployment. No student account on either — students still don't have a dedicated seed identity; link one manually via the staff-facing "link student account" flow to test that path (§2.3).
+The same five accounts exist in the real `balance-forward-dev` project too (`scripts/seed-real-dev-accounts.mjs`, same password), for manual verification against the live deployment. No student account on either — students still don't have a dedicated seed identity; link one manually via the staff-facing "link student account" flow to test that path (§2.3).
 
 ---
 
@@ -408,7 +408,7 @@ The same five accounts exist in the real `nelsongrey-bf-dev` project too (`scrip
 | Accessibility | Minimal incidental coverage only | See §2.4 |
 | Testing | Strong across the board | Web: 131 tests/24 files. Mobile: 86 tests/17 files. Firestore rules: 43 tests |
 
-**Status**: 🟢 **Phase 1 MVP live at `nelsongrey-bf-dev.web.app`. Phase 2 partially complete. Next priorities for a v1.0-readiness pass: reliability/offline hardening, accessibility, and the compliance program — none of which are started.**
+**Status**: 🟢 **Phase 1 MVP live at `balance-forward-dev.web.app`. Phase 2 partially complete. Next priorities for a v1.0-readiness pass: reliability/offline hardening, accessibility, and the compliance program — none of which are started.**
 
 ---
 

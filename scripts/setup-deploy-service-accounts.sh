@@ -4,7 +4,7 @@
 #
 # Creates a github-actions-deploy service account in each project and lets
 # GitHub Actions impersonate it through the EXISTING Workload Identity pool
-# (hosted in nelsongrey-bf-dev, shared with the github-actions-hosting
+# (hosted in balance-forward-dev, shared with the github-actions-hosting
 # accounts). No keys are created -- the org blocks SA key creation.
 #
 # Each account is only impersonable from one branch:
@@ -22,7 +22,7 @@ POOL_PROJECT_NUMBER=968230602171
 POOL="projects/${POOL_PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-actions"
 SA_NAME=github-actions-deploy
 
-project_for() { case "$1" in dev) echo nelsongrey-bf-dev;; staging) echo nelsongrey-bf-staging;; prod) echo nelsongrey-bf-prod;; *) echo "unknown env: $1" >&2; exit 1;; esac; }
+project_for() { case "$1" in dev) echo balance-forward-dev;; staging) echo balance-forward-staging;; prod) echo balance-forward-prod;; *) echo "unknown env: $1" >&2; exit 1;; esac; }
 branch_for()  { case "$1" in dev) echo develop;; staging) echo staging;; prod) echo main;; esac; }
 
 RULES_ROLES=(
